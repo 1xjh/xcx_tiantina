@@ -1,0 +1,73 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/sortPrice"
+		},
+		{
+			"path": "pages/index/courtyard_list"
+		},
+		{
+			"path": "pages/index/sortAi"
+		},
+		{
+			"path": "pages/search/search"
+		},
+		{
+			"path": "pages/index/index",
+			"style": {}
+		},
+		{
+			"path": "pages/order/cavase",
+			"style": {
+				// "enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/my/home"
+		},
+
+		{
+			"path": "pages/order/home",
+			"style": {}
+		},
+		{
+			"path": "pages/calendar/calendar"
+		},
+		{
+			"path": "pages/city/city"
+		}
+	],
+	"globalStyle": {
+		"navigationStyle": "custom"
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"checkSiteMap": false
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/tabbar/component.png",
+			"selectedIconPath": "static/tabbar/component_cur.png",
+			"text": "组件"
+		}, {
+			"pagePath": "pages/order/home",
+			"iconPath": "static/tabbar/basics.png",
+			"selectedIconPath": "static/tabbar/basics_cur.png",
+			"text": "接口"
+		}, {
+			"pagePath": "pages/my/home",
+			"iconPath": "static/tabbar/basics.png",
+			"selectedIconPath": "static/tabbar/basics_cur.png",
+			"text": "接口"
+		}]
+	}
+}

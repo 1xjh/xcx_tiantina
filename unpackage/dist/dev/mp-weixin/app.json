@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/index/sortPrice",
+    "pages/index/courtyard_list",
+    "pages/index/sortAi",
+    "pages/search/search",
+    "pages/index/index",
+    "pages/order/cavase",
+    "pages/my/home",
+    "pages/order/home",
+    "pages/calendar/calendar",
+    "pages/city/city"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/component.png",
+        "selectedIconPath": "static/tabbar/component_cur.png",
+        "text": "组件"
+      },
+      {
+        "pagePath": "pages/order/home",
+        "iconPath": "static/tabbar/basics.png",
+        "selectedIconPath": "static/tabbar/basics_cur.png",
+        "text": "接口"
+      },
+      {
+        "pagePath": "pages/my/home",
+        "iconPath": "static/tabbar/basics.png",
+        "selectedIconPath": "static/tabbar/basics_cur.png",
+        "text": "接口"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  }
+}

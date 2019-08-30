@@ -1,0 +1,149 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.calendar.data-v-6b561de4 {
+  margin-top: 100rpx;
+}
+.content.data-v-6b561de4 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.sliderBox.data-v-6b561de4 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: 50rpx;
+}
+.text-center.data-v-6b561de4 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.rowBox.data-v-6b561de4 {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.mrg50T.data-v-6b561de4 {
+  margin-top: 50rpx;
+}
+.tips.data-v-6b561de4 {
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  margin-top: 100rpx;
+}
+.residence_box.data-v-6b561de4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 14rpx 0;
+  font-size: 30rpx;
+  position: fixed;
+  z-index: 999;
+  top: 100rpx;
+  left: 0;
+  background: #fff;
+  width: 100%;
+  height: 210rpx;
+}
+.residence_box text.data-v-6b561de4 {
+  font-size: 24rpx;
+  color: #5f5f5f;
+  margin: 25rpx 0rpx 25rpx 0rpx;
+}
+.residence_end.data-v-6b561de4,
+.residence_start.data-v-6b561de4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.residence_end text.data-v-6b561de4 {
+  text-align: right;
+}
+.residence_end .week_number.data-v-6b561de4 {
+  text-align: right;
+}
+.calendar_date.data-v-6b561de4 {
+  color: #267656;
+  font-size: 38rpx;
+  font-family: SourceHanSansCN-Medium;
+  font-weight: bold;
+}
+.week_number.data-v-6b561de4 {
+  padding: 10rpx 0rpx;
+}
+.sure.data-v-6b561de4 {
+  width: 100%;
+  height: 90rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  background: #267656;
+  text-align: center;
+  font-size: 35rpx;
+  line-height: 90rpx;
+}
+.calendar_height.data-v-6b561de4 {
+  height: 90rpx;
+  width: 100%;
+}
+

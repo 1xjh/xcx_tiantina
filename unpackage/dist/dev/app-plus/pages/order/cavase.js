@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"screen-swiper { -webkit-box-sizing: border-box; box-sizing: border-box; }\n.",[1],"content { height: 600px; }\n",],undefined,{path:"./pages/order/cavase.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/order/cavase.wxml') } }));
