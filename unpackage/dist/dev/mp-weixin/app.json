@@ -1,13 +1,33 @@
 {
   "pages": [
+    "pages/my/home",
+    "pages/my/coupon",
+    "pages/sell_order/sell_order",
+    "pages/vip/up_vip",
+    "pages/vip/policy_vip",
+    "pages/my/my_team",
+    "pages/my/withdraw_success",
+    "pages/my/withdraw",
+    "pages/price_detailed/price_detailed",
+    "pages/my/wallet",
+    "pages/order_list/list",
+    "pages/order_list/order_comment_success",
+    "pages/order_list/order_comment",
+    "pages/order_list/list_item",
+    "pages/index/index",
+    "pages/reservation/reservation_index",
+    "pages/order_details/order_quit",
+    "pages/order_details/details",
+    "pages/agreement/agreement",
+    "pages/detalis/details",
+    "pages/detalis/evaluate",
+    "pages/detalis/facility_list",
+    "pages/detalis/policy",
+    "pages/index/sortAppoint",
     "pages/index/sortPrice",
     "pages/index/courtyard_list",
+    "pages/index/sortSite",
     "pages/index/sortAi",
-    "pages/search/search",
-    "pages/index/index",
-    "pages/order/cavase",
-    "pages/my/home",
-    "pages/order/home",
     "pages/calendar/calendar",
     "pages/city/city"
   ],
@@ -25,19 +45,19 @@
         "pagePath": "pages/index/index",
         "iconPath": "static/tabbar/component.png",
         "selectedIconPath": "static/tabbar/component_cur.png",
-        "text": "组件"
+        "text": "预定"
       },
       {
-        "pagePath": "pages/order/home",
+        "pagePath": "pages/order_list/list",
         "iconPath": "static/tabbar/basics.png",
         "selectedIconPath": "static/tabbar/basics_cur.png",
-        "text": "接口"
+        "text": "订单"
       },
       {
         "pagePath": "pages/my/home",
         "iconPath": "static/tabbar/basics.png",
         "selectedIconPath": "static/tabbar/basics_cur.png",
-        "text": "接口"
+        "text": "我的"
       }
     ]
   },

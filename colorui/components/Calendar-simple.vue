@@ -741,7 +741,6 @@
 <style lang="less" scoped>
 	@color: #415FFB;
 	@background: rgba(80, 200, 180, 0.1);
-
 	div,
 	ul,
 	li,

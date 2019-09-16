@@ -1,0 +1,1 @@
+<view hidden="{{!(show)}}" class="distributor_box_shadow"><view class="distributor_box_card"><block wx:if="{{wrong}}"><view class="flex distributor_top"><view class="distributor_name">{{title}}</view><text data-event-opts="{{[['tap',[['quitCard',['$event']]]]]}}" class="text-gray fork_img cuIcon-roundclose" bindtap="__e"></text></view></block><slot></slot></view></view>

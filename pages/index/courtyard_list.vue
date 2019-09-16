@@ -23,10 +23,14 @@
 				<text>位置区域</text>
 				<view class="triangle"></view>
 			</view>
+			<view class="item" @click="jumpCondition(4)">
+				<text>位置区域</text>
+				<view class="triangle"></view>
+			</view>
 		</view>
 		<!-- 院子列表 -->
 		<view class="list_box">
-			<view class="list">
+			<view class="list" @click="jumpDetalis">
 				<view class="list_img">
 					<image src="../../static/img/img3.jpg" mode=""></image>
 				</view>
@@ -136,7 +140,20 @@
 					uni.navigateTo({
 						url: '../index/sortPrice'
 					});
+				}else if(value ==3){
+					uni.navigateTo({
+						url: '../index/sortSite'
+					});
+				}else if(value==4){
+					uni.navigateTo({
+						url: '../index/sortAppoint'
+					});
 				}
+			},
+			jumpDetalis(){
+				uni.navigateTo({
+					url: '../detalis/details'
+				});
 			}
 		}
 	}

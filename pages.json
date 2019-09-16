@@ -1,34 +1,92 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/sortPrice"
+			"path": "pages/my/home"
 		},
 		{
-			"path": "pages/index/courtyard_list"
+			"path": "pages/my/coupon"
+		},
+
+		{
+			"path": "pages/sell_order/sell_order"
 		},
 		{
-			"path": "pages/index/sortAi"
+			"path": "pages/vip/up_vip"
 		},
 		{
-			"path": "pages/search/search"
+			"path": "pages/vip/policy_vip"
+		},
+		{
+			"path": "pages/my/my_team"
+		},
+		{
+			"path": "pages/my/withdraw_success"
+		},
+		{
+			"path": "pages/my/withdraw"
+		},
+		{
+			"path": "pages/price_detailed/price_detailed"
+		},
+		{
+			"path": "pages/my/wallet"
+		},
+
+		{
+			"path": "pages/order_list/list"
+		},
+		{
+			"path": "pages/order_list/order_comment_success"
+		},
+
+		{
+			"path": "pages/order_list/order_comment"
+		},
+		{
+			"path": "pages/order_list/list_item"
 		},
 		{
 			"path": "pages/index/index",
 			"style": {}
 		},
 		{
-			"path": "pages/order/cavase",
-			"style": {
-				// "enablePullDownRefresh": true
-			}
+			"path": "pages/reservation/reservation_index"
 		},
 		{
-			"path": "pages/my/home"
+			"path": "pages/order_details/order_quit"
 		},
-
 		{
-			"path": "pages/order/home",
-			"style": {}
+			"path": "pages/order_details/details"
+		},
+		{
+			"path": "pages/agreement/agreement"
+		},
+		{
+			"path": "pages/detalis/details"
+		},
+		{
+			"path": "pages/detalis/evaluate"
+		},
+		{
+			"path": "pages/detalis/facility_list"
+		},
+		{
+			"path": "pages/detalis/policy"
+		},
+		{
+			"path": "pages/index/sortAppoint"
+		},
+		{
+			"path": "pages/index/sortPrice"
+		},
+		{
+			"path": "pages/index/courtyard_list"
+		},
+		{
+			"path": "pages/index/sortSite"
+		},
+		{
+			"path": "pages/index/sortAi"
 		},
 		{
 			"path": "pages/calendar/calendar"
@@ -57,17 +115,17 @@
 			"pagePath": "pages/index/index",
 			"iconPath": "static/tabbar/component.png",
 			"selectedIconPath": "static/tabbar/component_cur.png",
-			"text": "组件"
+			"text": "预定"
 		}, {
-			"pagePath": "pages/order/home",
+			"pagePath": "pages/order_list/list",
 			"iconPath": "static/tabbar/basics.png",
 			"selectedIconPath": "static/tabbar/basics_cur.png",
-			"text": "接口"
+			"text": "订单"
 		}, {
 			"pagePath": "pages/my/home",
 			"iconPath": "static/tabbar/basics.png",
 			"selectedIconPath": "static/tabbar/basics_cur.png",
-			"text": "接口"
+			"text": "我的"
 		}]
 	}
 }

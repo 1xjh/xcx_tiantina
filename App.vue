@@ -5,17 +5,6 @@
 			DateObject: {},
 			city: "广州",
 		},
-		// 		import Vue from 'vue'
-		// 		import Vuex from 'vuex'
-		// 		Vue.use(Vuex)”
-		// 		const store = new Vuex.Store({
-		// 			state: {
-		// 			
-		// 			},
-		// 			mutations: {
-		// 				
-		// 			}
-		// 		})
 		onLaunch: function() {
 			uni.getSystemInfo({
 				success: function(e) {
@@ -52,12 +41,29 @@
 <style>
 	@import "colorui/main.css";
 	@import "colorui/icon.css";
+
 	.flex {
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-box;
 		display: -webkit-flex;
 		display: flex;
+	}
+
+	.nav-between {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.nav-content {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+	}
+
+	.nav-around {
+		display: flex;
+		justify-content: space-around;
 	}
 
 	.nav-list {
@@ -74,6 +80,8 @@
 	.tian-tian-color {
 		color: #267656;
 	}
+
+	.show {}
 
 	/*每个页面公共css */
 </style>

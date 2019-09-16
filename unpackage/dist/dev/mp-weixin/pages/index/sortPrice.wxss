@@ -24,40 +24,38 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+page {
+  background: #fff;
+}
 .slider {
-  position: relative;
   width: 90%;
-  height: 30rpx;
-  margin: 30rpx auto;
+  margin: 0rpx auto;
 }
-.slider .slider_chunk {
-    position: absolute;
-    top: -12rpx;
-    width: 30rpx;
-    height: 30rpx;
-    border-radius: 40rpx;
-    background: #fff;
-    z-index: 15;
+.slider .title {
+    margin: 30rpx 0;
 }
-.slider .slider_liner {
-    position: absolute;
-    height: 4rpx;
-    width: 100%;
+.select_price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin-top: 30rpx;
 }
-.slider,
-  .slider .slider_liner_right {
-    right: 0;
+.select_price .price {
+    margin-top: 4%;
+    width: 22%;
+    height: 80rpx;
+    margin-right: 4%;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 20rpx;
+    border-radius: 10rpx;
+    background: #F6F5F9;
 }
-.slider .slider_liner_left {
-    left: 0;
-}
-.slider .active {
-    z-index: 10;
-}
-.slider .slider_chunk_right {
-    right: 0;
-}
-.slider .slider_chunk_left {
-    left: 0;
+.select_price .price:nth-child(4n+0) {
+      margin-right: 0;
 }
 

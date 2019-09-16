@@ -72,17 +72,6 @@ var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _i
     DateObject: {},
     city: "广州" },
 
-  // 		import Vue from 'vue'
-  // 		import Vuex from 'vuex'
-  // 		Vue.use(Vuex)”
-  // 		const store = new Vuex.Store({
-  // 			state: {
-  // 			
-  // 			},
-  // 			mutations: {
-  // 				
-  // 			}
-  // 		})
   onLaunch: function onLaunch() {
     uni.getSystemInfo({
       success: function success(e) {

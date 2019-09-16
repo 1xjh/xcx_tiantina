@@ -241,7 +241,7 @@
 					this.monthCount = this.initMonthCount
 				}
 				if (this.date) {
-					//disableDate用于addClassName方法preDisabled==true的时候使用
+					
 					this.dates = this.disableDate = new Date(this.date.replace(/-/g, '/'))
 					this.isDate = true
 				}
