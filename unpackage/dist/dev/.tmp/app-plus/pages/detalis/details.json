@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "facility-page": "/pages/detalis/facility_list",
+    "index-page": "/pages/detalis/index",
+    "policy-page": "/pages/detalis/policy"
+  }
+}

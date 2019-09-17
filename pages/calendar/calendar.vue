@@ -3,8 +3,8 @@
 		<cu-custom bgColor="bg-gradual-blue">
 			<view slot="content">日历</view>
 		</cu-custom>
-		<Calendar :startDate="start" :themeColor="'#267656'" :priceList="priceList" :endDate="end" @callback="getDate" :mode="1"
-		 class="calendar">
+		<view  class="calendar"></view>
+		<Calendar :startDate="start" :themeColor="'#267656'" :priceList="priceList" :endDate="end" @callback="getDate" :mode="1">
 			<view>
 				<view class="residence_box">
 					<view class="residence_start">
@@ -99,7 +99,7 @@
 
 <style lang="scss" scoped>
 	.calendar {
-		margin-top: 100rpx;
+		margin-top: 165rpx;
 	}
 
 	.content {
@@ -137,7 +137,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 14rpx 0;
+		padding: 20rpx 0rpx 10rpx 0;
 		font-size: 30rpx;
 		position: fixed;
 		z-index: 999;
@@ -146,6 +146,7 @@
 		background: #fff;
 		width: 100%;
 		height: 210rpx;
+		box-sizing: content-box;
 	}
 
 	.residence_box text {

@@ -9,12 +9,12 @@
 		<view class="details_site nav-around">
 			<view class="site_title">中国/广东/肇庆市/端州区宝环大道岩前路181号</view>
 			<view class="img">
-				<!-- <image src="" mode=""></image> -->
+				<image src="../../static/img/icon_site.png" mode=""></image>
 			</view>
 		</view>
 		<view class="details_vip flex">
 			<view class="img">
-				<!-- <image src="" mode=""></image> -->
+				<image src="../../static/img/lv_vip.png" mode=""></image>
 			</view>
 			<view class="vip_content">
 				<view class="vip_t1">您是金卡会员/本人预订本人入住即可享受福利</view>
@@ -33,10 +33,10 @@
 			<view class="day_number">共<text>1</text>晚 ></view>
 		</view>
 		<view class="details_room">
-			<view class="details_room_list nav-content">
+			<view class="details_room_list nav-content" v-for="item in 3" :key="item">
 				<view class="left flex">
 					<view class="img">
-						<!-- <image src="" mode=""></image> -->
+						<image src="../../static/img/room_img.png" mode=""></image>
 					</view>
 					<view class="room_details">
 						<view class="room_name">湖景双床房</view>
@@ -57,54 +57,6 @@
 					</view>
 				</view>
 			</view>
-			<view class="details_room_list nav-content">
-				<view class="left flex">
-					<view class="img">
-						<!-- <image src="" mode=""></image> -->
-					</view>
-					<view class="room_details">
-						<view class="room_name">湖景双床房</view>
-						<view class="room_bed">单床×2张 25m² 可住2人</view>
-						<view class="room_quit">限时取消</view>
-						<view class="room_environment flex">
-							<view>湖景</view>
-							<view>阳台</view>
-							<view>会员首单免</view>
-						</view>
-					</view>
-				</view>
-				<view class="room_price">
-					<view class="price_new">￥560 <text>起</text></view>
-					<view class="price_old">原价￥999</view>
-					<view class="room_status tian-tian-bg">
-						预定
-					</view>
-				</view>
-			</view>
-			<view class="details_room_list nav-content">
-				<view class="left flex">
-					<view class="img">
-						<!-- <image src="" mode=""></image> -->
-					</view>
-					<view class="room_details">
-						<view class="room_name">湖景双床房</view>
-						<view class="room_bed">单床×2张 25m² 可住2人</view>
-						<view class="room_quit">限时取消</view>
-						<view class="room_environment flex">
-							<view>湖景</view>
-							<view>阳台</view>
-							<view>会员首单免</view>
-						</view>
-					</view>
-				</view>
-				<view class="room_price">
-					<view class="price_new">￥560 <text>起</text></view>
-					<view class="price_old">原价￥999</view>
-					<view class="room_status tian-tian-bg">
-						预定
-					</view>
-				</view>
-			</view>
 		</view>
 				
 	</view>
@@ -119,14 +71,11 @@
 		},
 		methods:{
 			jump_date(){
-				console.log(111111)
+				
 			},
 			jumpResservation(){
 				uni.navigateTo({
 					url: '../reservation/reservation_index',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
 				});
 			}
 		}
@@ -134,7 +83,10 @@
 </script>
 
 <style lang="scss">
-	
+	image{
+		width: 100%;
+		height: 100%;
+	}
 	.details_title_name {
 		margin: 30rpx 0;
 		font-size: 36rpx;
@@ -175,7 +127,6 @@
 		.img {
 			width: 108rpx;
 			height: 72rpx;
-			background: #007AFF;
 		}
 	}
 	
@@ -190,7 +141,6 @@
 			margin: 34rpx 24rpx 25rpx 24rpx;
 			width: 79rpx;
 			height: 65rpx;
-			background: #007AFF;
 		}
 	
 		.vip_content {
@@ -253,7 +203,6 @@
 			width: 180rpx;
 			height: 100%;
 			border-radius: 15rpx;
-			background: #007AFF;
 		}
 	
 		.room_details {

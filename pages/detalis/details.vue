@@ -5,13 +5,12 @@
 			 circular="true">
 				<swiper-item v-for="(item, index) in banner" :key="index">
 					<image class="nav-icon" mode="aspectFill" lazy-load="true" :src="item"></image>
-					<video :src="item.url" autoplay loop muted :show-play-btn="true" :controls="true" objectFit="cover"></video>
 				</swiper-item>
 			</swiper>
 			<view class="swiper_bg"></view>
 			<view class="swiper_number">
 				<view class="img">
-					<image src="../../static/img/dingwei.png" mode=""></image>
+					<image src="../../static/img/banner_icon.png" mode=""></image>
 				</view>
 				<text>{{banner.length}}</text>
 			</view>
@@ -20,25 +19,25 @@
 			<view class="details_nav nav-content">
 				<view class="details_nav_list" @click="select(1)">
 					<view class="img">
-						<image src="../../static/pullDown.jpg" mode=""></image>
+						<image src="../../static/img/details_icon1.png" mode=""></image>
 					</view>
 					<view class="title">详情</view>
 				</view>
 				<view class="details_nav_list" @click="select(2)">
 					<view class="img">
-						<image src="../../static/pullDown.jpg" mode=""></image>
+						<image src="../../static/img/details_icon2.png" mode=""></image>
 					</view>
 					<view class="title">房间设施</view>
 				</view>
 				<view class="details_nav_list" @click="select(3)">
 					<view class="img">
-						<image src="../../static/pullDown.jpg" mode=""></image>
+						<image src="../../static/img/details_icon3.png" mode=""></image>
 					</view>
 					<view class="title">入住政策</view>
 				</view>
 				<view class="details_nav_list" @click="select(4)">
 					<view class="img">
-						<image src="../../static/pullDown.jpg" mode=""></image>
+						<image src="../../static/img/details_icon4.png" mode=""></image>
 					</view>
 					<view class="title">评价</view>
 				</view>
@@ -49,16 +48,16 @@
 			<view class="bottom_height"></view>
 		</view>
 		<view class="footer">
-			<view class="icon_list">
-				<view class="icon_img"></view>
+			<view class="icon_list" @click="jumpIndex">
+				<view class="icon_img"><image src="../../static/img/icon_index.png" mode=""></image></view>
 				<view class="icon_title">回到首页</view>
 			</view>
 			<view class="icon_list">
-				<view class="icon_img"></view>
+				<view class="icon_img"><image src="../../static/img/haibao.png" mode=""></image></view>
 				<view class="icon_title">生成海报</view>
 			</view>
 			<view class="icon_list">
-				<view class="icon_img"></view>
+				<view class="icon_img"><image src="../../static/img/icon_share.png" mode=""></image></view>
 				<view class="icon_title">分享</view>
 			</view>
 		</view>
@@ -86,13 +85,18 @@
 		methods: {
 			select(val) {
 				if (val != 4) {
-
 					this.selectid = val
 				} else {
 					uni.navigateTo({
 						url: "./evaluate"
 					})
 				}
+			},
+			jumpIndex(){
+				console.log(1111111)
+				uni.reLaunch({
+					url: "../index/index"
+				})
 			}
 		}
 	}
@@ -108,10 +112,12 @@
 		height: 100%;
 		display: block;
 	}
-.bottom_height{
-	height: 110rpx;
-	width: 100rpx;
-}
+
+	.bottom_height {
+		height: 110rpx;
+		width: 100rpx;
+	}
+
 	.swiper {
 		width: 100%;
 		height: 500rpx;
@@ -209,7 +215,6 @@
 			.icon_img {
 				width: 40rpx;
 				height: 40rpx;
-				background: #007AFF;
 				margin: 0 auto;
 			}
 

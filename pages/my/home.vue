@@ -6,11 +6,9 @@
 		<!-- 登录 -->
 		<view class="my_user_info_cart" style="" v-if="isLogin">
 			<view class="my_user_info flex">
-				<view class="user_img"></view>
+				<view class="user_img  cu-avatar round margin-left" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);" @click="jumpDetail('centre')"></view>
 				<view class="user_name_box flex">
-					<view class="user_name flex">邹大大 <view class="user_sex_img">
-							<image src="" mode=""></image>
-						</view>
+					<view class="user_name flex">邹大大 <view class="user_sex_img cuIcon-male"></view>
 					</view>
 					<view class="user_vip">钻石会员</view>
 				</view>
@@ -26,29 +24,39 @@
 			<view class="details_card details_serve">
 				<view class="serve_list nav-around">
 					<view class="item flex" @click="jumpWallet()">
-						<view class="img"></view>
+						<view class="img">
+							<image src="../../static/img/icon_wallet.png" mode=""></image>
+						</view>
 						<view class="text">我的钱包</view>
 					</view>
 					<view class="item flex" @click="jumpOrder()">
-						<view class="img"></view>
+						<view class="img">
+							<image src="../../static/img/icon_price.png" mode=""></image>
+						</view>
 						<view class="text">销售订单</view>
 					</view>
 					<view class="item flex" @click="jumpTeam()">
-						<view class="img"></view>
+						<view class="img">
+							<image src="../../static/img/icon_tema.png" mode=""></image>
+						</view>
 						<view class="text">我的团队</view>
 					</view>
 				</view>
 			</view>
 			<view class="details_card list_entrance nav-between" @click="jumpDetail('yh')">
 				<view class="list_button flex">
-					<view class="icon_img"></view>
+					<view class="icon_img">
+						<image src="../../static/img/icon_coupon.png" mode=""></image>
+					</view>
 					<view class="icon_title">我的优惠券</view>
 				</view>
 				<view class="">＞</view>
 			</view>
 			<view class="details_card list_entrance nav-between" @click="closeServe()">
 				<view class="list_button flex">
-					<view class="icon_img"></view>
+					<view class="icon_img">
+						<image src="../../static/img/icon_serve.png" mode=""></image>
+					</view>
 					<view class="icon_title">我的客服</view>
 				</view>
 				<view class="">＞</view>
@@ -56,21 +64,27 @@
 
 			<view class="details_card list_entrance nav-between" @click="jumpDetail('up')">
 				<view class="list_button flex">
-					<view class="icon_img"></view>
+					<view class="icon_img">
+						<image src="../../static/img/icon_vip.png" mode=""></image>
+					</view>
 					<view class="icon_title">升级会员</view>
 				</view>
 				<view class="">＞</view>
 			</view>
 			<view class="details_card list_entrance nav-between" @click="closeMain()">
 				<view class="list_button flex">
-					<view class="icon_img"></view>
+					<view class="icon_img">
+						<image src="../../static/img/icon_shop.png" mode=""></image>
+					</view>
 					<view class="icon_title">成为分销商</view>
 				</view>
 				<view class="">＞</view>
 			</view>
 			<view class="details_card list_entrance nav-between" @click="jumpDetail('zc')">
 				<view class="list_button flex">
-					<view class="icon_img"></view>
+					<view class="icon_img">
+						<image src="../../static/img/icon_zc.png" mode=""></image>
+					</view>
 					<view class="icon_title">会员政策</view>
 				</view>
 				<view class="">＞</view>
@@ -190,9 +204,13 @@
 					uni.navigateTo({
 						url: '../vip/up_vip'
 					})
-				}else if(val=='zc'){
+				} else if (val == 'zc') {
 					uni.navigateTo({
 						url: '../vip/policy_vip'
+					})
+				}else if(val=='centre'){
+					uni.navigateTo({
+						url: 'my_centre'
 					})
 				}
 			},
@@ -313,9 +331,8 @@
 		margin-top: 30rpx;
 
 		.icon_img {
-			width: 43rpx;
-			height: 35rpx;
-			background: #007AFF;
+			width: 45rpx;
+			height: 45rpx;
 		}
 
 		.icon_title {
@@ -368,7 +385,7 @@
 				width: 120rpx;
 				height: 120rpx;
 				border-radius: 50%;
-				background: #007AFF;
+				border:4rpx solid #FFFFFF;
 			}
 
 			.user_name_box {
@@ -383,10 +400,15 @@
 					align-items: center;
 
 					.user_sex_img {
+						
+						padding: 5rpx;
 						width: 26rpx;
 						height: 26rpx;
-						background: #007AFF;
+						background: #FFFFFF;
+						color:#267656;
 						margin-left: 26rpx;
+						font-size: 21rpx;
+						border-radius: 5rpx;
 					}
 				}
 
@@ -435,7 +457,6 @@
 					.img {
 						width: 86rpx;
 						height: 86rpx;
-						background: #007AFF;
 						opacity: 0.9;
 						border-radius: 50%;
 					}

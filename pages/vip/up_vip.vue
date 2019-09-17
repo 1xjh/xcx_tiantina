@@ -5,27 +5,37 @@
 			<block slot="content">会员升级</block>
 		</cu-custom>
 		<view class="up_vip_main">
-			<view class="vip_img"></view>
+			<view class="vip_img">
+				<image src="../../static/img/vip_card1.png" mode=""></image>
+			</view>
 			<view class="vip_three">
 				<view class="vip_three_title">三大会员卡</view>
 				<view class="vip_three_flex nav-between">
 					<view class="up_item">
-						<view class="vip_three_icon"></view>
+						<view class="vip_three_icon">
+							<image src="../../static/img/vip_icon2.png" mode=""></image>
+						</view>
 						<view class="vip_three_text">VIP卡会员</view>
 					</view>
 					<view class="up_item">
-						<view class="vip_three_icon"></view>
-						<view class="vip_three_text">VIP卡会员</view>
+						<view class="vip_three_icon">
+							<image src="../../static/img/vip_icon1.png" mode=""></image>
+						</view>
+						<view class="vip_three_text">金卡会员</view>
 					</view>
 					<view class="up_item">
-						<view class="vip_three_icon"></view>
-						<view class="vip_three_text">VIP卡会员</view>
+						<view class="vip_three_icon">
+							<image src="../../static/img/vip_icon3.png" mode=""></image>
+						</view>
+						<view class="vip_three_text">钻石卡会员</view>
 					</view>
 				</view>
 			</view>
 			<view class="up_vip_card">
 				<view class="up-card_title flex">
-					<view class="diu_icon"></view>
+					<view class="diu_icon">
+						<image src="../../static/img/anaonymity_none.png" mode=""></image>
+					</view>
 					<view>选择开通会员卡类型</view>
 				</view>
 				<view class="up_card_list" v-for="item in 3" :key="item">
@@ -35,8 +45,10 @@
 			</view>
 			<view class="up_vip_card">
 				<view class="up-card_title flex">
-					<view class="diu_icon"></view> 
-					<view>选择开通会员卡类型</view>
+					<view class="diu_icon">
+						<image src="../../static/img/anaonymity_none.png" mode=""></image>
+					</view>
+					<view>会员卡兑换码</view>
 				</view>
 				<view class="up_code_box flex">
 					<view class="up_code_title">兑换码</view>
@@ -53,6 +65,12 @@
 </script>
 
 <style lang="scss">
+	image {
+		width: 100%;
+		height: 100%;
+		display: block;
+	}
+
 	.up_vip_main {
 		width: 90%;
 		margin: 0 auto;
@@ -120,7 +138,6 @@
 				.diu_icon {
 					width: 28rpx;
 					height: 28rpx;
-					background: #007AFF;
 					border-radius: 28rpx;
 					margin-right: 10rpx;
 				}
@@ -148,7 +165,6 @@
 					.vip_three_icon {
 						width: 120rpx;
 						height: 138rpx;
-						background: #007AFF;
 					}
 
 					.vip_three_text {
@@ -175,7 +191,6 @@
 		.vip_img {
 			width: 100%;
 			height: 369rpx;
-			background: #007AFF;
 			margin-top: 36rpx;
 			border-radius: 50rpx;
 		}
@@ -195,7 +210,7 @@
 		font-family: Source Han Sans CN;
 		font-weight: bold;
 		text-align: center;
-		position:fixed;
+		position: fixed;
 		bottom: 0;
 		left: 0;
 		background: rgba(38, 118, 86, 1);

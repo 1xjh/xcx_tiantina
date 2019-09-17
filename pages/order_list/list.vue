@@ -13,7 +13,7 @@
 		</scroll-view>
 
 		<view class="list_order" v-if="TabCur==1">
-			<list-item ></list-item>
+			<list-item></list-item>
 		</view>
 		<view class="order_no_login" v-else>
 			<view class="img">
@@ -21,6 +21,22 @@
 			</view>
 			<view class="title">请先登录后查看订单</view>
 			<view class="button">登录</view>
+			<!-- 图片窗口 -->
+			<!-- 		<view class="cu-modal">
+				<view class="cu-dialog">
+					<view class="bg-img" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg');height:200px;">
+						<view class="cu-bar justify-end text-white">
+							<view class="action" @tap="hideModal">
+								<text class="cuIcon-close "></text>
+							</view>
+						</view>
+					</view>
+					<view class="cu-bar bg-white">
+						<view class="action margin-0 flex-sub  solid-left" @tap="hideModal">我知道了</view>
+					</view>
+				</view>
+			</view>
+ -->
 		</view>
 	</view>
 </template>
@@ -41,8 +57,6 @@
 			tabSelect(e) {
 				this.TabCur = e.currentTarget.dataset.id;
 				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
-				console.log(this.TabCur)
-				console.log(this.scrollLeft)
 			}
 		}
 	}

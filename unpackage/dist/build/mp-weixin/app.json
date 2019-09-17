@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/home",
+    "pages/my/my_centre",
+    "pages/my/coupon",
+    "pages/sell_order/sell_order",
+    "pages/vip/up_vip",
+    "pages/vip/policy_vip",
+    "pages/my/my_team",
+    "pages/my/withdraw_success",
+    "pages/my/withdraw",
+    "pages/price_detailed/price_detailed",
+    "pages/my/wallet",
+    "pages/order_list/list",
+    "pages/order_list/order_comment_success",
+    "pages/order_list/order_comment",
+    "pages/order_list/list_item",
+    "pages/reservation/reservation_index",
+    "pages/order_details/order_quit",
+    "pages/order_details/details",
+    "pages/agreement/agreement",
+    "pages/detalis/details",
+    "pages/detalis/evaluate",
+    "pages/detalis/facility_list",
+    "pages/detalis/policy",
+    "pages/index/sortAppoint",
+    "pages/index/sortPrice",
+    "pages/index/courtyard_list",
+    "pages/index/sortSite",
+    "pages/index/sortAi",
+    "pages/search/search",
+    "pages/calendar/calendar",
+    "pages/city/city"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/component.png",
+        "selectedIconPath": "static/tabbar/component_cur.png",
+        "text": "预定"
+      },
+      {
+        "pagePath": "pages/order_list/list",
+        "iconPath": "static/tabbar/basics.png",
+        "selectedIconPath": "static/tabbar/basics_cur.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/my/home",
+        "iconPath": "static/tabbar/about.png",
+        "selectedIconPath": "static/tabbar/about_cur.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "usingComponents": {
+    "cu-custom": "/colorui/components/cu-custom"
+  },
+  "sitemapLocation": "sitemap.json"
+}

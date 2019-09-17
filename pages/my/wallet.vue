@@ -8,11 +8,13 @@
 			<view class="wallet_bg_card">
 				<view class="wallet_box_bg">
 					<view class="price_title flex">
-						<view class="">总金额(元)</view>
-						<view class="eye_img"></view>
+						<view class="wallet_peice">总金额(元)</view>	
+						<view class="eye_img" @click="isclose()">
+							<image :src='price_show?close:open' :mode="aspectFill"></image>
+						</view>
 					</view>
-					<view class="price_none"> * * * * *</view>
-					<view class="yesterday_none flex">昨日收益<text>* * *</text>元</view>
+					<view class="price_none">{{ price_show?'* * * * *':'10000'}}</view>
+					<view class="yesterday_none flex">昨日收益<text>{{ price_show?'* * *':'99'}}</text>元</view>
 					<view class="share_title">把好东西分享给好朋友，收入更高哦~</view>
 				</view>
 			</view>
@@ -54,39 +56,51 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				
+	export default {
+		data() {
+			return {
+				price_show: false,
+				open: '../../static/img/eye_open.png',
+				close: '../../static/img/eye_close.png'
 			}
 		},
-		methods:{
-			detiled(val){
+		methods: {
+			detiled(val) {
 				console.log(val)
 				uni.navigateTo({
 					url: '../price_detailed/price_detailed',
 				});
 			},
-			submit(){
+			submit() {
 				uni.navigateTo({
 					url: 'withdraw',
 				});
+			},
+			isclose() {
+				this.price_show = !this.price_show
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
+	image {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
 	.wallet_bg {
 		width: 100%;
 		height: 382rpx;
 		position: relative;
 		background: linear-gradient(0deg, rgba(38, 118, 86, 1), rgba(92, 187, 148, 0.05));
 		font-family: Source Han Sans CN;
+
 		.wallet_bg_card {
 			position: absolute;
 			top: 22rpx;
 			width: 100%;
+
 			.wallet_box_bg {
 				width: 90%;
 				margin: 0rpx auto;
@@ -101,7 +115,15 @@
 					color: rgba(85, 85, 85, 1);
 					margin-top: 104rpx;
 					justify-content: center;
+					align-items: center;
+
+					.eye_img {
+						width: 39rpx;
+						height: 30rpx;
+						margin-left: 5rpx;
+					}
 				}
+
 
 				.price_none {
 					text-align: center;
@@ -120,10 +142,10 @@
 					color: rgba(85, 85, 85, 1);
 					border-radius: 22px;
 					justify-content: center;
+					align-items:center;
 
 					text {
-						font-size: 44rpx;
-						margin-top: 10rpx;
+						font-size: 30rpx;
 						color: #267656;
 					}
 				}
@@ -137,11 +159,13 @@
 			}
 		}
 	}
+
 	.my_index_box {
 		width: 90%;
 		margin: 60rpx auto;
-			font-family: Source Han Sans CN;
-				color: rgba(85, 85, 85, 1);
+		font-family: Source Han Sans CN;
+		color: rgba(85, 85, 85, 1);
+
 		.list_entrance {
 			padding: 37rpx 31rpx;
 			align-items: center;
@@ -158,12 +182,14 @@
 				font-weight: 400;
 				margin-left: 26rpx;
 			}
-			.right_price{
-				align-items:center;
-				.price{
+
+			.right_price {
+				align-items: center;
+
+				.price {
 					margin-right: 10rpx;
-					font-size:32rpx;
-					font-weight:500;
+					font-size: 32rpx;
+					font-weight: 500;
 				}
 			}
 
@@ -176,8 +202,9 @@
 
 		}
 	}
-	.bottom_tiantian{
-		position:absolute;
+
+	.bottom_tiantian {
+		position: absolute;
 		bottom: 30rpx;
 		text-align: center;
 		width: 100%;

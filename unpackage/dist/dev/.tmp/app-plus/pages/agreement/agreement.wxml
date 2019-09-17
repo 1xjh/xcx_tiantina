@@ -1,0 +1,13 @@
+<view class="specification"><cu-custom vue-id="1" bgColor="bg-gradual-blue" isBack="{{true}}" bind:__l="__l" vue-slots="{{['backText','content']}}"><view slot="backText">返回</view><view slot="content">天天惦记协议</view></cu-custom><view class="specification_contetn"><view class="specification_title">天天惦记会员购买协议</view><view class="list"><view class="list_title">第一条协议</view><view class="list_content">一个问题的解决，总是依赖于与问题相邻的更高的一级。
+				即，问题决不可能在它出现的那一层面得到解决。做终
+				端一线销售，经常会提到“分销”二字，因为做终端销
+				售，分销是个永恒的话题。</view></view><view class="list"><view class="list_title">第一条协议</view><view class="list_content">一个问题的解决，总是依赖于与问题相邻的更高的一级。
+				即，问题决不可能在它出现的那一层面得到解决。做终
+				端一线销售，经常会提到“分销”二字，因为做终端销
+				售，分销是个永恒的话题。</view></view><view class="list"><view class="list_title">第一条协议</view><view class="list_content">一个问题的解决，总是依赖于与问题相邻的更高的一级。
+				即，问题决不可能在它出现的那一层面得到解决。做终
+				端一线销售，经常会提到“分销”二字，因为做终端销
+				售，分销是个永恒的话题。</view></view><view class="list"><view class="list_title">第一条协议</view><view class="list_content">一个问题的解决，总是依赖于与问题相邻的更高的一级。
+				即，问题决不可能在它出现的那一层面得到解决。做终
+				端一线销售，经常会提到“分销”二字，因为做终端销
+				售，分销是个永恒的话题。</view></view></view></view>

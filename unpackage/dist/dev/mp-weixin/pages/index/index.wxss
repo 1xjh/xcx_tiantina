@@ -216,7 +216,6 @@ image {
     width: 30%;
     padding-bottom: 35%;
     border-radius: 30rpx;
-    background: #007aff;
     position: relative;
 }
 .hot_site_list .hot_site .hot_name {

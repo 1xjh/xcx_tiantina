@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "slider-range": "/colorui/components/slider"
+  }
+}

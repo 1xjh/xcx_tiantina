@@ -25,7 +25,7 @@
 /* 透明度 */
 /* 文章场景相关 */
 .calendar.data-v-6b561de4 {
-  margin-top: 100rpx;
+  margin-top: 165rpx;
 }
 .content.data-v-6b561de4 {
   -webkit-box-pack: center;
@@ -88,7 +88,7 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 14rpx 0;
+  padding: 20rpx 0rpx 10rpx 0;
   font-size: 30rpx;
   position: fixed;
   z-index: 999;
@@ -97,6 +97,8 @@
   background: #fff;
   width: 100%;
   height: 210rpx;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 .residence_box text.data-v-6b561de4 {
   font-size: 24rpx;

@@ -1,0 +1,207 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.reservation_sumbit {
+  width: 100%;
+  height: 110rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: white;
+  padding: 0rpx 40rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+  font-family: Source Han Sans CN;
+}
+.reservation_sumbit .left {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+}
+.reservation_sumbit .left .price {
+      font-size: 40rpx;
+      font-weight: bold;
+      color: #267656;
+}
+.reservation_sumbit .left .details_prcie {
+      font-size: 20rpx;
+}
+.reservation_sumbit .left .details_prcie .detail {
+        margin-left: 19rpx;
+        font-size: 20rpx;
+        font-weight: 500;
+        color: #267656;
+}
+.reservation_sumbit .button {
+    width: 330rpx;
+    height: 80rpx;
+    background: #267656;
+    border-radius: 40rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    line-height: 80rpx;
+}
+.order_details_main {
+  width: 90%;
+  margin: 0 auto;
+  font-family: Source Han Sans CN;
+}
+.order_details_main .details_card {
+    border-radius: 20px;
+    background: #FFFFFF;
+    margin-top: 30rpx;
+}
+.order_details_main .reservation_bottom {
+    padding: 20rpx;
+    font-family: Source Han Sans CN;
+    color: #555555;
+    margin-bottom: 110rpx;
+}
+.order_details_main .reservation_bottom .title {
+      margin: 40rpx 0rpx 10rpx 0rpx;
+      font-size: 24rpx;
+      font-weight: 500;
+}
+.order_details_main .reservation_bottom .content {
+      font-size: 24rpx;
+      font-weight: 400;
+      line-height: 45rpx;
+}
+.order_details_main .reservation_bottom .content .left {
+        width: 30rpx;
+}
+.order_details_main .details_user {
+    padding: 20rpx;
+    font-family: Source Han Sans CN;
+}
+.order_details_main .details_user .user_details_list {
+      margin: 37rpx 0rpx;
+}
+.order_details_main .details_user .user_details_list .title {
+        width: 150rpx;
+        font-size: 28rpx;
+        font-weight: 400;
+        color: #aaaaaa;
+}
+.order_details_main .details_user .user_details_list .content {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        font-size: 28rpx;
+        font-weight: 400;
+        color: #555555;
+}
+.order_details_main .details_serve {
+    padding: 30rpx 0rpx;
+}
+.order_details_main .details_serve .serve_list {
+      font-family: Source Han Sans CN;
+}
+.order_details_main .details_serve .serve_list .item {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+}
+.order_details_main .details_serve .serve_list .item .img {
+          width: 86rpx;
+          height: 86rpx;
+          background: #007AFF;
+          opacity: 0.9;
+          border-radius: 50%;
+}
+.order_details_main .details_serve .serve_list .item .text {
+          margin-top: 24rpx;
+          text-align: center;
+          font-size: 24rpx;
+          font-weight: 400;
+          color: #555555;
+          line-height: 40rpx;
+}
+.order_details_main .details_room_box {
+    font-family: Source Han Sans CN;
+    color: #555555;
+    padding: 20rpx;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.order_details_main .details_room_box .details_room {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      padding-right: 20rpx;
+}
+.order_details_main .details_room_box .details_room .room_name {
+        font-size: 32rpx;
+        font-weight: 500;
+        line-height: 46rpx;
+}
+.order_details_main .details_room_box .details_room .room_site {
+        font-size: 24rpx;
+        font-weight: 400;
+        margin: 24rpx 0rpx 36rpx 0rpx;
+}
+.order_details_main .details_status {
+    -webkit-box-shadow: 0px 4px 6px 0px rgba(12, 77, 51, 0.4);
+            box-shadow: 0px 4px 6px 0px rgba(12, 77, 51, 0.4);
+    color: white;
+    background: #267656;
+    padding: 25rpx;
+}
+.order_details_main .details_status .status_date {
+      font-size: 40rpx;
+      font-weight: bold;
+      margin-top: 39rpx;
+}
+.order_details_main .details_status .status_text {
+      font-size: 24rpx;
+      font-weight: 400;
+      margin-top: 32rpx;
+}
+.order_details_main .details_status .order_number {
+      font-size: 24rpx;
+      font-weight: 400;
+      margin: 84rpx 0rpx 46rpx 0rpx;
+}
+

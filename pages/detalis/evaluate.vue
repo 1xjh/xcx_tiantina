@@ -112,7 +112,7 @@
 	}
 
 	.evaluate_main {
-		width: 90%;
+		width: 93%;
 		margin: 35rpx auto;
 	}
 
@@ -196,15 +196,20 @@
 		text-align: center;
 	}
 
+	.evaluate_card {
+		width: 100%;
+	}
+
 	.evaluate_list {
 		margin-top: 41rpx;
 		font-family: Source Han Sans CN;
+		width: 85%;
 
 		.evaluate_minute {
-			width: 86rpx;
 			height: 46rpx;
+			padding: 0rpx 20rpx;
 			background: rgba(38, 118, 86, 1);
-			border-radius: 23rpx;
+			border-radius: 20rpx;
 			font-size: 32rpx;
 			font-weight: 500;
 			color: rgba(254, 254, 254, 1);

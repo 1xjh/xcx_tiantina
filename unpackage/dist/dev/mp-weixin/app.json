@@ -1,6 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/my/home",
+    "pages/my/my_centre",
     "pages/my/coupon",
     "pages/sell_order/sell_order",
     "pages/vip/up_vip",
@@ -14,7 +16,6 @@
     "pages/order_list/order_comment_success",
     "pages/order_list/order_comment",
     "pages/order_list/list_item",
-    "pages/index/index",
     "pages/reservation/reservation_index",
     "pages/order_details/order_quit",
     "pages/order_details/details",
@@ -28,6 +29,7 @@
     "pages/index/courtyard_list",
     "pages/index/sortSite",
     "pages/index/sortAi",
+    "pages/search/search",
     "pages/calendar/calendar",
     "pages/city/city"
   ],
@@ -55,13 +57,14 @@
       },
       {
         "pagePath": "pages/my/home",
-        "iconPath": "static/tabbar/basics.png",
-        "selectedIconPath": "static/tabbar/basics_cur.png",
+        "iconPath": "static/tabbar/about.png",
+        "selectedIconPath": "static/tabbar/about_cur.png",
         "text": "我的"
       }
     ]
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
-  }
+  },
+  "sitemapLocation": "sitemap43.json"
 }

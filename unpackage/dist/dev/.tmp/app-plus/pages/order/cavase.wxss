@@ -1,9 +1,0 @@
-
-.screen-swiper {
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-.content {
-	height: 600px;
-}
-

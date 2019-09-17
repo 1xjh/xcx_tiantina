@@ -12,7 +12,7 @@
 		</view>
 		<view class="sell_order_box">
 			<view class="sell_order_list flex" v-for="item in 3" :key="item">
-				<view class="icon_img"></view>
+				<view class="icon_img"><image src="https://pic.tujia.com/upload/qualifiedpics/day_170806/thumb/201708061248483983_700_467.jpg" mode=""></image></view>
 				<view class="order_list_right flex">
 					<view class="room_name">天天惦记肇庆湖景双床房</view>
 					<view class="line nav-between">
@@ -52,6 +52,10 @@
 	page {
 		background: #FFFFFF;
 	}
+	image{
+		width: 100%;
+		height: 100%;
+	}
 
 	.sell_order_box {
 		font-family: Source Han Sans CN;
@@ -64,9 +68,9 @@
 			.icon_img {
 				width: 180rpx;
 				height: 220rpx;
-				background: #007AFF;
 				border-radius: 10rpx;
-				flex-direction: column
+				flex-direction: column;
+				overflow:hidden;
 			}
 
 			.order_list_right {

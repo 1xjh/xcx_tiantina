@@ -128,7 +128,7 @@
 			background: rgba(38, 118, 86, 1);
 			border-radius: 10rpx;
 			position: absolute;
-			background: #007AFF;
+			background: #267656;
 			font-size: 32rpx;
 			font-family: Source Han Sans CN;
 			font-weight: 500;

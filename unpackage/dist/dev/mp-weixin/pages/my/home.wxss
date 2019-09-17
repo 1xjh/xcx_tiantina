@@ -123,9 +123,8 @@ image.data-v-3a05ee7e {
   margin-top: 30rpx;
 }
 .list_entrance .icon_img.data-v-3a05ee7e {
-    width: 43rpx;
-    height: 35rpx;
-    background: #007AFF;
+    width: 45rpx;
+    height: 45rpx;
 }
 .list_entrance .icon_title.data-v-3a05ee7e {
     font-size: 28rpx;
@@ -172,7 +171,7 @@ image.data-v-3a05ee7e {
       width: 120rpx;
       height: 120rpx;
       border-radius: 50%;
-      background: #007AFF;
+      border: 4rpx solid #FFFFFF;
 }
 .my_user_info_cart .my_user_info .user_name_box.data-v-3a05ee7e {
       margin-left: 48rpx;
@@ -196,10 +195,14 @@ image.data-v-3a05ee7e {
                 align-items: center;
 }
 .my_user_info_cart .my_user_info .user_name_box .user_name .user_sex_img.data-v-3a05ee7e {
+          padding: 5rpx;
           width: 26rpx;
           height: 26rpx;
-          background: #007AFF;
+          background: #FFFFFF;
+          color: #267656;
           margin-left: 26rpx;
+          font-size: 21rpx;
+          border-radius: 5rpx;
 }
 .my_user_info_cart .my_user_info .user_name_box .user_vip.data-v-3a05ee7e {
         font-size: 26rpx;
@@ -244,7 +247,6 @@ image.data-v-3a05ee7e {
 .my_index_box .details_serve .serve_list .item .img.data-v-3a05ee7e {
           width: 86rpx;
           height: 86rpx;
-          background: #007AFF;
           opacity: 0.9;
           border-radius: 50%;
 }

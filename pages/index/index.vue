@@ -48,25 +48,25 @@
 		</view>
 		<!-- 地方 -->
 		<view class="hot_site_list">
-			<view class="hot_site">
+			<view class="hot_site cu-avatar" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
 				<view class="hot_name">
 					<view>肇庆</view>
 					<view>ZhaoQing</view>
 				</view>
 			</view>
-			<view class="hot_site">
+			<view class="hot_site cu-avatar" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
 				<view class="hot_name">
 					<view>肇庆</view>
 					<view>ZhaoQing</view>
 				</view>
 			</view>
-			<view class="hot_site">
+			<view class="hot_site cu-avatar" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
 				<view class="hot_name">
 					<view>肇庆</view>
 					<view>ZhaoQing</view>
 				</view>
 			</view>
-			<view class="hot_site">
+			<view class="hot_site cu-avatar" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
 				<view class="hot_name">
 					<view>肇庆</view>
 					<view>ZhaoQing</view>
@@ -146,9 +146,7 @@
 				};
 				this.DateObject = DateObject;
 				getApp().globalData.DateObject = this.DateObject;
-				console.log(111);
 			} else {
-				console.log(222);
 				this.DateObject = getApp().globalData.DateObject;
 			}
 		}
@@ -166,7 +164,6 @@
 			width: 30%;
 			padding-bottom: 35%;
 			border-radius: 30rpx;
-			background: #007aff;
 			position: relative;
 
 			.hot_name {
