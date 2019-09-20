@@ -5,6 +5,9 @@
 			"style": {}
 		},
 		{
+			"path": "pages/reservation/reservation_index"
+		},
+		{
 			"path": "pages/my/home"
 		},
 		{
@@ -50,9 +53,6 @@
 		},
 		{
 			"path": "pages/order_list/list_item"
-		},
-		{
-			"path": "pages/reservation/reservation_index"
 		},
 		{
 			"path": "pages/order_details/order_quit"
@@ -101,7 +101,15 @@
 		}
 	],
 	"globalStyle": {
-		"navigationStyle": "custom"
+		"navigationStyle": "custom",
+		"navigationBarTextStyle":"black"
+	},
+	"window": {
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#41ac8d",
+		"navigationBarTitleText": "black",
+		"navigationBarTextStyle": "black",
+		"enablePullDownRefresh": true
 	},
 	"setting": {
 		"urlCheck": true,

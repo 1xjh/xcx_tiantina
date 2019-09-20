@@ -34,7 +34,9 @@
 							<view>姓名（须填一个入住人）</view>
 							<view class="name">陈先</view>
 						</view>
-						<view class="icon"></view>
+						<view class="icon">
+							<image src="../../static/img/add_people.png" mode=""></image>
+						</view>
 					</view>
 				</view>
 				<view class="user_name flex">
@@ -125,12 +127,41 @@
 				</view>
 			</view>
 		</view>
+		<!-- 明细 -->
+		<view class="cu-modal bottom-modal" :class="bottomModal?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar bg-white">
+					<view class="action text-green"></view>
+					<view class="">房费明细</view>
+					<view class="action text-blue" @tap="hideModal">取消</view>
+				</view>
+				<view class="minxi_price  bg-white">
+					<view class="total_price nav-between">
+						<view class="tian-tian-color">房费合计：</view>
+						<view class="">1晚1间共 ￥271</view>
+					</view>
+					<view class="text_size nav-between">
+						<view class="">2019年09月15日</view>
+						<view class="">￥271×1</view>
+					</view>
+					<view class="line"></view>
+					<view class="text_size nav-between">
+						<view class="">房费钻石卡会员7.0折</view>
+						<view class="text-red">-￥14</view>
+					</view>
+					<view class="text_size nav-between">
+						<view class="">房费首单减免</view>
+						<view class="text-red">-￥30</view>
+					</view>
+				</view>
+			</view>
+		</view>
 		<view class="reservation_sumbit nav-between">
 			<view class="left flex">
 				<view class="price">￥209.00</view>
 				<view class="details_prcie flex">
 					<view class="">已优惠 ￥43</view>
-					<view class="detail">明细^</view>
+					<view class="detail" @tap="hideModal">明细^</view>
 				</view>
 			</view>
 			<view class="button" @click="jump_play()">去支付</view>
@@ -142,7 +173,7 @@
 	export default {
 		data() {
 			return {
-
+				bottomModal: false
 			}
 		},
 		methods: {
@@ -151,16 +182,48 @@
 					url: "../agreement/agreement"
 				})
 			},
-			jump_play(){
+			jump_play() {
 				uni.navigateTo({
 					url: "../order_details/details",
 				});
+			},
+			hideModal(){
+				this.bottomModal=!this.bottomModal
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
+	image {
+		width: 100%;
+		height: 100%;
+	}
+
+	.minxi_price {
+		padding: 0rpx 20rpx 20rpx 40rpx;
+		font-family: Source Han Sans CN;
+
+		.total_price {
+			font-size: 35rpx;
+			font-weight: 500;
+			line-height: 50rpx;
+			height: 50rpx;
+		}
+
+		.text_size {
+			font-size: 28rpx;
+			font-weight: 400;
+			line-height: 50rpx;
+			height: 50rpx;
+		}
+		.line{
+			height: 1px;
+			background: #CCCCCC;
+			margin:20rpx 0rpx;
+		}
+	}
+
 	.reservation_sumbit {
 		width: 100%;
 		height: 110rpx;
@@ -276,8 +339,9 @@
 				top: 0;
 				font-size: 22rpx;
 				text-align: center;
-				width: 146rpx;
-				height: 36rpx;
+				width: 171rpx;
+				line-height: 48rpx;
+				height: 50rpx;
 				background: rgba(38, 118, 86, 1);
 				border-radius: 20px 0px 20px 0px;
 				font-weight: 400;
@@ -366,9 +430,8 @@
 				}
 
 				.icon {
-					width: 34px;
-					height: 36px;
-					background: #007AFF;
+					width: 34rpx;
+					height: 36rpx;
 				}
 			}
 

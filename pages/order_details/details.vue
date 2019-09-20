@@ -22,15 +22,15 @@
 			<view class="details_card details_serve">
 				<view class="serve_list nav-around">
 					<view class="item flex">
-						<view class="img"></view>
+						<view class="img"><image src="../../static/img/details_serve_icon1.png" mode=""></image></view>
 						<view class="text">联系民宿</view>
 					</view>
 					<view class="item flex">
-						<view class="img"></view>
+						<view class="img"><image src="../../static/img/details_serve_icon2.png" mode=""></image></view>
 						<view class="text">联系民宿</view>
 					</view>
 					<view class="item flex">
-						<view class="img"></view>
+						<view class="img"><image src="../../static/img/details_serve_icon3.png" mode=""></image></view>
 						<view class="text">联系民宿</view>
 					</view>
 				</view>
@@ -83,12 +83,41 @@
 				</view>
 			</view>
 		</view>
+		<!-- 明细 -->
+		<view class="cu-modal bottom-modal" :class="bottomModal?'show':''">
+			<view class="cu-dialog">
+				<view class="cu-bar bg-white">
+					<view class="action text-green"></view>
+					<view class="">房费明细</view>
+					<view class="action text-blue" @tap="hideModal">取消</view>
+				</view>
+				<view class="minxi_price  bg-white">
+					<view class="total_price nav-between">
+						<view class="tian-tian-color">房费合计：</view>
+						<view class="">1晚1间共 ￥271</view>
+					</view>
+					<view class="text_size nav-between">
+						<view class="">2019年09月15日</view>
+						<view class="">￥271×1</view>
+					</view>
+					<view class="line"></view>
+					<view class="text_size nav-between">
+						<view class="">房费钻石卡会员7.0折</view>
+						<view class="text-red">-￥14</view>
+					</view>
+					<view class="text_size nav-between">
+						<view class="">房费首单减免</view>
+						<view class="text-red">-￥30</view>
+					</view>
+				</view>
+			</view>
+		</view>
 		<view class="reservation_sumbit nav-between">
 			<view class="left flex">
 				<view class="price">￥209.00</view>
 				<view class="details_prcie flex">
 					<view class="">已优惠 ￥43</view>
-					<view class="detail">明细^</view>
+					<view class="detail" @tap="hideModal">明细^</view>
 				</view>
 			</view>
 			<view class="button">去支付</view>
@@ -97,23 +126,56 @@
 </template>
 
 <script>
-	export default{
-		data(){
-			return{
-				
+	export default {
+		data() {
+			return {
+				bottomModal: false
 			}
 		},
-		methods:{
-			jump_quit(){
+		methods: {
+			jump_quit() {
 				uni.navigateTo({
 					url: 'order_quit',
 				});
+			},
+			hideModal() {
+				this.bottomModal = !this.bottomModal
 			}
 		}
 	}
 </script>
 
 <style lang="scss">
+	image{
+		width: 100%;
+		height:100%;
+		
+	}
+	.minxi_price {
+		padding: 0rpx 20rpx 20rpx 40rpx;
+		font-family: Source Han Sans CN;
+
+		.total_price {
+			font-size: 35rpx;
+			font-weight: 500;
+			line-height: 50rpx;
+			height: 50rpx;
+		}
+
+		.text_size {
+			font-size: 28rpx;
+			font-weight: 400;
+			line-height: 50rpx;
+			height: 50rpx;
+		}
+
+		.line {
+			height: 1px;
+			background: #CCCCCC;
+			margin: 20rpx 0rpx;
+		}
+	}
+
 	.reservation_sumbit {
 		width: 100%;
 		height: 110rpx;
@@ -246,7 +308,6 @@
 					.img {
 						width: 86rpx;
 						height: 86rpx;
-						background: #007AFF;
 						opacity: 0.9;
 						border-radius: 50%;
 					}

@@ -1,6 +1,6 @@
 <template>
 	<view class="index">
-		<cu-custom bgColor="bg-gradual-blue">
+		<cu-custom bgColor="bg-gradual-pink">
 			<view slot="content">天天惦记</view>
 		</cu-custom>
 		<view class="swiper">
@@ -66,7 +66,7 @@
 					<view>ZhaoQing</view>
 				</view>
 			</view>
-			<view class="hot_site cu-avatar" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);">
+			<view class="hot_site cu-avatar" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);" v-for="item in 6" :key="item">
 				<view class="hot_name">
 					<view>肇庆</view>
 					<view>ZhaoQing</view>
@@ -89,8 +89,9 @@
 
 <script>
 	import util from '../../util/util.js';
-	import Data from '../../util/data.js';
+	import Data from '../../util/data.js';	
 	export default {
+		
 		data() {
 			return {
 				DateObject: {},
@@ -101,10 +102,8 @@
 				]
 			};
 		},
-		onLoad() {
-
-		},
-
+		onLoad() {},
+		
 		methods: {
 			jumpCourtyardList: function() {
 				uni.navigateTo({
@@ -150,6 +149,7 @@
 				this.DateObject = getApp().globalData.DateObject;
 			}
 		}
+
 	};
 </script>
 

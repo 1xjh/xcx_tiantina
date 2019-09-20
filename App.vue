@@ -49,6 +49,11 @@
 		justify-content: space-between;
 	}
 
+	.bg-gradual-blue {
+		background: #FFFFFF;
+		color: #000000;
+	}
+
 	.nav-content {
 		display: flex;
 		justify-content: space-between;
@@ -75,7 +80,6 @@
 		color: #267656;
 	}
 
-	.show {}
-
 	/*每个页面公共css */
+
 </style>

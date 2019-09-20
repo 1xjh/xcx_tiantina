@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/reservation/reservation_index",
     "pages/my/home",
     "pages/my/my_centre",
     "pages/my/coupon",
@@ -16,7 +17,6 @@
     "pages/order_list/order_comment_success",
     "pages/order_list/order_comment",
     "pages/order_list/list_item",
-    "pages/reservation/reservation_index",
     "pages/order_details/order_quit",
     "pages/order_details/details",
     "pages/agreement/agreement",
