@@ -34,6 +34,8 @@
 
 <style>
 	@import "colorui/main.css";
+	@import "colorui/animation.css";
+	@import "colorui/animate.css";
 	@import "colorui/icon.css";
 
 	.flex {

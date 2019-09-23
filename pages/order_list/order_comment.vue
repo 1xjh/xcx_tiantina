@@ -1,20 +1,28 @@
 <template>
 	<view class="order_comment">
-		<cu-custom bgColor="bg-gradual-blue" :isBack="true">
+		<!-- 		<uni-nav-bar :statusBar="true" style="padding-top: 20rpx;" left-icon="arrowleft" left-text="返回" title="标题"
+		 @click-left="back"></uni-nav-bar> -->
+		<cu-custom bgColor="bg-gradual-blue" :isBack="true" :backPress="true" @back-press="back">
 			<block slot="backText">返回</block>
-			<block slot="content">评价</block>
+			<block slot="content">评论</block>
 		</cu-custom>
 		<view class="select_comment nav-around">
 			<view class="select_item flex">
-				<view class="img"><image src="../../static/img/hao_comment.png" mode=""></image></view>
+				<view class="img">
+					<image src="../../static/img/hao_comment.png" mode=""></image>
+				</view>
 				<view class="text">好评</view>
 			</view>
 			<view class="select_item flex">
-				<view class="img"><image src="../../static/img/zhong_comment.png" mode=""></image></view>
+				<view class="img">
+					<image src="../../static/img/zhong_comment.png" mode=""></image>
+				</view>
 				<view class="text">中评</view>
 			</view>
 			<view class="select_item flex">
-				<view class="img"><image src="../../static/img/cha_comment.png" mode=""></image></view>
+				<view class="img">
+					<image src="../../static/img/cha_comment.png" mode=""></image>
+				</view>
 				<view class="text">差评</view>
 			</view>
 		</view>
@@ -22,16 +30,7 @@
 			<view class="comment_textarea margin-top">
 				<textarea maxlength="-1" :disabled="modalName!=null" @input="textareaAInput" placeholder="文本输入框"></textarea>
 			</view>
-			<view class="uplode_img flex">
-				<view class="list_uplode_img">
-					<view class="img"></view>
-					<view class="quit_uplode">x</view>
-				</view>
-				<view class="list_uplode_img on_uplode">
-					<view class="img_camera"></view>
-					<view class="uplode_title">上传照片</view>
-				</view>
-			</view>
+			<upload-image @upload="upload"></upload-image>
 			<view class="anonymity_box flex">
 				<view class="anaonymity_img">
 					<image src="../../static/img/anaonymity_active.png" mode=""></image>
@@ -57,23 +56,50 @@
 </template>
 
 <script>
+	import uploadImage from '../../componets/upload-image.vue';
+	import uniNavBar from '../../componets/uni-nav-bar/uni-nav-bar.vue';
 	export default {
+		components: {
+			uploadImage,
+			uniNavBar
+		},
 		data() {
 			return {
-
+				textareaAInput: '',
+				imageList: [],
 			}
 		},
 		methods: {
+			back() {
+				if (!this.textareaAInput	 && this.imageList.length < 1) {
+					return;
+				}
+				uni.showModal({
+					content: "是否保存为草稿",
+					cancelText: "不保存",
+					confirmText: "保存",
+					success: res => {
+						if (res.confirm) {
+							console.log('保存')
+						} else {
+							console.log("不保存")
+						}
+						uni.navigateBack({
+							delta: 1
+						})
+					}
+				})
+			},
 			textareaAInput(e) {
 				this.textareaAValue = e.detail.value
 			},
-			jumpSuccess(){
+			jumpSuccess() {
 				uni.navigateTo({
 					url: 'order_comment_success',
-					success: res => {},
-					fail: () => {},
-					complete: () => {}
 				});
+			},
+			upload(e) {
+				this.imageList = e;
 			}
 		}
 	}
@@ -96,7 +122,8 @@
 		background: #F6F5F5;
 		font-family: Source Han Sans CN;
 		overflow: hidden;
-		margin-top:36rpx;
+		margin-top: 36rpx;
+
 		.button_sub {
 
 			width: 420rpx;
@@ -183,55 +210,55 @@
 			}
 		}
 
-		.uplode_img {
-			margin-top: 30rpx;
-			font-family: Source Han Sans CN;
-
-			.list_uplode_img {
-				position: relative;
-				margin-right: 14rpx;
-				width: 120rpx;
-				height: 120rpx;
-
-				.img {
-					width: 100%;
-					height: 100%;
-					background: #007AFF;
-				}
-
-				.quit_uplode {
-					width: 30rpx;
-					height: 30rpx;
-					position: absolute;
-					right: 10rpx;
-					top: 10rpx;
-					background: #F43F3B;
-					color: #FFFFFF;
-					text-align: center;
-					line-height: 25rpx;
-					border-radius: 20rpx;
-				}
-
-				.img_camera {
-					width: 48rpx;
-					height: 41rpx;
-					margin: 15rpx auto;
-					background: #007AFF;
-				}
-
-				.uplode_title {
-					text-align: center;
-					font-size: 24rpx;
-					font-weight: 400;
-					color: rgba(85, 85, 85, 1);
-				}
-			}
-
-			.on_uplode {
-				border: 1px dashed #007AFF;
-			}
-
-		}
+		// 		.uplode_img {
+		// 			margin-top: 30rpx;
+		// 			font-family: Source Han Sans CN;
+		// 
+		// 			.list_uplode_img {
+		// 				position: relative;
+		// 				margin-right: 14rpx;
+		// 				width: 120rpx;
+		// 				height: 120rpx;
+		// 
+		// 				.img {
+		// 					width: 100%;
+		// 					height: 100%;
+		// 					background: #007AFF;
+		// 				}
+		// 
+		// 				.quit_uplode {
+		// 					width: 30rpx;
+		// 					height: 30rpx;
+		// 					position: absolute;
+		// 					right: 10rpx;
+		// 					top: 10rpx;
+		// 					background: #F43F3B;
+		// 					color: #FFFFFF;
+		// 					text-align: center;
+		// 					line-height: 25rpx;
+		// 					border-radius: 20rpx;
+		// 				}
+		// 
+		// 				.img_camera {
+		// 					width: 48rpx;
+		// 					height: 41rpx;
+		// 					margin: 15rpx auto;
+		// 					background: #007AFF;
+		// 				}
+		// 
+		// 				.uplode_title {
+		// 					text-align: center;
+		// 					font-size: 24rpx;
+		// 					font-weight: 400;
+		// 					color: rgba(85, 85, 85, 1);
+		// 				}
+		// 			}
+		// 
+		// 			.on_uplode {
+		// 				border: 1px dashed #007AFF;
+		// 			}
+		// 
+		// 		}
 
 	}
 

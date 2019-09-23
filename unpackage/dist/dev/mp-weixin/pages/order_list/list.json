@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "list-item": "/pages/order_list/list_item"
+    "no-thing": "/componets/no-thing",
+    "list-item": "/pages/order_list/list_item",
+    "swiper-tab-head": "/componets/swiper-tab-head",
+    "load-more": "/componets/load-more"
   }
 }

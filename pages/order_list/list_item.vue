@@ -1,28 +1,28 @@
 <template>
-	<view class="list_item">
+	<view class="list_item animated rotateIn">
 		<view class="list_item_box">
 			<view class="room_order_number flex">
 				<view class="left_title">订单号</view>
-				<view class="order_number">201907191234</view>
+				<view class="order_number">{{list.order}}</view>
 				<view class="order_status">已取消</view>
 			</view>
-			<view class="room_order_title">肇庆天天惦记超级民宿</view>
+			<view class="room_order_title">{{list.roomName}}</view>
 			<view class="room_order_number flex">
 				<view class="left_title">预订房型</view>
-				<view class="order_number">湖景阳光大床房</view>
+				<view class="order_number">{{list.roomType}}</view>
 			</view>
 			<view class="room_order_number flex">
 				<view class="left_title">入离日期</view>
-				<view class="order_number">2019-08-03 ~ 2019-08-05</view>
-				<view class="order_today">共<text>2</text>晚</view>
+				<view class="order_number">{{list.startDate}} ~ {{list.endDate}}</view>
+				<view class="order_today">共<text>{{list.day}}</text>晚</view>
 			</view>
 			<view class="room_order_number flex">
 				<view class="left_title">入住姓名</view>
-				<view class="order_number">秦天柱</view>
+				<view class="order_number">{{list.userName}}</view>
 			</view>
 			<view class="room_order_number flex">
-				<view class="left_title">入离日期</view>
-				<view class="order_status">￥899.00</view>
+				<view class="left_title">金额</view>
+				<view class="order_status">￥{{list.price}}</view>
 			</view>
 			<view class="room_order_bottom flex">
 				<view class="button" @click="jumpOrderDetails()">订单详情</view>
@@ -35,6 +35,9 @@
 
 <script>
 	export default {
+		props:{
+			list:Object
+		},
 		data() {
 			return {
 
@@ -55,7 +58,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.list_item_box {
 		background: rgba(255, 255, 255, 1);
 		border-radius: 20rpx;

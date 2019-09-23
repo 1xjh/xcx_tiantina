@@ -45,6 +45,10 @@
 				type: [Boolean, String],
 				default: false
 			},
+			backPress: {
+				type: [Boolean, String],
+				default: false
+			},
 			bgImage: {
 				type: String,
 				default: ''
@@ -58,9 +62,14 @@
 						url
 					})
 				}
-				uni.navigateBack({
-					delta: 1
-				});
+
+				if (!this.backPress) {
+					uni.navigateBack({
+						delta: 1
+					});
+				} else {
+					this.$emit('back-press')
+				}
 			}
 		},
 	}

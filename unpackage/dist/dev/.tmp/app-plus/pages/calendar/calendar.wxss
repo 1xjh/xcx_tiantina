@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.calendar.data-v-6b561de4 {
+.calendar.data-v-28e86dae {
   margin-top: 165rpx;
 }
-.content.data-v-6b561de4 {
+.content.data-v-28e86dae {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
@@ -38,20 +38,20 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.sliderBox.data-v-6b561de4 {
+.sliderBox.data-v-28e86dae {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
   margin-right: 50rpx;
 }
-.text-center.data-v-6b561de4 {
+.text-center.data-v-28e86dae {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.rowBox.data-v-6b561de4 {
+.rowBox.data-v-28e86dae {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -webkit-flex-direction: row;
@@ -66,16 +66,16 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-.mrg50T.data-v-6b561de4 {
+.mrg50T.data-v-28e86dae {
   margin-top: 50rpx;
 }
-.tips.data-v-6b561de4 {
+.tips.data-v-28e86dae {
   color: #999;
   font-size: 24rpx;
   text-align: center;
   margin-top: 100rpx;
 }
-.residence_box.data-v-6b561de4 {
+.residence_box.data-v-28e86dae {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -100,13 +100,13 @@
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
 }
-.residence_box text.data-v-6b561de4 {
+.residence_box text.data-v-28e86dae {
   font-size: 24rpx;
   color: #5f5f5f;
   margin: 25rpx 0rpx 25rpx 0rpx;
 }
-.residence_end.data-v-6b561de4,
-.residence_start.data-v-6b561de4 {
+.residence_end.data-v-28e86dae,
+.residence_start.data-v-28e86dae {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -117,22 +117,22 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.residence_end text.data-v-6b561de4 {
+.residence_end text.data-v-28e86dae {
   text-align: right;
 }
-.residence_end .week_number.data-v-6b561de4 {
+.residence_end .week_number.data-v-28e86dae {
   text-align: right;
 }
-.calendar_date.data-v-6b561de4 {
+.calendar_date.data-v-28e86dae {
   color: #267656;
   font-size: 38rpx;
   font-family: SourceHanSansCN-Medium;
   font-weight: bold;
 }
-.week_number.data-v-6b561de4 {
+.week_number.data-v-28e86dae {
   padding: 10rpx 0rpx;
 }
-.sure.data-v-6b561de4 {
+.sure.data-v-28e86dae {
   width: 100%;
   height: 90rpx;
   position: fixed;
@@ -144,7 +144,7 @@
   font-size: 35rpx;
   line-height: 90rpx;
 }
-.calendar_height.data-v-6b561de4 {
+.calendar_height.data-v-28e86dae {
   height: 90rpx;
   width: 100%;
 }

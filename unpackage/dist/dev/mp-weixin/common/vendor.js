@@ -1,8 +1,9 @@
-(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],[
-/* 0 */
-/*!*************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js ***!
-  \*************************************************************/
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["common/vendor"],{
+
+/***/ 0:
+/*!***************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26,7 +27,8 @@ createApp(app).$mount();
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createApp"]))
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /*!************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js ***!
   \************************************************************/
@@ -1501,7 +1503,2515 @@ var uni$1 = uni;var _default =
 uni$1;exports.default = _default;
 
 /***/ }),
-/* 2 */
+
+/***/ 10:
+/*!********************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = 'data-v-' + scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+
+/***/ 102:
+/*!***************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fvip%2Fpolicy_vip"} ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _policy_vip = _interopRequireDefault(__webpack_require__(/*! ./pages/vip/policy_vip.vue */ 103));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_policy_vip.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 11:
+/*!************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Findex%2Findex"} ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_index.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 110:
+/*!***********************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fmy_team"} ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _my_team = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my_team.vue */ 111));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_my_team.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 118:
+/*!********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fwithdraw_success"} ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _withdraw_success = _interopRequireDefault(__webpack_require__(/*! ./pages/my/withdraw_success.vue */ 119));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_withdraw_success.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 126:
+/*!************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fwithdraw"} ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _withdraw = _interopRequireDefault(__webpack_require__(/*! ./pages/my/withdraw.vue */ 127));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_withdraw.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 134:
+/*!******************************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fprice_detailed%2Fprice_detailed"} ***!
+  \******************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _price_detailed = _interopRequireDefault(__webpack_require__(/*! ./pages/price_detailed/price_detailed.vue */ 135));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_price_detailed.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 142:
+/*!**********************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fwallet"} ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _wallet = _interopRequireDefault(__webpack_require__(/*! ./pages/my/wallet.vue */ 143));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_wallet.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 150:
+/*!****************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Forder_list%2Flist"} ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _list = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/list.vue */ 151));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_list.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 165:
+/*!*********************************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Forder_list%2Forder_comment_success"} ***!
+  \*********************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _order_comment_success = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/order_comment_success.vue */ 166));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_order_comment_success.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 17:
+/*!********************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/util/util.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! ./md5.js */ 18));
+var _underscore = _interopRequireDefault(__webpack_require__(/*! ./underscore.js */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+/**
+                                                                                                                                                                   	构造微擎地址, 
+                                                                                                                                                                   	@params action tp系统中的,model, contrlloer, action，格式为 'index/Info/getTourist'
+                                                                                                                                                                   	@params querystring 格式为 {参数名1 : 值1, 参数名2 : 值2}
+                                                                                                                                                                   */
+var siteInfo = {
+  'title': '',
+  'uniacid': '110',
+  'acid': '110',
+  'multiid': '0',
+  'version': 'v1.02',
+  'siteroot': 'https://fw.tiantiandj.com/index.php/',
+  'design_method': '3',
+  'redirect_module': '',
+  'template': '',
+  "yan": "tian",
+  "token": "3333" };
+
+
+var util = {};
+var storage = uni.setStorage;
+util.url = function (action, querystring) {
+  var url = siteInfo.siteroot + action + '?i=' + siteInfo.uniacid + '&v=' + siteInfo.version;
+  return url;
+};
+
+function getQuery(url) {
+  var theRequest = [];
+  if (url.indexOf("?") != -1) {
+    var str = url.split('?')[1];
+    var strs = str.split("&");
+    for (var i = 0; i < strs.length; i++) {
+      if (strs[i].split("=")[0] && unescape(strs[i].split("=")[1])) {
+        theRequest[i] = {
+          'name': strs[i].split("=")[0],
+          'value': unescape(strs[i].split("=")[1]) };
+
+      }
+    }
+  }
+  return theRequest;
+}
+/*
+   * 获取链接某个参数
+   * url 链接地址
+   * name 参数名称
+   */
+function getUrlParam(url, name) {
+  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
+  var r = url.split('?')[1].match(reg); //匹配目标参数  
+  if (r != null) return unescape(r[2]);
+  return null; //返回参数值  
+}
+/**
+   * 获取签名 将链接地址的所有参数按字母排序后拼接加上token进行md5
+   * url 链接地址 https://www.tiantiandj.com/xcx/index.php/index/Info/getTourist
+   * date 参数{参数名1 : 值1, 参数名2 : 值2} *
+   * token 签名token 非必须 在userinfo
+   * 
+   */
+//
+function getSign(url, data, token) {
+  var _ = _underscore.default._;
+  var md5 = _md.default.md5;
+  var querystring = '';
+  var urlData = '';
+  var sign = getUrlParam(url, 'sign');
+  if (sign || data && data.sign) {
+    return false;
+  } else {
+    if (JSON.stringify(data) != "{}") {//post
+      var theRequest = [];
+      for (var param in data) {
+        if (param && data[param]) {
+          if (param != 'page') {
+            theRequest = theRequest.concat({
+              'name': param,
+              'value': data[param] });
+
+          }
+        }
+      }
+      //排序
+      querystring = _.sortBy(theRequest, 'name'); //用key排序
+      //去重
+      querystring = _.uniq(querystring, true, 'name');
+      for (var i = 0; i < querystring.length; i++) {
+        if (querystring[i] && querystring[i].name && querystring[i].value != "") {
+          urlData += querystring[i].name + '=' + querystring[i].value;
+          if (i < querystring.length - 1) {
+            urlData += '&';
+          }
+        }
+      }
+      if (data) {
+        urlData += "&";
+      }
+    }
+    console.log(urlData, "Zs we 111");
+
+    siteInfo.token = JSON.parse(sessionStorage.getItem("user")) ? JSON.parse(sessionStorage.getItem("user")).partner_token :
+    siteInfo.token;
+    console.log(siteInfo.token);
+    var yan = JSON.parse(sessionStorage.getItem("user")) ? JSON.parse(sessionStorage.getItem("user")).partner_yan :
+    siteInfo.yan;
+    console.log(urlData + "token=" + siteInfo.token + "&yan=" + yan, "dfdfdfdf");
+    sign = md5(urlData + "token=" + siteInfo.token + "&yan=" + yan);
+    return sign;
+  }
+}
+
+
+util.ajax = function (option) {
+  var _ = _underscore.default._;
+  var md5 = _md.default.md5();
+  var option = option ? option : {};
+  option.cachetime = option.cachetime ? option.cachetime : 0;
+  option.showLoading = typeof option.showLoading != 'undefined' ? option.showLoading : true;
+  var url = option.url; //entry/wxapp/checkinfo
+  if (url.indexOf('http://') == -1 && url.indexOf('https://') == -1) {
+    url = util.url(url); //url ="https://www.tiantiandj.com/xcx/index.php";
+  }
+  var state = getUrlParam(url, 'state');
+
+  if (!state && !(option.data && option.data.state)) {
+    url = url + '&state=we7sid-';
+  }
+  // if (!option.data || !option.data.m) {
+  // 	var nowPage = getCurrentPages();
+  // 	if (nowPage) {
+  // 		nowPage = nowPage[getCurrentPages().length - 1];
+  // 		if (nowPage.__route__) {
+  // 			url = url + '&m=' + nowPage.__route__.split('/')[0];
+  // 		}
+  // 	}
+  // }
+  //https://www.tiantiandj.com/xcx/index.php/index/Info/getTourist?....
+  var sign = getSign(url, option.data);
+
+  console.log(siteInfo.token);
+  if (sign) {
+    url = url + "&sign=" + sign + "&token=" + siteInfo.token;
+  }
+  if (!url) {
+    return false;
+  }
+
+  //显示状态图	
+  // wx.showNavigationBarLoading();
+  if (option.showLoading) {
+    $.showLoading();
+  }
+  if (option.cachetime) {
+    var cachekey = _md.default.md5(url);
+    var cachedata = storage.getItem(cachekey);
+    var timestamp = Date.parse(new Date());
+
+    if (cachedata && cachedata.data) {
+      if (cachedata.expire > timestamp) {
+        if (option.complete && typeof option.complete == 'function') {
+          option.complete(cachedata);
+        }
+        if (option.success && typeof option.success == 'function') {
+          option.success(cachedata);
+        }
+        $.hideLoading();
+        return true;
+      } else {
+        storage.removeItem(cachekey);
+      }
+    }
+  }
+  $.ajax({
+    "url": url, // url---->地址
+    "type": option.method ? option.method : 'GET', // type ---> 请求方式
+    "async": option.async, // async----> 同步：false，异步：true 
+    "data": option.data ? option.data : {},
+    'success': function success(response) {
+      //隐藏状态图
+      $.hideLoading();
+
+      if (response.data.errno) {
+        if (response.data.errno == '41009') {
+          wx.setStorageSync('userInfo', '');
+          util.getUserInfo(function () {
+            util.request(option);
+          });
+          return;
+        } else {
+          if (option.fail && typeof option.fail == 'function') {
+            option.fail(response);
+          } else {
+            if (response.data.message) {
+              if (response.data.data != null && response.data.data.redirect) {
+                var redirect = response.data.data.redirect;
+              } else {
+                var redirect = '';
+              }
+              app.util.message(response.data.message, redirect, 'error');
+            }
+          }
+          return;
+        }
+      } else {
+        if (option.success && typeof option.success == 'function') {
+          option.success(response);
+        }
+        //写入缓存，减少HTTP请求，并且如果网络异常可以读取缓存数据
+        if (option.cachetime) {
+          var cachedata = {
+            'data': response.data,
+            'expire': timestamp + option.cachetime * 1000 };
+
+          storage.setItem(cachekey, cachedata);
+        }
+      }
+    },
+    'fail': function fail(response) {
+      $.hideLoading();
+      //如果请求失败，尝试从缓存中读取数据
+      var md5 = __webpack_require__(/*! md5.js */ 20);
+      var cachekey = md5(url);
+      var cachedata = storage.getItem(cachekey);
+      if (cachedata && cachedata.data) {
+        if (option.success && typeof option.success == 'function') {
+          option.success(cachedata);
+        }
+        return true;
+      } else {
+        if (option.fail && typeof option.fail == 'function') {
+          option.fail(response);
+        }
+      }
+    },
+    'complete': function complete(response) {
+      $.hideLoading();
+      if (option.complete && typeof option.complete == 'function') {
+        option.complete(response);
+      }
+    } });
+
+};var _default =
+
+util;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 173:
+/*!*************************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Forder_list%2Forder_comment"} ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _order_comment = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/order_comment.vue */ 174));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_order_comment.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 18:
+/*!*******************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/util/md5.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /*
+                                                                                                      * JavaScript MD5
+                                                                                                      * https://github.com/blueimp/JavaScript-MD5
+                                                                                                      *
+                                                                                                      * Copyright 2011, Sebastian Tschan
+                                                                                                      * https://blueimp.net
+                                                                                                      *
+                                                                                                      * Licensed under the MIT license:
+                                                                                                      * http://www.opensource.org/licenses/MIT
+                                                                                                      *
+                                                                                                      * Based on
+                                                                                                      * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
+                                                                                                      * Digest Algorithm, as defined in RFC 1321.
+                                                                                                      * Version 2.2 Copyright (C) Paul Johnston 1999 - 2009
+                                                                                                      * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
+                                                                                                      * Distributed under the BSD License
+                                                                                                      * See http://pajhome.org.uk/crypt/md5 for more info.
+                                                                                                      */
+
+/*global unescape, define, module */
+
+
+
+
+/*
+                                      * Add integers, wrapping at 2^32. This uses 16-bit operations internally
+                                      * to work around bugs in some JS interpreters.
+                                      */
+function safe_add(x, y) {
+  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
+  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+  return msw << 16 | lsw & 0xFFFF;
+}
+
+/*
+   * Bitwise rotate a 32-bit number to the left.
+   */
+function bit_rol(num, cnt) {
+  return num << cnt | num >>> 32 - cnt;
+}
+
+/*
+   * These functions implement the four basic operations the algorithm uses.
+   */
+function md5_cmn(q, a, b, x, s, t) {
+  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
+}
+
+function md5_ff(a, b, c, d, x, s, t) {
+  return md5_cmn(b & c | ~b & d, a, b, x, s, t);
+}
+
+function md5_gg(a, b, c, d, x, s, t) {
+  return md5_cmn(b & d | c & ~d, a, b, x, s, t);
+}
+
+function md5_hh(a, b, c, d, x, s, t) {
+  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
+}
+
+function md5_ii(a, b, c, d, x, s, t) {
+  return md5_cmn(c ^ (b | ~d), a, b, x, s, t);
+}
+
+/*
+   * Calculate the MD5 of an array of little-endian words, and a bit length.
+   */
+function binl_md5(x, len) {
+  /* append padding */
+  x[len >> 5] |= 0x80 << len % 32;
+  x[(len + 64 >>> 9 << 4) + 14] = len;
+
+  var i;
+  var olda;
+  var oldb;
+  var oldc;
+  var oldd;
+  var a = 1732584193;
+  var b = -271733879;
+  var c = -1732584194;
+  var d = 271733878;
+
+  for (i = 0; i < x.length; i += 16) {
+    olda = a;
+    oldb = b;
+    oldc = c;
+    oldd = d;
+
+    a = md5_ff(a, b, c, d, x[i], 7, -680876936);
+    d = md5_ff(d, a, b, c, x[i + 1], 12, -389564586);
+    c = md5_ff(c, d, a, b, x[i + 2], 17, 606105819);
+    b = md5_ff(b, c, d, a, x[i + 3], 22, -1044525330);
+    a = md5_ff(a, b, c, d, x[i + 4], 7, -176418897);
+    d = md5_ff(d, a, b, c, x[i + 5], 12, 1200080426);
+    c = md5_ff(c, d, a, b, x[i + 6], 17, -1473231341);
+    b = md5_ff(b, c, d, a, x[i + 7], 22, -45705983);
+    a = md5_ff(a, b, c, d, x[i + 8], 7, 1770035416);
+    d = md5_ff(d, a, b, c, x[i + 9], 12, -1958414417);
+    c = md5_ff(c, d, a, b, x[i + 10], 17, -42063);
+    b = md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
+    a = md5_ff(a, b, c, d, x[i + 12], 7, 1804603682);
+    d = md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
+    c = md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
+    b = md5_ff(b, c, d, a, x[i + 15], 22, 1236535329);
+
+    a = md5_gg(a, b, c, d, x[i + 1], 5, -165796510);
+    d = md5_gg(d, a, b, c, x[i + 6], 9, -1069501632);
+    c = md5_gg(c, d, a, b, x[i + 11], 14, 643717713);
+    b = md5_gg(b, c, d, a, x[i], 20, -373897302);
+    a = md5_gg(a, b, c, d, x[i + 5], 5, -701558691);
+    d = md5_gg(d, a, b, c, x[i + 10], 9, 38016083);
+    c = md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
+    b = md5_gg(b, c, d, a, x[i + 4], 20, -405537848);
+    a = md5_gg(a, b, c, d, x[i + 9], 5, 568446438);
+    d = md5_gg(d, a, b, c, x[i + 14], 9, -1019803690);
+    c = md5_gg(c, d, a, b, x[i + 3], 14, -187363961);
+    b = md5_gg(b, c, d, a, x[i + 8], 20, 1163531501);
+    a = md5_gg(a, b, c, d, x[i + 13], 5, -1444681467);
+    d = md5_gg(d, a, b, c, x[i + 2], 9, -51403784);
+    c = md5_gg(c, d, a, b, x[i + 7], 14, 1735328473);
+    b = md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
+
+    a = md5_hh(a, b, c, d, x[i + 5], 4, -378558);
+    d = md5_hh(d, a, b, c, x[i + 8], 11, -2022574463);
+    c = md5_hh(c, d, a, b, x[i + 11], 16, 1839030562);
+    b = md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
+    a = md5_hh(a, b, c, d, x[i + 1], 4, -1530992060);
+    d = md5_hh(d, a, b, c, x[i + 4], 11, 1272893353);
+    c = md5_hh(c, d, a, b, x[i + 7], 16, -155497632);
+    b = md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
+    a = md5_hh(a, b, c, d, x[i + 13], 4, 681279174);
+    d = md5_hh(d, a, b, c, x[i], 11, -358537222);
+    c = md5_hh(c, d, a, b, x[i + 3], 16, -722521979);
+    b = md5_hh(b, c, d, a, x[i + 6], 23, 76029189);
+    a = md5_hh(a, b, c, d, x[i + 9], 4, -640364487);
+    d = md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
+    c = md5_hh(c, d, a, b, x[i + 15], 16, 530742520);
+    b = md5_hh(b, c, d, a, x[i + 2], 23, -995338651);
+
+    a = md5_ii(a, b, c, d, x[i], 6, -198630844);
+    d = md5_ii(d, a, b, c, x[i + 7], 10, 1126891415);
+    c = md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
+    b = md5_ii(b, c, d, a, x[i + 5], 21, -57434055);
+    a = md5_ii(a, b, c, d, x[i + 12], 6, 1700485571);
+    d = md5_ii(d, a, b, c, x[i + 3], 10, -1894986606);
+    c = md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
+    b = md5_ii(b, c, d, a, x[i + 1], 21, -2054922799);
+    a = md5_ii(a, b, c, d, x[i + 8], 6, 1873313359);
+    d = md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
+    c = md5_ii(c, d, a, b, x[i + 6], 15, -1560198380);
+    b = md5_ii(b, c, d, a, x[i + 13], 21, 1309151649);
+    a = md5_ii(a, b, c, d, x[i + 4], 6, -145523070);
+    d = md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
+    c = md5_ii(c, d, a, b, x[i + 2], 15, 718787259);
+    b = md5_ii(b, c, d, a, x[i + 9], 21, -343485551);
+
+    a = safe_add(a, olda);
+    b = safe_add(b, oldb);
+    c = safe_add(c, oldc);
+    d = safe_add(d, oldd);
+  }
+  return [a, b, c, d];
+}
+
+/*
+   * Convert an array of little-endian words to a string
+   */
+function binl2rstr(input) {
+  var i;
+  var output = '';
+  var length32 = input.length * 32;
+  for (i = 0; i < length32; i += 8) {
+    output += String.fromCharCode(input[i >> 5] >>> i % 32 & 0xFF);
+  }
+  return output;
+}
+
+/*
+   * Convert a raw string to an array of little-endian words
+   * Characters >255 have their high-byte silently ignored.
+   */
+function rstr2binl(input) {
+  var i;
+  var output = [];
+  output[(input.length >> 2) - 1] = undefined;
+  for (i = 0; i < output.length; i += 1) {
+    output[i] = 0;
+  }
+  var length8 = input.length * 8;
+  for (i = 0; i < length8; i += 8) {
+    output[i >> 5] |= (input.charCodeAt(i / 8) & 0xFF) << i % 32;
+  }
+  return output;
+}
+
+/*
+   * Calculate the MD5 of a raw string
+   */
+function rstr_md5(s) {
+  return binl2rstr(binl_md5(rstr2binl(s), s.length * 8));
+}
+
+/*
+   * Calculate the HMAC-MD5, of a key and some data (raw strings)
+   */
+function rstr_hmac_md5(key, data) {
+  var i;
+  var bkey = rstr2binl(key);
+  var ipad = [];
+  var opad = [];
+  var hash;
+  ipad[15] = opad[15] = undefined;
+  if (bkey.length > 16) {
+    bkey = binl_md5(bkey, key.length * 8);
+  }
+  for (i = 0; i < 16; i += 1) {
+    ipad[i] = bkey[i] ^ 0x36363636;
+    opad[i] = bkey[i] ^ 0x5C5C5C5C;
+  }
+  hash = binl_md5(ipad.concat(rstr2binl(data)), 512 + data.length * 8);
+  return binl2rstr(binl_md5(opad.concat(hash), 512 + 128));
+}
+
+/*
+   * Convert a raw string to a hex string
+   */
+function rstr2hex(input) {
+  var hex_tab = '0123456789abcdef';
+  var output = '';
+  var x;
+  var i;
+  for (i = 0; i < input.length; i += 1) {
+    x = input.charCodeAt(i);
+    output += hex_tab.charAt(x >>> 4 & 0x0F) +
+    hex_tab.charAt(x & 0x0F);
+  }
+  return output;
+}
+
+/*
+   * Encode a string as utf-8
+   */
+function str2rstr_utf8(input) {
+  return unescape(encodeURIComponent(input));
+}
+
+/*
+   * Take string arguments and return either raw or hex encoded strings
+   */
+
+
+function raw_md5(s) {
+  return rstr_md5(str2rstr_utf8(s));
+}
+
+function hex_md5(s) {
+  return rstr2hex(raw_md5(s));
+}
+
+function raw_hmac_md5(k, d) {
+  return rstr_hmac_md5(str2rstr_utf8(k), str2rstr_utf8(d));
+}
+
+function hex_hmac_md5(k, d) {
+  return rstr2hex(raw_hmac_md5(k, d));
+}
+
+// function md5(string, key, raw) {
+// 	if (!key) {
+// 		if (!raw) {
+// 			return hex_md5(string)
+// 		}
+// 		return raw_md5(string)
+// 	}
+// 	if (!raw) {
+// 		return hex_hmac_md5(key, string)
+// 	}
+// 	return raw_hmac_md5(key, string)
+// }
+var _default =
+{
+  md5: function md5(string, key, raw) {
+    if (!key) {
+      if (!raw) {
+        return hex_md5(string);
+      }
+      return raw_md5(string);
+    }
+    if (!raw) {
+      return hex_hmac_md5(key, string);
+    }
+    return raw_hmac_md5(key, string);
+  } };exports.default = _default;
+
+/***/ }),
+
+/***/ 181:
+/*!*********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Forder_list%2Flist_item"} ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _list_item = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/list_item.vue */ 156));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_list_item.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 182:
+/*!*************************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Forder_details%2Forder_quit"} ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _order_quit = _interopRequireDefault(__webpack_require__(/*! ./pages/order_details/order_quit.vue */ 183));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_order_quit.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 19:
+/*!**************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/util/underscore.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //     Underscore.js 1.8.2
+//     http://underscorejs.org
+//     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+//     Underscore may be freely distributed under the MIT license.
+var _2;
+(function () {
+
+  // Baseline setup
+  // --------------
+
+  // Establish the root object, `window` in the browser, or `exports` on the server.
+  //   var root = this;
+
+  //   // Save the previous value of the `_` variable.
+  //   var previousUnderscore = root._;
+
+  // Save bytes in the minified (but not gzipped) version:
+  var ArrayProto = Array.prototype,
+  ObjProto = Object.prototype,
+  FuncProto = Function.prototype;
+
+  // Create quick reference variables for speed access to core prototypes.
+  var
+  push = ArrayProto.push,
+  slice = ArrayProto.slice,
+  toString = ObjProto.toString,
+  hasOwnProperty = ObjProto.hasOwnProperty;
+
+  // All **ECMAScript 5** native function implementations that we hope to use
+  // are declared here.
+  var
+  nativeIsArray = Array.isArray,
+  nativeKeys = Object.keys,
+  nativeBind = FuncProto.bind,
+  nativeCreate = Object.create;
+
+  // Naked function reference for surrogate-prototype-swapping.
+  var Ctor = function Ctor() {};
+
+  // Create a safe reference to the Underscore object for use below.
+  _2 = function _(obj) {
+    if (obj instanceof _2) return obj;
+    if (!(this instanceof _2)) return new _2(obj);
+    this._wrapped = obj;
+  };
+
+  // Export the Underscore object for **Node.js**, with
+  // backwards-compatibility for the old `require()` API. If we're in
+  // the browser, add `_` as a global object.
+  //   if (typeof exports !== 'undefined') {
+  //     if (typeof module !== 'undefined' && module.exports) {
+  //       exports = module.exports = _;
+  //     }
+  //     exports._ = _;
+  //   } else {
+  //     root._ = _;
+  //   }
+
+
+
+  // module.exports = _;
+  // Current version.
+  _2.VERSION = '1.8.2';
+
+  // Internal function that returns an efficient (for current engines) version
+  // of the passed-in callback, to be repeatedly applied in other Underscore
+  // functions.
+  var optimizeCb = function optimizeCb(func, context, argCount) {
+    if (context === void 0) return func;
+    switch (argCount == null ? 3 : argCount) {
+      case 1:
+        return function (value) {
+          return func.call(context, value);
+        };
+      case 2:
+        return function (value, other) {
+          return func.call(context, value, other);
+        };
+      case 3:
+        return function (value, index, collection) {
+          return func.call(context, value, index, collection);
+        };
+      case 4:
+        return function (accumulator, value, index, collection) {
+          return func.call(context, accumulator, value, index, collection);
+        };}
+
+    return function () {
+      return func.apply(context, arguments);
+    };
+  };
+
+  // A mostly-internal function to generate callbacks that can be applied
+  // to each element in a collection, returning the desired result 鈥� either
+  // identity, an arbitrary callback, a property matcher, or a property accessor.
+  var cb = function cb(value, context, argCount) {
+    if (value == null) return _2.identity;
+    if (_2.isFunction(value)) return optimizeCb(value, context, argCount);
+    if (_2.isObject(value)) return _2.matcher(value);
+    return _2.property(value);
+  };
+  _2.iteratee = function (value, context) {
+    return cb(value, context, Infinity);
+  };
+
+  // An internal function for creating assigner functions.
+  var createAssigner = function createAssigner(keysFunc, undefinedOnly) {
+    return function (obj) {
+      var length = arguments.length;
+      if (length < 2 || obj == null) return obj;
+      for (var index = 1; index < length; index++) {
+        var source = arguments[index],
+        keys = keysFunc(source),
+        l = keys.length;
+        for (var i = 0; i < l; i++) {
+          var key = keys[i];
+          if (!undefinedOnly || obj[key] === void 0) obj[key] = source[key];
+        }
+      }
+      return obj;
+    };
+  };
+
+  // An internal function for creating a new object that inherits from another.
+  var baseCreate = function baseCreate(prototype) {
+    if (!_2.isObject(prototype)) return {};
+    if (nativeCreate) return nativeCreate(prototype);
+    Ctor.prototype = prototype;
+    var result = new Ctor();
+    Ctor.prototype = null;
+    return result;
+  };
+
+  // Helper for collection methods to determine whether a collection
+  // should be iterated as an array or as an object
+  // Related: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
+  var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
+  var isArrayLike = function isArrayLike(collection) {
+    var length = collection != null && collection.length;
+    return typeof length == 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
+  };
+
+  // Collection Functions
+  // --------------------
+
+  // The cornerstone, an `each` implementation, aka `forEach`.
+  // Handles raw objects in addition to array-likes. Treats all
+  // sparse array-likes as if they were dense.
+  _2.each = _2.forEach = function (obj, iteratee, context) {
+    iteratee = optimizeCb(iteratee, context);
+    var i, length;
+    if (isArrayLike(obj)) {
+      for (i = 0, length = obj.length; i < length; i++) {
+        iteratee(obj[i], i, obj);
+      }
+    } else {
+      var keys = _2.keys(obj);
+      for (i = 0, length = keys.length; i < length; i++) {
+        iteratee(obj[keys[i]], keys[i], obj);
+      }
+    }
+    return obj;
+  };
+
+  // Return the results of applying the iteratee to each element.
+  _2.map = _2.collect = function (obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    var keys = !isArrayLike(obj) && _2.keys(obj),
+    length = (keys || obj).length,
+    results = Array(length);
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys ? keys[index] : index;
+      results[index] = iteratee(obj[currentKey], currentKey, obj);
+    }
+    return results;
+  };
+
+  // Create a reducing function iterating left or right.
+  function createReduce(dir) {
+    // Optimized iterator function as using arguments.length
+    // in the main function will deoptimize the, see #1991.
+    function iterator(obj, iteratee, memo, keys, index, length) {
+      for (; index >= 0 && index < length; index += dir) {
+        var currentKey = keys ? keys[index] : index;
+        memo = iteratee(memo, obj[currentKey], currentKey, obj);
+      }
+      return memo;
+    }
+
+    return function (obj, iteratee, memo, context) {
+      iteratee = optimizeCb(iteratee, context, 4);
+      var keys = !isArrayLike(obj) && _2.keys(obj),
+      length = (keys || obj).length,
+      index = dir > 0 ? 0 : length - 1;
+      // Determine the initial value if none is provided.
+      if (arguments.length < 3) {
+        memo = obj[keys ? keys[index] : index];
+        index += dir;
+      }
+      return iterator(obj, iteratee, memo, keys, index, length);
+    };
+  }
+
+  // **Reduce** builds up a single result from a list of values, aka `inject`,
+  // or `foldl`.
+  _2.reduce = _2.foldl = _2.inject = createReduce(1);
+
+  // The right-associative version of reduce, also known as `foldr`.
+  _2.reduceRight = _2.foldr = createReduce(-1);
+
+  // Return the first value which passes a truth test. Aliased as `detect`.
+  _2.find = _2.detect = function (obj, predicate, context) {
+    var key;
+    if (isArrayLike(obj)) {
+      key = _2.findIndex(obj, predicate, context);
+    } else {
+      key = _2.findKey(obj, predicate, context);
+    }
+    if (key !== void 0 && key !== -1) return obj[key];
+  };
+
+  // Return all the elements that pass a truth test.
+  // Aliased as `select`.
+  _2.filter = _2.select = function (obj, predicate, context) {
+    var results = [];
+    predicate = cb(predicate, context);
+    _2.each(obj, function (value, index, list) {
+      if (predicate(value, index, list)) results.push(value);
+    });
+    return results;
+  };
+
+  // Return all the elements for which a truth test fails.
+  _2.reject = function (obj, predicate, context) {
+    return _2.filter(obj, _2.negate(cb(predicate)), context);
+  };
+
+  // Determine whether all of the elements match a truth test.
+  // Aliased as `all`.
+  _2.every = _2.all = function (obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var keys = !isArrayLike(obj) && _2.keys(obj),
+    length = (keys || obj).length;
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys ? keys[index] : index;
+      if (!predicate(obj[currentKey], currentKey, obj)) return false;
+    }
+    return true;
+  };
+
+  // Determine if at least one element in the object matches a truth test.
+  // Aliased as `any`.
+  _2.some = _2.any = function (obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var keys = !isArrayLike(obj) && _2.keys(obj),
+    length = (keys || obj).length;
+    for (var index = 0; index < length; index++) {
+      var currentKey = keys ? keys[index] : index;
+      if (predicate(obj[currentKey], currentKey, obj)) return true;
+    }
+    return false;
+  };
+
+  // Determine if the array or object contains a given value (using `===`).
+  // Aliased as `includes` and `include`.
+  _2.contains = _2.includes = _2.include = function (obj, target, fromIndex) {
+    if (!isArrayLike(obj)) obj = _2.values(obj);
+    return _2.indexOf(obj, target, typeof fromIndex == 'number' && fromIndex) >= 0;
+  };
+
+  // Invoke a method (with arguments) on every item in a collection.
+  _2.invoke = function (obj, method) {
+    var args = slice.call(arguments, 2);
+    var isFunc = _2.isFunction(method);
+    return _2.map(obj, function (value) {
+      var func = isFunc ? method : value[method];
+      return func == null ? func : func.apply(value, args);
+    });
+  };
+
+  // Convenience version of a common use case of `map`: fetching a property.
+  _2.pluck = function (obj, key) {
+    return _2.map(obj, _2.property(key));
+  };
+
+  // Convenience version of a common use case of `filter`: selecting only objects
+  // containing specific `key:value` pairs.
+  _2.where = function (obj, attrs) {
+    return _2.filter(obj, _2.matcher(attrs));
+  };
+
+  // Convenience version of a common use case of `find`: getting the first object
+  // containing specific `key:value` pairs.
+  _2.findWhere = function (obj, attrs) {
+    return _2.find(obj, _2.matcher(attrs));
+  };
+
+  // Return the maximum element (or element-based computation).
+  _2.max = function (obj, iteratee, context) {
+    var result = -Infinity,
+    lastComputed = -Infinity,
+    value,computed;
+    if (iteratee == null && obj != null) {
+      obj = isArrayLike(obj) ? obj : _2.values(obj);
+      for (var i = 0, length = obj.length; i < length; i++) {
+        value = obj[i];
+        if (value > result) {
+          result = value;
+        }
+      }
+    } else {
+      iteratee = cb(iteratee, context);
+      _2.each(obj, function (value, index, list) {
+        computed = iteratee(value, index, list);
+        if (computed > lastComputed || computed === -Infinity && result === -Infinity) {
+          result = value;
+          lastComputed = computed;
+        }
+      });
+    }
+    return result;
+  };
+
+  // Return the minimum element (or element-based computation).
+  _2.min = function (obj, iteratee, context) {
+    var result = Infinity,
+    lastComputed = Infinity,
+    value,computed;
+    if (iteratee == null && obj != null) {
+      obj = isArrayLike(obj) ? obj : _2.values(obj);
+      for (var i = 0, length = obj.length; i < length; i++) {
+        value = obj[i];
+        if (value < result) {
+          result = value;
+        }
+      }
+    } else {
+      iteratee = cb(iteratee, context);
+      _2.each(obj, function (value, index, list) {
+        computed = iteratee(value, index, list);
+        if (computed < lastComputed || computed === Infinity && result === Infinity) {
+          result = value;
+          lastComputed = computed;
+        }
+      });
+    }
+    return result;
+  };
+
+  // Shuffle a collection, using the modern version of the
+  // [Fisher-Yates shuffle](http://en.wikipedia.org/wiki/Fisher鈥揧ates_shuffle).
+  _2.shuffle = function (obj) {
+    var set = isArrayLike(obj) ? obj : _2.values(obj);
+    var length = set.length;
+    var shuffled = Array(length);
+    for (var index = 0, rand; index < length; index++) {
+      rand = _2.random(0, index);
+      if (rand !== index) shuffled[index] = shuffled[rand];
+      shuffled[rand] = set[index];
+    }
+    return shuffled;
+  };
+
+  // Sample **n** random values from a collection.
+  // If **n** is not specified, returns a single random element.
+  // The internal `guard` argument allows it to work with `map`.
+  _2.sample = function (obj, n, guard) {
+    if (n == null || guard) {
+      if (!isArrayLike(obj)) obj = _2.values(obj);
+      return obj[_2.random(obj.length - 1)];
+    }
+    return _2.shuffle(obj).slice(0, Math.max(0, n));
+  };
+
+  // Sort the object's values by a criterion produced by an iteratee.
+  _2.sortBy = function (obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    return _2.pluck(_2.map(obj, function (value, index, list) {
+      return {
+        value: value,
+        index: index,
+        criteria: iteratee(value, index, list) };
+
+    }).sort(function (left, right) {
+      var a = left.criteria;
+      var b = right.criteria;
+      if (a !== b) {
+        if (a > b || a === void 0) return 1;
+        if (a < b || b === void 0) return -1;
+      }
+      return left.index - right.index;
+    }), 'value');
+  };
+
+  // An internal function used for aggregate "group by" operations.
+  var group = function group(behavior) {
+    return function (obj, iteratee, context) {
+      var result = {};
+      iteratee = cb(iteratee, context);
+      _2.each(obj, function (value, index) {
+        var key = iteratee(value, index, obj);
+        behavior(result, value, key);
+      });
+      return result;
+    };
+  };
+
+  // Groups the object's values by a criterion. Pass either a string attribute
+  // to group by, or a function that returns the criterion.
+  _2.groupBy = group(function (result, value, key) {
+    if (_2.has(result, key)) result[key].push(value);else
+    result[key] = [value];
+  });
+
+  // Indexes the object's values by a criterion, similar to `groupBy`, but for
+  // when you know that your index values will be unique.
+  _2.indexBy = group(function (result, value, key) {
+    result[key] = value;
+  });
+
+  // Counts instances of an object that group by a certain criterion. Pass
+  // either a string attribute to count by, or a function that returns the
+  // criterion.
+  _2.countBy = group(function (result, value, key) {
+    if (_2.has(result, key)) result[key]++;else
+    result[key] = 1;
+  });
+
+  // Safely create a real, live array from anything iterable.
+  _2.toArray = function (obj) {
+    if (!obj) return [];
+    if (_2.isArray(obj)) return slice.call(obj);
+    if (isArrayLike(obj)) return _2.map(obj, _2.identity);
+    return _2.values(obj);
+  };
+
+  // Return the number of elements in an object.
+  _2.size = function (obj) {
+    if (obj == null) return 0;
+    return isArrayLike(obj) ? obj.length : _2.keys(obj).length;
+  };
+
+  // Split a collection into two arrays: one whose elements all satisfy the given
+  // predicate, and one whose elements all do not satisfy the predicate.
+  _2.partition = function (obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var pass = [],
+    fail = [];
+    _2.each(obj, function (value, key, obj) {
+      (predicate(value, key, obj) ? pass : fail).push(value);
+    });
+    return [pass, fail];
+  };
+
+  // Array Functions
+  // ---------------
+
+  // Get the first element of an array. Passing **n** will return the first N
+  // values in the array. Aliased as `head` and `take`. The **guard** check
+  // allows it to work with `_.map`.
+  _2.first = _2.head = _2.take = function (array, n, guard) {
+    if (array == null) return void 0;
+    if (n == null || guard) return array[0];
+    return _2.initial(array, array.length - n);
+  };
+
+  // Returns everything but the last entry of the array. Especially useful on
+  // the arguments object. Passing **n** will return all the values in
+  // the array, excluding the last N.
+  _2.initial = function (array, n, guard) {
+    return slice.call(array, 0, Math.max(0, array.length - (n == null || guard ? 1 : n)));
+  };
+
+  // Get the last element of an array. Passing **n** will return the last N
+  // values in the array.
+  _2.last = function (array, n, guard) {
+    if (array == null) return void 0;
+    if (n == null || guard) return array[array.length - 1];
+    return _2.rest(array, Math.max(0, array.length - n));
+  };
+
+  // Returns everything but the first entry of the array. Aliased as `tail` and `drop`.
+  // Especially useful on the arguments object. Passing an **n** will return
+  // the rest N values in the array.
+  _2.rest = _2.tail = _2.drop = function (array, n, guard) {
+    return slice.call(array, n == null || guard ? 1 : n);
+  };
+
+  // Trim out all falsy values from an array.
+  _2.compact = function (array) {
+    return _2.filter(array, _2.identity);
+  };
+
+  // Internal implementation of a recursive `flatten` function.
+  var flatten = function flatten(input, shallow, strict, startIndex) {
+    var output = [],
+    idx = 0;
+    for (var i = startIndex || 0, length = input && input.length; i < length; i++) {
+      var value = input[i];
+      if (isArrayLike(value) && (_2.isArray(value) || _2.isArguments(value))) {
+        //flatten current level of array or arguments object
+        if (!shallow) value = flatten(value, shallow, strict);
+        var j = 0,
+        len = value.length;
+        output.length += len;
+        while (j < len) {
+          output[idx++] = value[j++];
+        }
+      } else if (!strict) {
+        output[idx++] = value;
+      }
+    }
+    return output;
+  };
+
+  // Flatten out an array, either recursively (by default), or just one level.
+  _2.flatten = function (array, shallow) {
+    return flatten(array, shallow, false);
+  };
+
+  // Return a version of the array that does not contain the specified value(s).
+  _2.without = function (array) {
+    return _2.difference(array, slice.call(arguments, 1));
+  };
+
+  // Produce a duplicate-free version of the array. If the array has already
+  // been sorted, you have the option of using a faster algorithm.
+  // Aliased as `unique`.
+  _2.uniq = _2.unique = function (array, isSorted, iteratee, context) {
+    if (array == null) return [];
+    if (!_2.isBoolean(isSorted)) {
+      context = iteratee;
+      iteratee = isSorted;
+      isSorted = false;
+    }
+    if (iteratee != null) iteratee = cb(iteratee, context);
+    var result = [];
+    var seen = [];
+    for (var i = 0, length = array.length; i < length; i++) {
+      var value = array[i],
+      computed = iteratee ? iteratee(value, i, array) : value;
+      if (isSorted) {
+        if (!i || seen !== computed) result.push(value);
+        seen = computed;
+      } else if (iteratee) {
+        if (!_2.contains(seen, computed)) {
+          seen.push(computed);
+          result.push(value);
+        }
+      } else if (!_2.contains(result, value)) {
+        result.push(value);
+      }
+    }
+    return result;
+  };
+
+  // Produce an array that contains the union: each distinct element from all of
+  // the passed-in arrays.
+  _2.union = function () {
+    return _2.uniq(flatten(arguments, true, true));
+  };
+
+  // Produce an array that contains every item shared between all the
+  // passed-in arrays.
+  _2.intersection = function (array) {
+    if (array == null) return [];
+    var result = [];
+    var argsLength = arguments.length;
+    for (var i = 0, length = array.length; i < length; i++) {
+      var item = array[i];
+      if (_2.contains(result, item)) continue;
+      for (var j = 1; j < argsLength; j++) {
+        if (!_2.contains(arguments[j], item)) break;
+      }
+      if (j === argsLength) result.push(item);
+    }
+    return result;
+  };
+
+  // Take the difference between one array and a number of other arrays.
+  // Only the elements present in just the first array will remain.
+  _2.difference = function (array) {
+    var rest = flatten(arguments, true, true, 1);
+    return _2.filter(array, function (value) {
+      return !_2.contains(rest, value);
+    });
+  };
+
+  // Zip together multiple lists into a single array -- elements that share
+  // an index go together.
+  _2.zip = function () {
+    return _2.unzip(arguments);
+  };
+
+  // Complement of _.zip. Unzip accepts an array of arrays and groups
+  // each array's elements on shared indices
+  _2.unzip = function (array) {
+    var length = array && _2.max(array, 'length').length || 0;
+    var result = Array(length);
+
+    for (var index = 0; index < length; index++) {
+      result[index] = _2.pluck(array, index);
+    }
+    return result;
+  };
+
+  // Converts lists into objects. Pass either a single array of `[key, value]`
+  // pairs, or two parallel arrays of the same length -- one of keys, and one of
+  // the corresponding values.
+  _2.object = function (list, values) {
+    var result = {};
+    for (var i = 0, length = list && list.length; i < length; i++) {
+      if (values) {
+        result[list[i]] = values[i];
+      } else {
+        result[list[i][0]] = list[i][1];
+      }
+    }
+    return result;
+  };
+
+  // Return the position of the first occurrence of an item in an array,
+  // or -1 if the item is not included in the array.
+  // If the array is large and already in sort order, pass `true`
+  // for **isSorted** to use binary search.
+  _2.indexOf = function (array, item, isSorted) {
+    var i = 0,
+    length = array && array.length;
+    if (typeof isSorted == 'number') {
+      i = isSorted < 0 ? Math.max(0, length + isSorted) : isSorted;
+    } else if (isSorted && length) {
+      i = _2.sortedIndex(array, item);
+      return array[i] === item ? i : -1;
+    }
+    if (item !== item) {
+      return _2.findIndex(slice.call(array, i), _2.isNaN);
+    }
+    for (; i < length; i++) {
+      if (array[i] === item) return i;}
+    return -1;
+  };
+
+  _2.lastIndexOf = function (array, item, from) {
+    var idx = array ? array.length : 0;
+    if (typeof from == 'number') {
+      idx = from < 0 ? idx + from + 1 : Math.min(idx, from + 1);
+    }
+    if (item !== item) {
+      return _2.findLastIndex(slice.call(array, 0, idx), _2.isNaN);
+    }
+    while (--idx >= 0) {
+      if (array[idx] === item) return idx;}
+    return -1;
+  };
+
+  // Generator function to create the findIndex and findLastIndex functions
+  function createIndexFinder(dir) {
+    return function (array, predicate, context) {
+      predicate = cb(predicate, context);
+      var length = array != null && array.length;
+      var index = dir > 0 ? 0 : length - 1;
+      for (; index >= 0 && index < length; index += dir) {
+        if (predicate(array[index], index, array)) return index;
+      }
+      return -1;
+    };
+  }
+
+  // Returns the first index on an array-like that passes a predicate test
+  _2.findIndex = createIndexFinder(1);
+
+  _2.findLastIndex = createIndexFinder(-1);
+
+  // Use a comparator function to figure out the smallest index at which
+  // an object should be inserted so as to maintain order. Uses binary search.
+  _2.sortedIndex = function (array, obj, iteratee, context) {
+    iteratee = cb(iteratee, context, 1);
+    var value = iteratee(obj);
+    var low = 0,
+    high = array.length;
+    while (low < high) {
+      var mid = Math.floor((low + high) / 2);
+      if (iteratee(array[mid]) < value) low = mid + 1;else
+      high = mid;
+    }
+    return low;
+  };
+
+  // Generate an integer Array containing an arithmetic progression. A port of
+  // the native Python `range()` function. See
+  // [the Python documentation](http://docs.python.org/library/functions.html#range).
+  _2.range = function (start, stop, step) {
+    if (arguments.length <= 1) {
+      stop = start || 0;
+      start = 0;
+    }
+    step = step || 1;
+
+    var length = Math.max(Math.ceil((stop - start) / step), 0);
+    var range = Array(length);
+
+    for (var idx = 0; idx < length; idx++, start += step) {
+      range[idx] = start;
+    }
+
+    return range;
+  };
+
+  // Function (ahem) Functions
+  // ------------------
+
+  // Determines whether to execute a function as a constructor
+  // or a normal function with the provided arguments
+  var executeBound = function executeBound(sourceFunc, boundFunc, context, callingContext, args) {
+    if (!(callingContext instanceof boundFunc)) return sourceFunc.apply(context, args);
+    var self = baseCreate(sourceFunc.prototype);
+    var result = sourceFunc.apply(self, args);
+    if (_2.isObject(result)) return result;
+    return self;
+  };
+
+  // Create a function bound to a given object (assigning `this`, and arguments,
+  // optionally). Delegates to **ECMAScript 5**'s native `Function.bind` if
+  // available.
+  _2.bind = function (func, context) {
+    if (nativeBind && func.bind === nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
+    if (!_2.isFunction(func)) throw new TypeError('Bind must be called on a function');
+    var args = slice.call(arguments, 2);
+    var bound = function bound() {
+      return executeBound(func, bound, context, this, args.concat(slice.call(arguments)));
+    };
+    return bound;
+  };
+
+  // Partially apply a function by creating a version that has had some of its
+  // arguments pre-filled, without changing its dynamic `this` context. _ acts
+  // as a placeholder, allowing any combination of arguments to be pre-filled.
+  _2.partial = function (func) {
+    var boundArgs = slice.call(arguments, 1);
+    var bound = function bound() {
+      var position = 0,
+      length = boundArgs.length;
+      var args = Array(length);
+      for (var i = 0; i < length; i++) {
+        args[i] = boundArgs[i] === _2 ? arguments[position++] : boundArgs[i];
+      }
+      while (position < arguments.length) {args.push(arguments[position++]);}
+      return executeBound(func, bound, this, this, args);
+    };
+    return bound;
+  };
+
+  // Bind a number of an object's methods to that object. Remaining arguments
+  // are the method names to be bound. Useful for ensuring that all callbacks
+  // defined on an object belong to it.
+  _2.bindAll = function (obj) {
+    var i,length = arguments.length,
+    key;
+    if (length <= 1) throw new Error('bindAll must be passed function names');
+    for (i = 1; i < length; i++) {
+      key = arguments[i];
+      obj[key] = _2.bind(obj[key], obj);
+    }
+    return obj;
+  };
+
+  // Memoize an expensive function by storing its results.
+  _2.memoize = function (func, hasher) {
+    var memoize = function memoize(key) {
+      var cache = memoize.cache;
+      var address = '' + (hasher ? hasher.apply(this, arguments) : key);
+      if (!_2.has(cache, address)) cache[address] = func.apply(this, arguments);
+      return cache[address];
+    };
+    memoize.cache = {};
+    return memoize;
+  };
+
+  // Delays a function for the given number of milliseconds, and then calls
+  // it with the arguments supplied.
+  _2.delay = function (func, wait) {
+    var args = slice.call(arguments, 2);
+    return setTimeout(function () {
+      return func.apply(null, args);
+    }, wait);
+  };
+
+  // Defers a function, scheduling it to run after the current call stack has
+  // cleared.
+  _2.defer = _2.partial(_2.delay, _2, 1);
+
+  // Returns a function, that, when invoked, will only be triggered at most once
+  // during a given window of time. Normally, the throttled function will run
+  // as much as it can, without ever going more than once per `wait` duration;
+  // but if you'd like to disable the execution on the leading edge, pass
+  // `{leading: false}`. To disable execution on the trailing edge, ditto.
+  _2.throttle = function (func, wait, options) {
+    var context, args, result;
+    var timeout = null;
+    var previous = 0;
+    if (!options) options = {};
+    var later = function later() {
+      previous = options.leading === false ? 0 : _2.now();
+      timeout = null;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    };
+    return function () {
+      var now = _2.now();
+      if (!previous && options.leading === false) previous = now;
+      var remaining = wait - (now - previous);
+      context = this;
+      args = arguments;
+      if (remaining <= 0 || remaining > wait) {
+        if (timeout) {
+          clearTimeout(timeout);
+          timeout = null;
+        }
+        previous = now;
+        result = func.apply(context, args);
+        if (!timeout) context = args = null;
+      } else if (!timeout && options.trailing !== false) {
+        timeout = setTimeout(later, remaining);
+      }
+      return result;
+    };
+  };
+
+  // Returns a function, that, as long as it continues to be invoked, will not
+  // be triggered. The function will be called after it stops being called for
+  // N milliseconds. If `immediate` is passed, trigger the function on the
+  // leading edge, instead of the trailing.
+  _2.debounce = function (func, wait, immediate) {
+    var timeout, args, context, timestamp, result;
+
+    var later = function later() {
+      var last = _2.now() - timestamp;
+
+      if (last < wait && last >= 0) {
+        timeout = setTimeout(later, wait - last);
+      } else {
+        timeout = null;
+        if (!immediate) {
+          result = func.apply(context, args);
+          if (!timeout) context = args = null;
+        }
+      }
+    };
+
+    return function () {
+      context = this;
+      args = arguments;
+      timestamp = _2.now();
+      var callNow = immediate && !timeout;
+      if (!timeout) timeout = setTimeout(later, wait);
+      if (callNow) {
+        result = func.apply(context, args);
+        context = args = null;
+      }
+
+      return result;
+    };
+  };
+
+  // Returns the first function passed as an argument to the second,
+  // allowing you to adjust arguments, run code before and after, and
+  // conditionally execute the original function.
+  _2.wrap = function (func, wrapper) {
+    return _2.partial(wrapper, func);
+  };
+
+  // Returns a negated version of the passed-in predicate.
+  _2.negate = function (predicate) {
+    return function () {
+      return !predicate.apply(this, arguments);
+    };
+  };
+
+  // Returns a function that is the composition of a list of functions, each
+  // consuming the return value of the function that follows.
+  _2.compose = function () {
+    var args = arguments;
+    var start = args.length - 1;
+    return function () {
+      var i = start;
+      var result = args[start].apply(this, arguments);
+      while (i--) {result = args[i].call(this, result);}
+      return result;
+    };
+  };
+
+  // Returns a function that will only be executed on and after the Nth call.
+  _2.after = function (times, func) {
+    return function () {
+      if (--times < 1) {
+        return func.apply(this, arguments);
+      }
+    };
+  };
+
+  // Returns a function that will only be executed up to (but not including) the Nth call.
+  _2.before = function (times, func) {
+    var memo;
+    return function () {
+      if (--times > 0) {
+        memo = func.apply(this, arguments);
+      }
+      if (times <= 1) func = null;
+      return memo;
+    };
+  };
+
+  // Returns a function that will be executed at most one time, no matter how
+  // often you call it. Useful for lazy initialization.
+  _2.once = _2.partial(_2.before, 2);
+
+  // Object Functions
+  // ----------------
+
+  // Keys in IE < 9 that won't be iterated by `for key in ...` and thus missed.
+  var hasEnumBug = !{
+    toString: null }.
+  propertyIsEnumerable('toString');
+  var nonEnumerableProps = ['valueOf', 'isPrototypeOf', 'toString',
+  'propertyIsEnumerable', 'hasOwnProperty', 'toLocaleString'];
+
+
+  function collectNonEnumProps(obj, keys) {
+    var nonEnumIdx = nonEnumerableProps.length;
+    var constructor = obj.constructor;
+    var proto = _2.isFunction(constructor) && constructor.prototype || ObjProto;
+
+    // Constructor is a special case.
+    var prop = 'constructor';
+    if (_2.has(obj, prop) && !_2.contains(keys, prop)) keys.push(prop);
+
+    while (nonEnumIdx--) {
+      prop = nonEnumerableProps[nonEnumIdx];
+      if (prop in obj && obj[prop] !== proto[prop] && !_2.contains(keys, prop)) {
+        keys.push(prop);
+      }
+    }
+  }
+
+  // Retrieve the names of an object's own properties.
+  // Delegates to **ECMAScript 5**'s native `Object.keys`
+  _2.keys = function (obj) {
+    if (!_2.isObject(obj)) return [];
+    if (nativeKeys) return nativeKeys(obj);
+    var keys = [];
+    for (var key in obj) {
+      if (_2.has(obj, key)) keys.push(key);}
+    // Ahem, IE < 9.
+    if (hasEnumBug) collectNonEnumProps(obj, keys);
+    return keys;
+  };
+
+  // Retrieve all the property names of an object.
+  _2.allKeys = function (obj) {
+    if (!_2.isObject(obj)) return [];
+    var keys = [];
+    for (var key in obj) {keys.push(key);}
+    // Ahem, IE < 9.
+    if (hasEnumBug) collectNonEnumProps(obj, keys);
+    return keys;
+  };
+
+  // Retrieve the values of an object's properties.
+  _2.values = function (obj) {
+    var keys = _2.keys(obj);
+    var length = keys.length;
+    var values = Array(length);
+    for (var i = 0; i < length; i++) {
+      values[i] = obj[keys[i]];
+    }
+    return values;
+  };
+
+  // Returns the results of applying the iteratee to each element of the object
+  // In contrast to _.map it returns an object
+  _2.mapObject = function (obj, iteratee, context) {
+    iteratee = cb(iteratee, context);
+    var keys = _2.keys(obj),
+    length = keys.length,
+    results = {},
+    currentKey;
+    for (var index = 0; index < length; index++) {
+      currentKey = keys[index];
+      results[currentKey] = iteratee(obj[currentKey], currentKey, obj);
+    }
+    return results;
+  };
+
+  // Convert an object into a list of `[key, value]` pairs.
+  _2.pairs = function (obj) {
+    var keys = _2.keys(obj);
+    var length = keys.length;
+    var pairs = Array(length);
+    for (var i = 0; i < length; i++) {
+      pairs[i] = [keys[i], obj[keys[i]]];
+    }
+    return pairs;
+  };
+
+  // Invert the keys and values of an object. The values must be serializable.
+  _2.invert = function (obj) {
+    var result = {};
+    var keys = _2.keys(obj);
+    for (var i = 0, length = keys.length; i < length; i++) {
+      result[obj[keys[i]]] = keys[i];
+    }
+    return result;
+  };
+
+  // Return a sorted list of the function names available on the object.
+  // Aliased as `methods`
+  _2.functions = _2.methods = function (obj) {
+    var names = [];
+    for (var key in obj) {
+      if (_2.isFunction(obj[key])) names.push(key);
+    }
+    return names.sort();
+  };
+
+  // Extend a given object with all the properties in passed-in object(s).
+  _2.extend = createAssigner(_2.allKeys);
+
+  // Assigns a given object with all the own properties in the passed-in object(s)
+  // (https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+  _2.extendOwn = _2.assign = createAssigner(_2.keys);
+
+  // Returns the first key on an object that passes a predicate test
+  _2.findKey = function (obj, predicate, context) {
+    predicate = cb(predicate, context);
+    var keys = _2.keys(obj),
+    key;
+    for (var i = 0, length = keys.length; i < length; i++) {
+      key = keys[i];
+      if (predicate(obj[key], key, obj)) return key;
+    }
+  };
+
+  // Return a copy of the object only containing the whitelisted properties.
+  _2.pick = function (object, oiteratee, context) {
+    var result = {},
+    obj = object,
+    iteratee,keys;
+    if (obj == null) return result;
+    if (_2.isFunction(oiteratee)) {
+      keys = _2.allKeys(obj);
+      iteratee = optimizeCb(oiteratee, context);
+    } else {
+      keys = flatten(arguments, false, false, 1);
+      iteratee = function iteratee(value, key, obj) {
+        return key in obj;
+      };
+      obj = Object(obj);
+    }
+    for (var i = 0, length = keys.length; i < length; i++) {
+      var key = keys[i];
+      var value = obj[key];
+      if (iteratee(value, key, obj)) result[key] = value;
+    }
+    return result;
+  };
+
+  // Return a copy of the object without the blacklisted properties.
+  _2.omit = function (obj, iteratee, context) {
+    if (_2.isFunction(iteratee)) {
+      iteratee = _2.negate(iteratee);
+    } else {
+      var keys = _2.map(flatten(arguments, false, false, 1), String);
+      iteratee = function iteratee(value, key) {
+        return !_2.contains(keys, key);
+      };
+    }
+    return _2.pick(obj, iteratee, context);
+  };
+
+  // Fill in a given object with default properties.
+  _2.defaults = createAssigner(_2.allKeys, true);
+
+  // Creates an object that inherits from the given prototype object.
+  // If additional properties are provided then they will be added to the
+  // created object.
+  _2.create = function (prototype, props) {
+    var result = baseCreate(prototype);
+    if (props) _2.extendOwn(result, props);
+    return result;
+  };
+
+  // Create a (shallow-cloned) duplicate of an object.
+  _2.clone = function (obj) {
+    if (!_2.isObject(obj)) return obj;
+    return _2.isArray(obj) ? obj.slice() : _2.extend({}, obj);
+  };
+
+  // Invokes interceptor with the obj, and then returns obj.
+  // The primary purpose of this method is to "tap into" a method chain, in
+  // order to perform operations on intermediate results within the chain.
+  _2.tap = function (obj, interceptor) {
+    interceptor(obj);
+    return obj;
+  };
+
+  // Returns whether an object has a given set of `key:value` pairs.
+  _2.isMatch = function (object, attrs) {
+    var keys = _2.keys(attrs),
+    length = keys.length;
+    if (object == null) return !length;
+    var obj = Object(object);
+    for (var i = 0; i < length; i++) {
+      var key = keys[i];
+      if (attrs[key] !== obj[key] || !(key in obj)) return false;
+    }
+    return true;
+  };
+
+
+  // Internal recursive comparison function for `isEqual`.
+  var eq = function eq(a, b, aStack, bStack) {
+    // Identical objects are equal. `0 === -0`, but they aren't identical.
+    // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
+    if (a === b) return a !== 0 || 1 / a === 1 / b;
+    // A strict comparison is necessary because `null == undefined`.
+    if (a == null || b == null) return a === b;
+    // Unwrap any wrapped objects.
+    if (a instanceof _2) a = a._wrapped;
+    if (b instanceof _2) b = b._wrapped;
+    // Compare `[[Class]]` names.
+    var className = toString.call(a);
+    if (className !== toString.call(b)) return false;
+    switch (className) {
+      // Strings, numbers, regular expressions, dates, and booleans are compared by value.
+      case '[object RegExp]':
+      // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
+      case '[object String]':
+        // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
+        // equivalent to `new String("5")`.
+        return '' + a === '' + b;
+      case '[object Number]':
+        // `NaN`s are equivalent, but non-reflexive.
+        // Object(NaN) is equivalent to NaN
+        if (+a !== +a) return +b !== +b;
+        // An `egal` comparison is performed for other numeric values.
+        return +a === 0 ? 1 / +a === 1 / b : +a === +b;
+      case '[object Date]':
+      case '[object Boolean]':
+        // Coerce dates and booleans to numeric primitive values. Dates are compared by their
+        // millisecond representations. Note that invalid dates with millisecond representations
+        // of `NaN` are not equivalent.
+        return +a === +b;}
+
+
+    var areArrays = className === '[object Array]';
+    if (!areArrays) {
+      if (typeof a != 'object' || typeof b != 'object') return false;
+
+      // Objects with different constructors are not equivalent, but `Object`s or `Array`s
+      // from different frames are.
+      var aCtor = a.constructor,
+      bCtor = b.constructor;
+      if (aCtor !== bCtor && !(_2.isFunction(aCtor) && aCtor instanceof aCtor &&
+      _2.isFunction(bCtor) && bCtor instanceof bCtor) &&
+      'constructor' in a && 'constructor' in b) {
+        return false;
+      }
+    }
+    // Assume equality for cyclic structures. The algorithm for detecting cyclic
+    // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
+
+    // Initializing stack of traversed objects.
+    // It's done here since we only need them for objects and arrays comparison.
+    aStack = aStack || [];
+    bStack = bStack || [];
+    var length = aStack.length;
+    while (length--) {
+      // Linear search. Performance is inversely proportional to the number of
+      // unique nested structures.
+      if (aStack[length] === a) return bStack[length] === b;
+    }
+
+    // Add the first object to the stack of traversed objects.
+    aStack.push(a);
+    bStack.push(b);
+
+    // Recursively compare objects and arrays.
+    if (areArrays) {
+      // Compare array lengths to determine if a deep comparison is necessary.
+      length = a.length;
+      if (length !== b.length) return false;
+      // Deep compare the contents, ignoring non-numeric properties.
+      while (length--) {
+        if (!eq(a[length], b[length], aStack, bStack)) return false;
+      }
+    } else {
+      // Deep compare objects.
+      var keys = _2.keys(a),
+      key;
+      length = keys.length;
+      // Ensure that both objects contain the same number of properties before comparing deep equality.
+      if (_2.keys(b).length !== length) return false;
+      while (length--) {
+        // Deep compare each member
+        key = keys[length];
+        if (!(_2.has(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
+      }
+    }
+    // Remove the first object from the stack of traversed objects.
+    aStack.pop();
+    bStack.pop();
+    return true;
+  };
+
+  // Perform a deep comparison to check if two objects are equal.
+  _2.isEqual = function (a, b) {
+    return eq(a, b);
+  };
+
+  // Is a given array, string, or object empty?
+  // An "empty" object has no enumerable own-properties.
+  _2.isEmpty = function (obj) {
+    if (obj == null) return true;
+    if (isArrayLike(obj) && (_2.isArray(obj) || _2.isString(obj) || _2.isArguments(obj))) return obj.length === 0;
+    return _2.keys(obj).length === 0;
+  };
+
+  // Is a given value a DOM element?
+  _2.isElement = function (obj) {
+    return !!(obj && obj.nodeType === 1);
+  };
+
+  // Is a given value an array?
+  // Delegates to ECMA5's native Array.isArray
+  _2.isArray = nativeIsArray || function (obj) {
+    return toString.call(obj) === '[object Array]';
+  };
+
+  // Is a given variable an object?
+  _2.isObject = function (obj) {
+    var type = typeof obj;
+    return type === 'function' || type === 'object' && !!obj;
+  };
+
+  // Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp, isError.
+  _2.each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error'], function (name) {
+    _2['is' + name] = function (obj) {
+      return toString.call(obj) === '[object ' + name + ']';
+    };
+  });
+
+  // Define a fallback version of the method in browsers (ahem, IE < 9), where
+  // there isn't any inspectable "Arguments" type.
+  if (!_2.isArguments(arguments)) {
+    _2.isArguments = function (obj) {
+      return _2.has(obj, 'callee');
+    };
+  }
+
+  // Optimize `isFunction` if appropriate. Work around some typeof bugs in old v8,
+  // IE 11 (#1621), and in Safari 8 (#1929).
+  if ( true && typeof Int8Array != 'object') {
+    _2.isFunction = function (obj) {
+      return typeof obj == 'function' || false;
+    };
+  }
+
+  // Is a given object a finite number?
+  _2.isFinite = function (obj) {
+    return isFinite(obj) && !isNaN(parseFloat(obj));
+  };
+
+  // Is the given value `NaN`? (NaN is the only number which does not equal itself).
+  _2.isNaN = function (obj) {
+    return _2.isNumber(obj) && obj !== +obj;
+  };
+
+  // Is a given value a boolean?
+  _2.isBoolean = function (obj) {
+    return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
+  };
+
+  // Is a given value equal to null?
+  _2.isNull = function (obj) {
+    return obj === null;
+  };
+
+  // Is a given variable undefined?
+  _2.isUndefined = function (obj) {
+    return obj === void 0;
+  };
+
+  // Shortcut function for checking if an object has a given property directly
+  // on itself (in other words, not on a prototype).
+  _2.has = function (obj, key) {
+    return obj != null && hasOwnProperty.call(obj, key);
+  };
+
+  // Utility Functions
+  // -----------------
+
+  // Run Underscore.js in *noConflict* mode, returning the `_` variable to its
+  // previous owner. Returns a reference to the Underscore object.
+  _2.noConflict = function () {
+    root._ = previousUnderscore;
+    return this;
+  };
+
+  // Keep the identity function around for default iteratees.
+  _2.identity = function (value) {
+    return value;
+  };
+
+  // Predicate-generating functions. Often useful outside of Underscore.
+  _2.constant = function (value) {
+    return function () {
+      return value;
+    };
+  };
+
+  _2.noop = function () {};
+
+  _2.property = function (key) {
+    return function (obj) {
+      return obj == null ? void 0 : obj[key];
+    };
+  };
+
+  // Generates a function for a given object that returns a given property.
+  _2.propertyOf = function (obj) {
+    return obj == null ? function () {} : function (key) {
+      return obj[key];
+    };
+  };
+
+  // Returns a predicate for checking whether an object has a given set of 
+  // `key:value` pairs.
+  _2.matcher = _2.matches = function (attrs) {
+    attrs = _2.extendOwn({}, attrs);
+    return function (obj) {
+      return _2.isMatch(obj, attrs);
+    };
+  };
+
+  // Run a function **n** times.
+  _2.times = function (n, iteratee, context) {
+    var accum = Array(Math.max(0, n));
+    iteratee = optimizeCb(iteratee, context, 1);
+    for (var i = 0; i < n; i++) {accum[i] = iteratee(i);}
+    return accum;
+  };
+
+  // Return a random integer between min and max (inclusive).
+  _2.random = function (min, max) {
+    if (max == null) {
+      max = min;
+      min = 0;
+    }
+    return min + Math.floor(Math.random() * (max - min + 1));
+  };
+
+  // A (possibly faster) way to get the current timestamp as an integer.
+  _2.now = Date.now || function () {
+    return new Date().getTime();
+  };
+
+  // List of HTML entities for escaping.
+  var escapeMap = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#x27;',
+    '`': '&#x60;' };
+
+  var unescapeMap = _2.invert(escapeMap);
+
+  // Functions for escaping and unescaping strings to/from HTML interpolation.
+  var createEscaper = function createEscaper(map) {
+    var escaper = function escaper(match) {
+      return map[match];
+    };
+    // Regexes for identifying a key that needs to be escaped
+    var source = '(?:' + _2.keys(map).join('|') + ')';
+    var testRegexp = RegExp(source);
+    var replaceRegexp = RegExp(source, 'g');
+    return function (string) {
+      string = string == null ? '' : '' + string;
+      return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
+    };
+  };
+  _2.escape = createEscaper(escapeMap);
+  _2.unescape = createEscaper(unescapeMap);
+
+  // If the value of the named `property` is a function then invoke it with the
+  // `object` as context; otherwise, return it.
+  _2.result = function (object, property, fallback) {
+    var value = object == null ? void 0 : object[property];
+    if (value === void 0) {
+      value = fallback;
+    }
+    return _2.isFunction(value) ? value.call(object) : value;
+  };
+
+  // Generate a unique integer id (unique within the entire client session).
+  // Useful for temporary DOM ids.
+  var idCounter = 0;
+  _2.uniqueId = function (prefix) {
+    var id = ++idCounter + '';
+    return prefix ? prefix + id : id;
+  };
+
+  // By default, Underscore uses ERB-style template delimiters, change the
+  // following template settings to use alternative delimiters.
+  _2.templateSettings = {
+    evaluate: /<%([\s\S]+?)%>/g,
+    interpolate: /<%=([\s\S]+?)%>/g,
+    escape: /<%-([\s\S]+?)%>/g };
+
+
+  // When customizing `templateSettings`, if you don't want to define an
+  // interpolation, evaluation or escaping regex, we need one that is
+  // guaranteed not to match.
+  var noMatch = /(.)^/;
+
+  // Certain characters need to be escaped so that they can be put into a
+  // string literal.
+  var escapes = {
+    "'": "'",
+    '\\': '\\',
+    '\r': 'r',
+    '\n': 'n',
+    "\u2028": 'u2028',
+    "\u2029": 'u2029' };
+
+
+  var escaper = /\\|'|\r|\n|\u2028|\u2029/g;
+
+  var escapeChar = function escapeChar(match) {
+    return '\\' + escapes[match];
+  };
+
+  // JavaScript micro-templating, similar to John Resig's implementation.
+  // Underscore templating handles arbitrary delimiters, preserves whitespace,
+  // and correctly escapes quotes within interpolated code.
+  // NB: `oldSettings` only exists for backwards compatibility.
+  _2.template = function (text, settings, oldSettings) {
+    if (!settings && oldSettings) settings = oldSettings;
+    settings = _2.defaults({}, settings, _2.templateSettings);
+
+    // Combine delimiters into one regular expression via alternation.
+    var matcher = RegExp([
+    (settings.escape || noMatch).source,
+    (settings.interpolate || noMatch).source,
+    (settings.evaluate || noMatch).source].
+    join('|') + '|$', 'g');
+
+    // Compile the template source, escaping string literals appropriately.
+    var index = 0;
+    var source = "__p+='";
+    text.replace(matcher, function (match, escape, interpolate, evaluate, offset) {
+      source += text.slice(index, offset).replace(escaper, escapeChar);
+      index = offset + match.length;
+
+      if (escape) {
+        source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
+      } else if (interpolate) {
+        source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
+      } else if (evaluate) {
+        source += "';\n" + evaluate + "\n__p+='";
+      }
+
+      // Adobe VMs need the match returned to produce the correct offest.
+      return match;
+    });
+    source += "';\n";
+
+    // If a variable is not specified, place data values in local scope.
+    if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
+
+    source = "var __t,__p='',__j=Array.prototype.join," +
+    "print=function(){__p+=__j.call(arguments,'');};\n" +
+    source + 'return __p;\n';
+
+    try {
+      var render = new Function(settings.variable || 'obj', '_', source);
+    } catch (e) {
+      e.source = source;
+      throw e;
+    }
+
+    var template = function template(data) {
+      return render.call(this, data, _2);
+    };
+
+    // Provide the compiled source as a convenience for precompilation.
+    var argument = settings.variable || 'obj';
+    template.source = 'function(' + argument + '){\n' + source + '}';
+
+    return template;
+  };
+
+  // Add a "chain" function. Start chaining a wrapped Underscore object.
+  _2.chain = function (obj) {
+    var instance = _2(obj);
+    instance._chain = true;
+    return instance;
+  };
+
+  // OOP
+  // ---------------
+  // If Underscore is called as a function, it returns a wrapped object that
+  // can be used OO-style. This wrapper holds altered versions of all the
+  // underscore functions. Wrapped objects may be chained.
+
+  // Helper function to continue chaining intermediate results.
+  var result = function result(instance, obj) {
+    return instance._chain ? _2(obj).chain() : obj;
+  };
+
+  // Add your own custom functions to the Underscore object.
+  _2.mixin = function (obj) {
+    _2.each(_2.functions(obj), function (name) {
+      var func = _2[name] = obj[name];
+      _2.prototype[name] = function () {
+        var args = [this._wrapped];
+        push.apply(args, arguments);
+        return result(this, func.apply(_2, args));
+      };
+    });
+  };
+
+  // Add all of the Underscore functions to the wrapper object.
+  _2.mixin(_2);
+
+  // Add all mutator Array functions to the wrapper.
+  _2.each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function (name) {
+    var method = ArrayProto[name];
+    _2.prototype[name] = function () {
+      var obj = this._wrapped;
+      method.apply(obj, arguments);
+      if ((name === 'shift' || name === 'splice') && obj.length === 0) delete obj[0];
+      return result(this, obj);
+    };
+  });
+
+  // Add all accessor Array functions to the wrapper.
+  _2.each(['concat', 'join', 'slice'], function (name) {
+    var method = ArrayProto[name];
+    _2.prototype[name] = function () {
+      return result(this, method.apply(this._wrapped, arguments));
+    };
+  });
+
+  // Extracts the result from a wrapped and chained object.
+  _2.prototype.value = function () {
+    return this._wrapped;
+  };
+
+  // Provide unwrapping proxy for some methods used in engine operations
+  // such as arithmetic and JSON stringification.
+  _2.prototype.valueOf = _2.prototype.toJSON = _2.prototype.value;
+
+  _2.prototype.toString = function () {
+    return '' + this._wrapped;
+  };
+
+
+  // AMD registration happens at the end for compatibility with AMD loaders
+  // that may not enforce next-turn semantics on modules. Even though general
+  // practice for AMD registration is to be anonymous, underscore registers
+  // as a named module because, like jQuery, it is a base library that is
+  // popular enough to be bundled in a third party lib, but not be part of
+  // an AMD load request. Those cases could generate an error when an
+  // anonymous define() is called outside of a loader request.
+  //   if (typeof define === 'function' && define.amd) {
+  //     define('underscore', [], function() {
+  //       return _;
+  //     });
+  //   }
+
+
+
+
+}).call(void 0);var _default =
+
+
+{
+  _: _2 };exports.default = _default;
+
+/***/ }),
+
+/***/ 190:
+/*!**********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Forder_details%2Fdetails"} ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _details = _interopRequireDefault(__webpack_require__(/*! ./pages/order_details/details.vue */ 191));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_details.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 198:
+/*!********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fagreement%2Fagreement"} ***!
+  \********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _agreement = _interopRequireDefault(__webpack_require__(/*! ./pages/agreement/agreement.vue */ 199));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_agreement.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 2:
 /*!******************************************************************************************!*\
   !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mp-vue/dist/mp.runtime.esm.js ***!
   \******************************************************************************************/
@@ -7449,2339 +9959,8 @@ internalMixin(Vue);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 3 */
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 4 */
-/*!****************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/pages.json ***!
-  \****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-/***/ }),
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
-/*!********************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/runtime/componentNormalizer.js ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return normalizeComponent; });
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = 'data-v-' + scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
-
-/***/ }),
-/* 11 */
-/*!**********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Findex%2Findex"} ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _index = _interopRequireDefault(__webpack_require__(/*! ./pages/index/index.vue */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_index.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
-/*!******************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/util/util.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _md = _interopRequireDefault(__webpack_require__(/*! ./md5.js */ 18));
-var _underscore = _interopRequireDefault(__webpack_require__(/*! ./underscore.js */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-/**
-                                                                                                                                                                   	构造微擎地址, 
-                                                                                                                                                                   	@params action tp系统中的,model, contrlloer, action，格式为 'index/Info/getTourist'
-                                                                                                                                                                   	@params querystring 格式为 {参数名1 : 值1, 参数名2 : 值2}
-                                                                                                                                                                   */
-var siteInfo = {
-  'title': '',
-  'uniacid': '110',
-  'acid': '110',
-  'multiid': '0',
-  'version': 'v1.02',
-  'siteroot': 'https://fw.tiantiandj.com/index.php/',
-  'design_method': '3',
-  'redirect_module': '',
-  'template': '',
-  "yan": "tian",
-  "token": "3333" };
-
-
-var util = {};
-var storage = uni.setStorage;
-util.url = function (action, querystring) {
-  var url = siteInfo.siteroot + action + '?i=' + siteInfo.uniacid + '&v=' + siteInfo.version;
-  return url;
-};
-
-function getQuery(url) {
-  var theRequest = [];
-  if (url.indexOf("?") != -1) {
-    var str = url.split('?')[1];
-    var strs = str.split("&");
-    for (var i = 0; i < strs.length; i++) {
-      if (strs[i].split("=")[0] && unescape(strs[i].split("=")[1])) {
-        theRequest[i] = {
-          'name': strs[i].split("=")[0],
-          'value': unescape(strs[i].split("=")[1]) };
-
-      }
-    }
-  }
-  return theRequest;
-}
-/*
-   * 获取链接某个参数
-   * url 链接地址
-   * name 参数名称
-   */
-function getUrlParam(url, name) {
-  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象  
-  var r = url.split('?')[1].match(reg); //匹配目标参数  
-  if (r != null) return unescape(r[2]);
-  return null; //返回参数值  
-}
-/**
-   * 获取签名 将链接地址的所有参数按字母排序后拼接加上token进行md5
-   * url 链接地址 https://www.tiantiandj.com/xcx/index.php/index/Info/getTourist
-   * date 参数{参数名1 : 值1, 参数名2 : 值2} *
-   * token 签名token 非必须 在userinfo
-   * 
-   */
-//
-function getSign(url, data, token) {
-  var _ = _underscore.default._;
-  var md5 = _md.default.md5;
-  var querystring = '';
-  var urlData = '';
-  var sign = getUrlParam(url, 'sign');
-  if (sign || data && data.sign) {
-    return false;
-  } else {
-    if (JSON.stringify(data) != "{}") {//post
-      var theRequest = [];
-      for (var param in data) {
-        if (param && data[param]) {
-          if (param != 'page') {
-            theRequest = theRequest.concat({
-              'name': param,
-              'value': data[param] });
-
-          }
-        }
-      }
-      //排序
-      querystring = _.sortBy(theRequest, 'name'); //用key排序
-      //去重
-      querystring = _.uniq(querystring, true, 'name');
-      for (var i = 0; i < querystring.length; i++) {
-        if (querystring[i] && querystring[i].name && querystring[i].value != "") {
-          urlData += querystring[i].name + '=' + querystring[i].value;
-          if (i < querystring.length - 1) {
-            urlData += '&';
-          }
-        }
-      }
-      if (data) {
-        urlData += "&";
-      }
-    }
-    console.log(urlData, "Zs we 111");
-
-    siteInfo.token = JSON.parse(sessionStorage.getItem("user")) ? JSON.parse(sessionStorage.getItem("user")).partner_token :
-    siteInfo.token;
-    console.log(siteInfo.token);
-    var yan = JSON.parse(sessionStorage.getItem("user")) ? JSON.parse(sessionStorage.getItem("user")).partner_yan :
-    siteInfo.yan;
-    console.log(urlData + "token=" + siteInfo.token + "&yan=" + yan, "dfdfdfdf");
-    sign = md5(urlData + "token=" + siteInfo.token + "&yan=" + yan);
-    return sign;
-  }
-}
-
-
-util.ajax = function (option) {
-  var _ = _underscore.default._;
-  var md5 = _md.default.md5();
-  var option = option ? option : {};
-  option.cachetime = option.cachetime ? option.cachetime : 0;
-  option.showLoading = typeof option.showLoading != 'undefined' ? option.showLoading : true;
-  var url = option.url; //entry/wxapp/checkinfo
-  if (url.indexOf('http://') == -1 && url.indexOf('https://') == -1) {
-    url = util.url(url); //url ="https://www.tiantiandj.com/xcx/index.php";
-  }
-  var state = getUrlParam(url, 'state');
-
-  if (!state && !(option.data && option.data.state)) {
-    url = url + '&state=we7sid-';
-  }
-  // if (!option.data || !option.data.m) {
-  // 	var nowPage = getCurrentPages();
-  // 	if (nowPage) {
-  // 		nowPage = nowPage[getCurrentPages().length - 1];
-  // 		if (nowPage.__route__) {
-  // 			url = url + '&m=' + nowPage.__route__.split('/')[0];
-  // 		}
-  // 	}
-  // }
-  //https://www.tiantiandj.com/xcx/index.php/index/Info/getTourist?....
-  var sign = getSign(url, option.data);
-
-  console.log(siteInfo.token);
-  if (sign) {
-    url = url + "&sign=" + sign + "&token=" + siteInfo.token;
-  }
-  if (!url) {
-    return false;
-  }
-
-  //显示状态图	
-  // wx.showNavigationBarLoading();
-  if (option.showLoading) {
-    $.showLoading();
-  }
-  if (option.cachetime) {
-    var cachekey = _md.default.md5(url);
-    var cachedata = storage.getItem(cachekey);
-    var timestamp = Date.parse(new Date());
-
-    if (cachedata && cachedata.data) {
-      if (cachedata.expire > timestamp) {
-        if (option.complete && typeof option.complete == 'function') {
-          option.complete(cachedata);
-        }
-        if (option.success && typeof option.success == 'function') {
-          option.success(cachedata);
-        }
-        $.hideLoading();
-        return true;
-      } else {
-        storage.removeItem(cachekey);
-      }
-    }
-  }
-  $.ajax({
-    "url": url, // url---->地址
-    "type": option.method ? option.method : 'GET', // type ---> 请求方式
-    "async": option.async, // async----> 同步：false，异步：true 
-    "data": option.data ? option.data : {},
-    'success': function success(response) {
-      //隐藏状态图
-      $.hideLoading();
-
-      if (response.data.errno) {
-        if (response.data.errno == '41009') {
-          wx.setStorageSync('userInfo', '');
-          util.getUserInfo(function () {
-            util.request(option);
-          });
-          return;
-        } else {
-          if (option.fail && typeof option.fail == 'function') {
-            option.fail(response);
-          } else {
-            if (response.data.message) {
-              if (response.data.data != null && response.data.data.redirect) {
-                var redirect = response.data.data.redirect;
-              } else {
-                var redirect = '';
-              }
-              app.util.message(response.data.message, redirect, 'error');
-            }
-          }
-          return;
-        }
-      } else {
-        if (option.success && typeof option.success == 'function') {
-          option.success(response);
-        }
-        //写入缓存，减少HTTP请求，并且如果网络异常可以读取缓存数据
-        if (option.cachetime) {
-          var cachedata = {
-            'data': response.data,
-            'expire': timestamp + option.cachetime * 1000 };
-
-          storage.setItem(cachekey, cachedata);
-        }
-      }
-    },
-    'fail': function fail(response) {
-      $.hideLoading();
-      //如果请求失败，尝试从缓存中读取数据
-      var md5 = __webpack_require__(/*! md5.js */ 20);
-      var cachekey = md5(url);
-      var cachedata = storage.getItem(cachekey);
-      if (cachedata && cachedata.data) {
-        if (option.success && typeof option.success == 'function') {
-          option.success(cachedata);
-        }
-        return true;
-      } else {
-        if (option.fail && typeof option.fail == 'function') {
-          option.fail(response);
-        }
-      }
-    },
-    'complete': function complete(response) {
-      $.hideLoading();
-      if (option.complete && typeof option.complete == 'function') {
-        option.complete(response);
-      }
-    } });
-
-};var _default =
-
-util;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-/* 18 */
-/*!*****************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/util/md5.js ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; /*
-                                                                                                      * JavaScript MD5
-                                                                                                      * https://github.com/blueimp/JavaScript-MD5
-                                                                                                      *
-                                                                                                      * Copyright 2011, Sebastian Tschan
-                                                                                                      * https://blueimp.net
-                                                                                                      *
-                                                                                                      * Licensed under the MIT license:
-                                                                                                      * http://www.opensource.org/licenses/MIT
-                                                                                                      *
-                                                                                                      * Based on
-                                                                                                      * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
-                                                                                                      * Digest Algorithm, as defined in RFC 1321.
-                                                                                                      * Version 2.2 Copyright (C) Paul Johnston 1999 - 2009
-                                                                                                      * Other contributors: Greg Holt, Andrew Kepert, Ydnar, Lostinet
-                                                                                                      * Distributed under the BSD License
-                                                                                                      * See http://pajhome.org.uk/crypt/md5 for more info.
-                                                                                                      */
-
-/*global unescape, define, module */
-
-
-
-
-/*
-                                      * Add integers, wrapping at 2^32. This uses 16-bit operations internally
-                                      * to work around bugs in some JS interpreters.
-                                      */
-function safe_add(x, y) {
-  var lsw = (x & 0xFFFF) + (y & 0xFFFF);
-  var msw = (x >> 16) + (y >> 16) + (lsw >> 16);
-  return msw << 16 | lsw & 0xFFFF;
-}
-
-/*
-   * Bitwise rotate a 32-bit number to the left.
-   */
-function bit_rol(num, cnt) {
-  return num << cnt | num >>> 32 - cnt;
-}
-
-/*
-   * These functions implement the four basic operations the algorithm uses.
-   */
-function md5_cmn(q, a, b, x, s, t) {
-  return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
-}
-
-function md5_ff(a, b, c, d, x, s, t) {
-  return md5_cmn(b & c | ~b & d, a, b, x, s, t);
-}
-
-function md5_gg(a, b, c, d, x, s, t) {
-  return md5_cmn(b & d | c & ~d, a, b, x, s, t);
-}
-
-function md5_hh(a, b, c, d, x, s, t) {
-  return md5_cmn(b ^ c ^ d, a, b, x, s, t);
-}
-
-function md5_ii(a, b, c, d, x, s, t) {
-  return md5_cmn(c ^ (b | ~d), a, b, x, s, t);
-}
-
-/*
-   * Calculate the MD5 of an array of little-endian words, and a bit length.
-   */
-function binl_md5(x, len) {
-  /* append padding */
-  x[len >> 5] |= 0x80 << len % 32;
-  x[(len + 64 >>> 9 << 4) + 14] = len;
-
-  var i;
-  var olda;
-  var oldb;
-  var oldc;
-  var oldd;
-  var a = 1732584193;
-  var b = -271733879;
-  var c = -1732584194;
-  var d = 271733878;
-
-  for (i = 0; i < x.length; i += 16) {
-    olda = a;
-    oldb = b;
-    oldc = c;
-    oldd = d;
-
-    a = md5_ff(a, b, c, d, x[i], 7, -680876936);
-    d = md5_ff(d, a, b, c, x[i + 1], 12, -389564586);
-    c = md5_ff(c, d, a, b, x[i + 2], 17, 606105819);
-    b = md5_ff(b, c, d, a, x[i + 3], 22, -1044525330);
-    a = md5_ff(a, b, c, d, x[i + 4], 7, -176418897);
-    d = md5_ff(d, a, b, c, x[i + 5], 12, 1200080426);
-    c = md5_ff(c, d, a, b, x[i + 6], 17, -1473231341);
-    b = md5_ff(b, c, d, a, x[i + 7], 22, -45705983);
-    a = md5_ff(a, b, c, d, x[i + 8], 7, 1770035416);
-    d = md5_ff(d, a, b, c, x[i + 9], 12, -1958414417);
-    c = md5_ff(c, d, a, b, x[i + 10], 17, -42063);
-    b = md5_ff(b, c, d, a, x[i + 11], 22, -1990404162);
-    a = md5_ff(a, b, c, d, x[i + 12], 7, 1804603682);
-    d = md5_ff(d, a, b, c, x[i + 13], 12, -40341101);
-    c = md5_ff(c, d, a, b, x[i + 14], 17, -1502002290);
-    b = md5_ff(b, c, d, a, x[i + 15], 22, 1236535329);
-
-    a = md5_gg(a, b, c, d, x[i + 1], 5, -165796510);
-    d = md5_gg(d, a, b, c, x[i + 6], 9, -1069501632);
-    c = md5_gg(c, d, a, b, x[i + 11], 14, 643717713);
-    b = md5_gg(b, c, d, a, x[i], 20, -373897302);
-    a = md5_gg(a, b, c, d, x[i + 5], 5, -701558691);
-    d = md5_gg(d, a, b, c, x[i + 10], 9, 38016083);
-    c = md5_gg(c, d, a, b, x[i + 15], 14, -660478335);
-    b = md5_gg(b, c, d, a, x[i + 4], 20, -405537848);
-    a = md5_gg(a, b, c, d, x[i + 9], 5, 568446438);
-    d = md5_gg(d, a, b, c, x[i + 14], 9, -1019803690);
-    c = md5_gg(c, d, a, b, x[i + 3], 14, -187363961);
-    b = md5_gg(b, c, d, a, x[i + 8], 20, 1163531501);
-    a = md5_gg(a, b, c, d, x[i + 13], 5, -1444681467);
-    d = md5_gg(d, a, b, c, x[i + 2], 9, -51403784);
-    c = md5_gg(c, d, a, b, x[i + 7], 14, 1735328473);
-    b = md5_gg(b, c, d, a, x[i + 12], 20, -1926607734);
-
-    a = md5_hh(a, b, c, d, x[i + 5], 4, -378558);
-    d = md5_hh(d, a, b, c, x[i + 8], 11, -2022574463);
-    c = md5_hh(c, d, a, b, x[i + 11], 16, 1839030562);
-    b = md5_hh(b, c, d, a, x[i + 14], 23, -35309556);
-    a = md5_hh(a, b, c, d, x[i + 1], 4, -1530992060);
-    d = md5_hh(d, a, b, c, x[i + 4], 11, 1272893353);
-    c = md5_hh(c, d, a, b, x[i + 7], 16, -155497632);
-    b = md5_hh(b, c, d, a, x[i + 10], 23, -1094730640);
-    a = md5_hh(a, b, c, d, x[i + 13], 4, 681279174);
-    d = md5_hh(d, a, b, c, x[i], 11, -358537222);
-    c = md5_hh(c, d, a, b, x[i + 3], 16, -722521979);
-    b = md5_hh(b, c, d, a, x[i + 6], 23, 76029189);
-    a = md5_hh(a, b, c, d, x[i + 9], 4, -640364487);
-    d = md5_hh(d, a, b, c, x[i + 12], 11, -421815835);
-    c = md5_hh(c, d, a, b, x[i + 15], 16, 530742520);
-    b = md5_hh(b, c, d, a, x[i + 2], 23, -995338651);
-
-    a = md5_ii(a, b, c, d, x[i], 6, -198630844);
-    d = md5_ii(d, a, b, c, x[i + 7], 10, 1126891415);
-    c = md5_ii(c, d, a, b, x[i + 14], 15, -1416354905);
-    b = md5_ii(b, c, d, a, x[i + 5], 21, -57434055);
-    a = md5_ii(a, b, c, d, x[i + 12], 6, 1700485571);
-    d = md5_ii(d, a, b, c, x[i + 3], 10, -1894986606);
-    c = md5_ii(c, d, a, b, x[i + 10], 15, -1051523);
-    b = md5_ii(b, c, d, a, x[i + 1], 21, -2054922799);
-    a = md5_ii(a, b, c, d, x[i + 8], 6, 1873313359);
-    d = md5_ii(d, a, b, c, x[i + 15], 10, -30611744);
-    c = md5_ii(c, d, a, b, x[i + 6], 15, -1560198380);
-    b = md5_ii(b, c, d, a, x[i + 13], 21, 1309151649);
-    a = md5_ii(a, b, c, d, x[i + 4], 6, -145523070);
-    d = md5_ii(d, a, b, c, x[i + 11], 10, -1120210379);
-    c = md5_ii(c, d, a, b, x[i + 2], 15, 718787259);
-    b = md5_ii(b, c, d, a, x[i + 9], 21, -343485551);
-
-    a = safe_add(a, olda);
-    b = safe_add(b, oldb);
-    c = safe_add(c, oldc);
-    d = safe_add(d, oldd);
-  }
-  return [a, b, c, d];
-}
-
-/*
-   * Convert an array of little-endian words to a string
-   */
-function binl2rstr(input) {
-  var i;
-  var output = '';
-  var length32 = input.length * 32;
-  for (i = 0; i < length32; i += 8) {
-    output += String.fromCharCode(input[i >> 5] >>> i % 32 & 0xFF);
-  }
-  return output;
-}
-
-/*
-   * Convert a raw string to an array of little-endian words
-   * Characters >255 have their high-byte silently ignored.
-   */
-function rstr2binl(input) {
-  var i;
-  var output = [];
-  output[(input.length >> 2) - 1] = undefined;
-  for (i = 0; i < output.length; i += 1) {
-    output[i] = 0;
-  }
-  var length8 = input.length * 8;
-  for (i = 0; i < length8; i += 8) {
-    output[i >> 5] |= (input.charCodeAt(i / 8) & 0xFF) << i % 32;
-  }
-  return output;
-}
-
-/*
-   * Calculate the MD5 of a raw string
-   */
-function rstr_md5(s) {
-  return binl2rstr(binl_md5(rstr2binl(s), s.length * 8));
-}
-
-/*
-   * Calculate the HMAC-MD5, of a key and some data (raw strings)
-   */
-function rstr_hmac_md5(key, data) {
-  var i;
-  var bkey = rstr2binl(key);
-  var ipad = [];
-  var opad = [];
-  var hash;
-  ipad[15] = opad[15] = undefined;
-  if (bkey.length > 16) {
-    bkey = binl_md5(bkey, key.length * 8);
-  }
-  for (i = 0; i < 16; i += 1) {
-    ipad[i] = bkey[i] ^ 0x36363636;
-    opad[i] = bkey[i] ^ 0x5C5C5C5C;
-  }
-  hash = binl_md5(ipad.concat(rstr2binl(data)), 512 + data.length * 8);
-  return binl2rstr(binl_md5(opad.concat(hash), 512 + 128));
-}
-
-/*
-   * Convert a raw string to a hex string
-   */
-function rstr2hex(input) {
-  var hex_tab = '0123456789abcdef';
-  var output = '';
-  var x;
-  var i;
-  for (i = 0; i < input.length; i += 1) {
-    x = input.charCodeAt(i);
-    output += hex_tab.charAt(x >>> 4 & 0x0F) +
-    hex_tab.charAt(x & 0x0F);
-  }
-  return output;
-}
-
-/*
-   * Encode a string as utf-8
-   */
-function str2rstr_utf8(input) {
-  return unescape(encodeURIComponent(input));
-}
-
-/*
-   * Take string arguments and return either raw or hex encoded strings
-   */
-
-
-function raw_md5(s) {
-  return rstr_md5(str2rstr_utf8(s));
-}
-
-function hex_md5(s) {
-  return rstr2hex(raw_md5(s));
-}
-
-function raw_hmac_md5(k, d) {
-  return rstr_hmac_md5(str2rstr_utf8(k), str2rstr_utf8(d));
-}
-
-function hex_hmac_md5(k, d) {
-  return rstr2hex(raw_hmac_md5(k, d));
-}
-
-// function md5(string, key, raw) {
-// 	if (!key) {
-// 		if (!raw) {
-// 			return hex_md5(string)
-// 		}
-// 		return raw_md5(string)
-// 	}
-// 	if (!raw) {
-// 		return hex_hmac_md5(key, string)
-// 	}
-// 	return raw_hmac_md5(key, string)
-// }
-var _default =
-{
-  md5: function md5(string, key, raw) {
-    if (!key) {
-      if (!raw) {
-        return hex_md5(string);
-      }
-      return raw_md5(string);
-    }
-    if (!raw) {
-      return hex_hmac_md5(key, string);
-    }
-    return raw_hmac_md5(key, string);
-  } };exports.default = _default;
-
-/***/ }),
-/* 19 */
-/*!************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/util/underscore.js ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //     Underscore.js 1.8.2
-//     http://underscorejs.org
-//     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-//     Underscore may be freely distributed under the MIT license.
-var _2;
-(function () {
-
-  // Baseline setup
-  // --------------
-
-  // Establish the root object, `window` in the browser, or `exports` on the server.
-  //   var root = this;
-
-  //   // Save the previous value of the `_` variable.
-  //   var previousUnderscore = root._;
-
-  // Save bytes in the minified (but not gzipped) version:
-  var ArrayProto = Array.prototype,
-  ObjProto = Object.prototype,
-  FuncProto = Function.prototype;
-
-  // Create quick reference variables for speed access to core prototypes.
-  var
-  push = ArrayProto.push,
-  slice = ArrayProto.slice,
-  toString = ObjProto.toString,
-  hasOwnProperty = ObjProto.hasOwnProperty;
-
-  // All **ECMAScript 5** native function implementations that we hope to use
-  // are declared here.
-  var
-  nativeIsArray = Array.isArray,
-  nativeKeys = Object.keys,
-  nativeBind = FuncProto.bind,
-  nativeCreate = Object.create;
-
-  // Naked function reference for surrogate-prototype-swapping.
-  var Ctor = function Ctor() {};
-
-  // Create a safe reference to the Underscore object for use below.
-  _2 = function _(obj) {
-    if (obj instanceof _2) return obj;
-    if (!(this instanceof _2)) return new _2(obj);
-    this._wrapped = obj;
-  };
-
-  // Export the Underscore object for **Node.js**, with
-  // backwards-compatibility for the old `require()` API. If we're in
-  // the browser, add `_` as a global object.
-  //   if (typeof exports !== 'undefined') {
-  //     if (typeof module !== 'undefined' && module.exports) {
-  //       exports = module.exports = _;
-  //     }
-  //     exports._ = _;
-  //   } else {
-  //     root._ = _;
-  //   }
-
-
-
-  // module.exports = _;
-  // Current version.
-  _2.VERSION = '1.8.2';
-
-  // Internal function that returns an efficient (for current engines) version
-  // of the passed-in callback, to be repeatedly applied in other Underscore
-  // functions.
-  var optimizeCb = function optimizeCb(func, context, argCount) {
-    if (context === void 0) return func;
-    switch (argCount == null ? 3 : argCount) {
-      case 1:
-        return function (value) {
-          return func.call(context, value);
-        };
-      case 2:
-        return function (value, other) {
-          return func.call(context, value, other);
-        };
-      case 3:
-        return function (value, index, collection) {
-          return func.call(context, value, index, collection);
-        };
-      case 4:
-        return function (accumulator, value, index, collection) {
-          return func.call(context, accumulator, value, index, collection);
-        };}
-
-    return function () {
-      return func.apply(context, arguments);
-    };
-  };
-
-  // A mostly-internal function to generate callbacks that can be applied
-  // to each element in a collection, returning the desired result 鈥� either
-  // identity, an arbitrary callback, a property matcher, or a property accessor.
-  var cb = function cb(value, context, argCount) {
-    if (value == null) return _2.identity;
-    if (_2.isFunction(value)) return optimizeCb(value, context, argCount);
-    if (_2.isObject(value)) return _2.matcher(value);
-    return _2.property(value);
-  };
-  _2.iteratee = function (value, context) {
-    return cb(value, context, Infinity);
-  };
-
-  // An internal function for creating assigner functions.
-  var createAssigner = function createAssigner(keysFunc, undefinedOnly) {
-    return function (obj) {
-      var length = arguments.length;
-      if (length < 2 || obj == null) return obj;
-      for (var index = 1; index < length; index++) {
-        var source = arguments[index],
-        keys = keysFunc(source),
-        l = keys.length;
-        for (var i = 0; i < l; i++) {
-          var key = keys[i];
-          if (!undefinedOnly || obj[key] === void 0) obj[key] = source[key];
-        }
-      }
-      return obj;
-    };
-  };
-
-  // An internal function for creating a new object that inherits from another.
-  var baseCreate = function baseCreate(prototype) {
-    if (!_2.isObject(prototype)) return {};
-    if (nativeCreate) return nativeCreate(prototype);
-    Ctor.prototype = prototype;
-    var result = new Ctor();
-    Ctor.prototype = null;
-    return result;
-  };
-
-  // Helper for collection methods to determine whether a collection
-  // should be iterated as an array or as an object
-  // Related: http://people.mozilla.org/~jorendorff/es6-draft.html#sec-tolength
-  var MAX_ARRAY_INDEX = Math.pow(2, 53) - 1;
-  var isArrayLike = function isArrayLike(collection) {
-    var length = collection != null && collection.length;
-    return typeof length == 'number' && length >= 0 && length <= MAX_ARRAY_INDEX;
-  };
-
-  // Collection Functions
-  // --------------------
-
-  // The cornerstone, an `each` implementation, aka `forEach`.
-  // Handles raw objects in addition to array-likes. Treats all
-  // sparse array-likes as if they were dense.
-  _2.each = _2.forEach = function (obj, iteratee, context) {
-    iteratee = optimizeCb(iteratee, context);
-    var i, length;
-    if (isArrayLike(obj)) {
-      for (i = 0, length = obj.length; i < length; i++) {
-        iteratee(obj[i], i, obj);
-      }
-    } else {
-      var keys = _2.keys(obj);
-      for (i = 0, length = keys.length; i < length; i++) {
-        iteratee(obj[keys[i]], keys[i], obj);
-      }
-    }
-    return obj;
-  };
-
-  // Return the results of applying the iteratee to each element.
-  _2.map = _2.collect = function (obj, iteratee, context) {
-    iteratee = cb(iteratee, context);
-    var keys = !isArrayLike(obj) && _2.keys(obj),
-    length = (keys || obj).length,
-    results = Array(length);
-    for (var index = 0; index < length; index++) {
-      var currentKey = keys ? keys[index] : index;
-      results[index] = iteratee(obj[currentKey], currentKey, obj);
-    }
-    return results;
-  };
-
-  // Create a reducing function iterating left or right.
-  function createReduce(dir) {
-    // Optimized iterator function as using arguments.length
-    // in the main function will deoptimize the, see #1991.
-    function iterator(obj, iteratee, memo, keys, index, length) {
-      for (; index >= 0 && index < length; index += dir) {
-        var currentKey = keys ? keys[index] : index;
-        memo = iteratee(memo, obj[currentKey], currentKey, obj);
-      }
-      return memo;
-    }
-
-    return function (obj, iteratee, memo, context) {
-      iteratee = optimizeCb(iteratee, context, 4);
-      var keys = !isArrayLike(obj) && _2.keys(obj),
-      length = (keys || obj).length,
-      index = dir > 0 ? 0 : length - 1;
-      // Determine the initial value if none is provided.
-      if (arguments.length < 3) {
-        memo = obj[keys ? keys[index] : index];
-        index += dir;
-      }
-      return iterator(obj, iteratee, memo, keys, index, length);
-    };
-  }
-
-  // **Reduce** builds up a single result from a list of values, aka `inject`,
-  // or `foldl`.
-  _2.reduce = _2.foldl = _2.inject = createReduce(1);
-
-  // The right-associative version of reduce, also known as `foldr`.
-  _2.reduceRight = _2.foldr = createReduce(-1);
-
-  // Return the first value which passes a truth test. Aliased as `detect`.
-  _2.find = _2.detect = function (obj, predicate, context) {
-    var key;
-    if (isArrayLike(obj)) {
-      key = _2.findIndex(obj, predicate, context);
-    } else {
-      key = _2.findKey(obj, predicate, context);
-    }
-    if (key !== void 0 && key !== -1) return obj[key];
-  };
-
-  // Return all the elements that pass a truth test.
-  // Aliased as `select`.
-  _2.filter = _2.select = function (obj, predicate, context) {
-    var results = [];
-    predicate = cb(predicate, context);
-    _2.each(obj, function (value, index, list) {
-      if (predicate(value, index, list)) results.push(value);
-    });
-    return results;
-  };
-
-  // Return all the elements for which a truth test fails.
-  _2.reject = function (obj, predicate, context) {
-    return _2.filter(obj, _2.negate(cb(predicate)), context);
-  };
-
-  // Determine whether all of the elements match a truth test.
-  // Aliased as `all`.
-  _2.every = _2.all = function (obj, predicate, context) {
-    predicate = cb(predicate, context);
-    var keys = !isArrayLike(obj) && _2.keys(obj),
-    length = (keys || obj).length;
-    for (var index = 0; index < length; index++) {
-      var currentKey = keys ? keys[index] : index;
-      if (!predicate(obj[currentKey], currentKey, obj)) return false;
-    }
-    return true;
-  };
-
-  // Determine if at least one element in the object matches a truth test.
-  // Aliased as `any`.
-  _2.some = _2.any = function (obj, predicate, context) {
-    predicate = cb(predicate, context);
-    var keys = !isArrayLike(obj) && _2.keys(obj),
-    length = (keys || obj).length;
-    for (var index = 0; index < length; index++) {
-      var currentKey = keys ? keys[index] : index;
-      if (predicate(obj[currentKey], currentKey, obj)) return true;
-    }
-    return false;
-  };
-
-  // Determine if the array or object contains a given value (using `===`).
-  // Aliased as `includes` and `include`.
-  _2.contains = _2.includes = _2.include = function (obj, target, fromIndex) {
-    if (!isArrayLike(obj)) obj = _2.values(obj);
-    return _2.indexOf(obj, target, typeof fromIndex == 'number' && fromIndex) >= 0;
-  };
-
-  // Invoke a method (with arguments) on every item in a collection.
-  _2.invoke = function (obj, method) {
-    var args = slice.call(arguments, 2);
-    var isFunc = _2.isFunction(method);
-    return _2.map(obj, function (value) {
-      var func = isFunc ? method : value[method];
-      return func == null ? func : func.apply(value, args);
-    });
-  };
-
-  // Convenience version of a common use case of `map`: fetching a property.
-  _2.pluck = function (obj, key) {
-    return _2.map(obj, _2.property(key));
-  };
-
-  // Convenience version of a common use case of `filter`: selecting only objects
-  // containing specific `key:value` pairs.
-  _2.where = function (obj, attrs) {
-    return _2.filter(obj, _2.matcher(attrs));
-  };
-
-  // Convenience version of a common use case of `find`: getting the first object
-  // containing specific `key:value` pairs.
-  _2.findWhere = function (obj, attrs) {
-    return _2.find(obj, _2.matcher(attrs));
-  };
-
-  // Return the maximum element (or element-based computation).
-  _2.max = function (obj, iteratee, context) {
-    var result = -Infinity,
-    lastComputed = -Infinity,
-    value,computed;
-    if (iteratee == null && obj != null) {
-      obj = isArrayLike(obj) ? obj : _2.values(obj);
-      for (var i = 0, length = obj.length; i < length; i++) {
-        value = obj[i];
-        if (value > result) {
-          result = value;
-        }
-      }
-    } else {
-      iteratee = cb(iteratee, context);
-      _2.each(obj, function (value, index, list) {
-        computed = iteratee(value, index, list);
-        if (computed > lastComputed || computed === -Infinity && result === -Infinity) {
-          result = value;
-          lastComputed = computed;
-        }
-      });
-    }
-    return result;
-  };
-
-  // Return the minimum element (or element-based computation).
-  _2.min = function (obj, iteratee, context) {
-    var result = Infinity,
-    lastComputed = Infinity,
-    value,computed;
-    if (iteratee == null && obj != null) {
-      obj = isArrayLike(obj) ? obj : _2.values(obj);
-      for (var i = 0, length = obj.length; i < length; i++) {
-        value = obj[i];
-        if (value < result) {
-          result = value;
-        }
-      }
-    } else {
-      iteratee = cb(iteratee, context);
-      _2.each(obj, function (value, index, list) {
-        computed = iteratee(value, index, list);
-        if (computed < lastComputed || computed === Infinity && result === Infinity) {
-          result = value;
-          lastComputed = computed;
-        }
-      });
-    }
-    return result;
-  };
-
-  // Shuffle a collection, using the modern version of the
-  // [Fisher-Yates shuffle](http://en.wikipedia.org/wiki/Fisher鈥揧ates_shuffle).
-  _2.shuffle = function (obj) {
-    var set = isArrayLike(obj) ? obj : _2.values(obj);
-    var length = set.length;
-    var shuffled = Array(length);
-    for (var index = 0, rand; index < length; index++) {
-      rand = _2.random(0, index);
-      if (rand !== index) shuffled[index] = shuffled[rand];
-      shuffled[rand] = set[index];
-    }
-    return shuffled;
-  };
-
-  // Sample **n** random values from a collection.
-  // If **n** is not specified, returns a single random element.
-  // The internal `guard` argument allows it to work with `map`.
-  _2.sample = function (obj, n, guard) {
-    if (n == null || guard) {
-      if (!isArrayLike(obj)) obj = _2.values(obj);
-      return obj[_2.random(obj.length - 1)];
-    }
-    return _2.shuffle(obj).slice(0, Math.max(0, n));
-  };
-
-  // Sort the object's values by a criterion produced by an iteratee.
-  _2.sortBy = function (obj, iteratee, context) {
-    iteratee = cb(iteratee, context);
-    return _2.pluck(_2.map(obj, function (value, index, list) {
-      return {
-        value: value,
-        index: index,
-        criteria: iteratee(value, index, list) };
-
-    }).sort(function (left, right) {
-      var a = left.criteria;
-      var b = right.criteria;
-      if (a !== b) {
-        if (a > b || a === void 0) return 1;
-        if (a < b || b === void 0) return -1;
-      }
-      return left.index - right.index;
-    }), 'value');
-  };
-
-  // An internal function used for aggregate "group by" operations.
-  var group = function group(behavior) {
-    return function (obj, iteratee, context) {
-      var result = {};
-      iteratee = cb(iteratee, context);
-      _2.each(obj, function (value, index) {
-        var key = iteratee(value, index, obj);
-        behavior(result, value, key);
-      });
-      return result;
-    };
-  };
-
-  // Groups the object's values by a criterion. Pass either a string attribute
-  // to group by, or a function that returns the criterion.
-  _2.groupBy = group(function (result, value, key) {
-    if (_2.has(result, key)) result[key].push(value);else
-    result[key] = [value];
-  });
-
-  // Indexes the object's values by a criterion, similar to `groupBy`, but for
-  // when you know that your index values will be unique.
-  _2.indexBy = group(function (result, value, key) {
-    result[key] = value;
-  });
-
-  // Counts instances of an object that group by a certain criterion. Pass
-  // either a string attribute to count by, or a function that returns the
-  // criterion.
-  _2.countBy = group(function (result, value, key) {
-    if (_2.has(result, key)) result[key]++;else
-    result[key] = 1;
-  });
-
-  // Safely create a real, live array from anything iterable.
-  _2.toArray = function (obj) {
-    if (!obj) return [];
-    if (_2.isArray(obj)) return slice.call(obj);
-    if (isArrayLike(obj)) return _2.map(obj, _2.identity);
-    return _2.values(obj);
-  };
-
-  // Return the number of elements in an object.
-  _2.size = function (obj) {
-    if (obj == null) return 0;
-    return isArrayLike(obj) ? obj.length : _2.keys(obj).length;
-  };
-
-  // Split a collection into two arrays: one whose elements all satisfy the given
-  // predicate, and one whose elements all do not satisfy the predicate.
-  _2.partition = function (obj, predicate, context) {
-    predicate = cb(predicate, context);
-    var pass = [],
-    fail = [];
-    _2.each(obj, function (value, key, obj) {
-      (predicate(value, key, obj) ? pass : fail).push(value);
-    });
-    return [pass, fail];
-  };
-
-  // Array Functions
-  // ---------------
-
-  // Get the first element of an array. Passing **n** will return the first N
-  // values in the array. Aliased as `head` and `take`. The **guard** check
-  // allows it to work with `_.map`.
-  _2.first = _2.head = _2.take = function (array, n, guard) {
-    if (array == null) return void 0;
-    if (n == null || guard) return array[0];
-    return _2.initial(array, array.length - n);
-  };
-
-  // Returns everything but the last entry of the array. Especially useful on
-  // the arguments object. Passing **n** will return all the values in
-  // the array, excluding the last N.
-  _2.initial = function (array, n, guard) {
-    return slice.call(array, 0, Math.max(0, array.length - (n == null || guard ? 1 : n)));
-  };
-
-  // Get the last element of an array. Passing **n** will return the last N
-  // values in the array.
-  _2.last = function (array, n, guard) {
-    if (array == null) return void 0;
-    if (n == null || guard) return array[array.length - 1];
-    return _2.rest(array, Math.max(0, array.length - n));
-  };
-
-  // Returns everything but the first entry of the array. Aliased as `tail` and `drop`.
-  // Especially useful on the arguments object. Passing an **n** will return
-  // the rest N values in the array.
-  _2.rest = _2.tail = _2.drop = function (array, n, guard) {
-    return slice.call(array, n == null || guard ? 1 : n);
-  };
-
-  // Trim out all falsy values from an array.
-  _2.compact = function (array) {
-    return _2.filter(array, _2.identity);
-  };
-
-  // Internal implementation of a recursive `flatten` function.
-  var flatten = function flatten(input, shallow, strict, startIndex) {
-    var output = [],
-    idx = 0;
-    for (var i = startIndex || 0, length = input && input.length; i < length; i++) {
-      var value = input[i];
-      if (isArrayLike(value) && (_2.isArray(value) || _2.isArguments(value))) {
-        //flatten current level of array or arguments object
-        if (!shallow) value = flatten(value, shallow, strict);
-        var j = 0,
-        len = value.length;
-        output.length += len;
-        while (j < len) {
-          output[idx++] = value[j++];
-        }
-      } else if (!strict) {
-        output[idx++] = value;
-      }
-    }
-    return output;
-  };
-
-  // Flatten out an array, either recursively (by default), or just one level.
-  _2.flatten = function (array, shallow) {
-    return flatten(array, shallow, false);
-  };
-
-  // Return a version of the array that does not contain the specified value(s).
-  _2.without = function (array) {
-    return _2.difference(array, slice.call(arguments, 1));
-  };
-
-  // Produce a duplicate-free version of the array. If the array has already
-  // been sorted, you have the option of using a faster algorithm.
-  // Aliased as `unique`.
-  _2.uniq = _2.unique = function (array, isSorted, iteratee, context) {
-    if (array == null) return [];
-    if (!_2.isBoolean(isSorted)) {
-      context = iteratee;
-      iteratee = isSorted;
-      isSorted = false;
-    }
-    if (iteratee != null) iteratee = cb(iteratee, context);
-    var result = [];
-    var seen = [];
-    for (var i = 0, length = array.length; i < length; i++) {
-      var value = array[i],
-      computed = iteratee ? iteratee(value, i, array) : value;
-      if (isSorted) {
-        if (!i || seen !== computed) result.push(value);
-        seen = computed;
-      } else if (iteratee) {
-        if (!_2.contains(seen, computed)) {
-          seen.push(computed);
-          result.push(value);
-        }
-      } else if (!_2.contains(result, value)) {
-        result.push(value);
-      }
-    }
-    return result;
-  };
-
-  // Produce an array that contains the union: each distinct element from all of
-  // the passed-in arrays.
-  _2.union = function () {
-    return _2.uniq(flatten(arguments, true, true));
-  };
-
-  // Produce an array that contains every item shared between all the
-  // passed-in arrays.
-  _2.intersection = function (array) {
-    if (array == null) return [];
-    var result = [];
-    var argsLength = arguments.length;
-    for (var i = 0, length = array.length; i < length; i++) {
-      var item = array[i];
-      if (_2.contains(result, item)) continue;
-      for (var j = 1; j < argsLength; j++) {
-        if (!_2.contains(arguments[j], item)) break;
-      }
-      if (j === argsLength) result.push(item);
-    }
-    return result;
-  };
-
-  // Take the difference between one array and a number of other arrays.
-  // Only the elements present in just the first array will remain.
-  _2.difference = function (array) {
-    var rest = flatten(arguments, true, true, 1);
-    return _2.filter(array, function (value) {
-      return !_2.contains(rest, value);
-    });
-  };
-
-  // Zip together multiple lists into a single array -- elements that share
-  // an index go together.
-  _2.zip = function () {
-    return _2.unzip(arguments);
-  };
-
-  // Complement of _.zip. Unzip accepts an array of arrays and groups
-  // each array's elements on shared indices
-  _2.unzip = function (array) {
-    var length = array && _2.max(array, 'length').length || 0;
-    var result = Array(length);
-
-    for (var index = 0; index < length; index++) {
-      result[index] = _2.pluck(array, index);
-    }
-    return result;
-  };
-
-  // Converts lists into objects. Pass either a single array of `[key, value]`
-  // pairs, or two parallel arrays of the same length -- one of keys, and one of
-  // the corresponding values.
-  _2.object = function (list, values) {
-    var result = {};
-    for (var i = 0, length = list && list.length; i < length; i++) {
-      if (values) {
-        result[list[i]] = values[i];
-      } else {
-        result[list[i][0]] = list[i][1];
-      }
-    }
-    return result;
-  };
-
-  // Return the position of the first occurrence of an item in an array,
-  // or -1 if the item is not included in the array.
-  // If the array is large and already in sort order, pass `true`
-  // for **isSorted** to use binary search.
-  _2.indexOf = function (array, item, isSorted) {
-    var i = 0,
-    length = array && array.length;
-    if (typeof isSorted == 'number') {
-      i = isSorted < 0 ? Math.max(0, length + isSorted) : isSorted;
-    } else if (isSorted && length) {
-      i = _2.sortedIndex(array, item);
-      return array[i] === item ? i : -1;
-    }
-    if (item !== item) {
-      return _2.findIndex(slice.call(array, i), _2.isNaN);
-    }
-    for (; i < length; i++) {
-      if (array[i] === item) return i;}
-    return -1;
-  };
-
-  _2.lastIndexOf = function (array, item, from) {
-    var idx = array ? array.length : 0;
-    if (typeof from == 'number') {
-      idx = from < 0 ? idx + from + 1 : Math.min(idx, from + 1);
-    }
-    if (item !== item) {
-      return _2.findLastIndex(slice.call(array, 0, idx), _2.isNaN);
-    }
-    while (--idx >= 0) {
-      if (array[idx] === item) return idx;}
-    return -1;
-  };
-
-  // Generator function to create the findIndex and findLastIndex functions
-  function createIndexFinder(dir) {
-    return function (array, predicate, context) {
-      predicate = cb(predicate, context);
-      var length = array != null && array.length;
-      var index = dir > 0 ? 0 : length - 1;
-      for (; index >= 0 && index < length; index += dir) {
-        if (predicate(array[index], index, array)) return index;
-      }
-      return -1;
-    };
-  }
-
-  // Returns the first index on an array-like that passes a predicate test
-  _2.findIndex = createIndexFinder(1);
-
-  _2.findLastIndex = createIndexFinder(-1);
-
-  // Use a comparator function to figure out the smallest index at which
-  // an object should be inserted so as to maintain order. Uses binary search.
-  _2.sortedIndex = function (array, obj, iteratee, context) {
-    iteratee = cb(iteratee, context, 1);
-    var value = iteratee(obj);
-    var low = 0,
-    high = array.length;
-    while (low < high) {
-      var mid = Math.floor((low + high) / 2);
-      if (iteratee(array[mid]) < value) low = mid + 1;else
-      high = mid;
-    }
-    return low;
-  };
-
-  // Generate an integer Array containing an arithmetic progression. A port of
-  // the native Python `range()` function. See
-  // [the Python documentation](http://docs.python.org/library/functions.html#range).
-  _2.range = function (start, stop, step) {
-    if (arguments.length <= 1) {
-      stop = start || 0;
-      start = 0;
-    }
-    step = step || 1;
-
-    var length = Math.max(Math.ceil((stop - start) / step), 0);
-    var range = Array(length);
-
-    for (var idx = 0; idx < length; idx++, start += step) {
-      range[idx] = start;
-    }
-
-    return range;
-  };
-
-  // Function (ahem) Functions
-  // ------------------
-
-  // Determines whether to execute a function as a constructor
-  // or a normal function with the provided arguments
-  var executeBound = function executeBound(sourceFunc, boundFunc, context, callingContext, args) {
-    if (!(callingContext instanceof boundFunc)) return sourceFunc.apply(context, args);
-    var self = baseCreate(sourceFunc.prototype);
-    var result = sourceFunc.apply(self, args);
-    if (_2.isObject(result)) return result;
-    return self;
-  };
-
-  // Create a function bound to a given object (assigning `this`, and arguments,
-  // optionally). Delegates to **ECMAScript 5**'s native `Function.bind` if
-  // available.
-  _2.bind = function (func, context) {
-    if (nativeBind && func.bind === nativeBind) return nativeBind.apply(func, slice.call(arguments, 1));
-    if (!_2.isFunction(func)) throw new TypeError('Bind must be called on a function');
-    var args = slice.call(arguments, 2);
-    var bound = function bound() {
-      return executeBound(func, bound, context, this, args.concat(slice.call(arguments)));
-    };
-    return bound;
-  };
-
-  // Partially apply a function by creating a version that has had some of its
-  // arguments pre-filled, without changing its dynamic `this` context. _ acts
-  // as a placeholder, allowing any combination of arguments to be pre-filled.
-  _2.partial = function (func) {
-    var boundArgs = slice.call(arguments, 1);
-    var bound = function bound() {
-      var position = 0,
-      length = boundArgs.length;
-      var args = Array(length);
-      for (var i = 0; i < length; i++) {
-        args[i] = boundArgs[i] === _2 ? arguments[position++] : boundArgs[i];
-      }
-      while (position < arguments.length) {args.push(arguments[position++]);}
-      return executeBound(func, bound, this, this, args);
-    };
-    return bound;
-  };
-
-  // Bind a number of an object's methods to that object. Remaining arguments
-  // are the method names to be bound. Useful for ensuring that all callbacks
-  // defined on an object belong to it.
-  _2.bindAll = function (obj) {
-    var i,length = arguments.length,
-    key;
-    if (length <= 1) throw new Error('bindAll must be passed function names');
-    for (i = 1; i < length; i++) {
-      key = arguments[i];
-      obj[key] = _2.bind(obj[key], obj);
-    }
-    return obj;
-  };
-
-  // Memoize an expensive function by storing its results.
-  _2.memoize = function (func, hasher) {
-    var memoize = function memoize(key) {
-      var cache = memoize.cache;
-      var address = '' + (hasher ? hasher.apply(this, arguments) : key);
-      if (!_2.has(cache, address)) cache[address] = func.apply(this, arguments);
-      return cache[address];
-    };
-    memoize.cache = {};
-    return memoize;
-  };
-
-  // Delays a function for the given number of milliseconds, and then calls
-  // it with the arguments supplied.
-  _2.delay = function (func, wait) {
-    var args = slice.call(arguments, 2);
-    return setTimeout(function () {
-      return func.apply(null, args);
-    }, wait);
-  };
-
-  // Defers a function, scheduling it to run after the current call stack has
-  // cleared.
-  _2.defer = _2.partial(_2.delay, _2, 1);
-
-  // Returns a function, that, when invoked, will only be triggered at most once
-  // during a given window of time. Normally, the throttled function will run
-  // as much as it can, without ever going more than once per `wait` duration;
-  // but if you'd like to disable the execution on the leading edge, pass
-  // `{leading: false}`. To disable execution on the trailing edge, ditto.
-  _2.throttle = function (func, wait, options) {
-    var context, args, result;
-    var timeout = null;
-    var previous = 0;
-    if (!options) options = {};
-    var later = function later() {
-      previous = options.leading === false ? 0 : _2.now();
-      timeout = null;
-      result = func.apply(context, args);
-      if (!timeout) context = args = null;
-    };
-    return function () {
-      var now = _2.now();
-      if (!previous && options.leading === false) previous = now;
-      var remaining = wait - (now - previous);
-      context = this;
-      args = arguments;
-      if (remaining <= 0 || remaining > wait) {
-        if (timeout) {
-          clearTimeout(timeout);
-          timeout = null;
-        }
-        previous = now;
-        result = func.apply(context, args);
-        if (!timeout) context = args = null;
-      } else if (!timeout && options.trailing !== false) {
-        timeout = setTimeout(later, remaining);
-      }
-      return result;
-    };
-  };
-
-  // Returns a function, that, as long as it continues to be invoked, will not
-  // be triggered. The function will be called after it stops being called for
-  // N milliseconds. If `immediate` is passed, trigger the function on the
-  // leading edge, instead of the trailing.
-  _2.debounce = function (func, wait, immediate) {
-    var timeout, args, context, timestamp, result;
-
-    var later = function later() {
-      var last = _2.now() - timestamp;
-
-      if (last < wait && last >= 0) {
-        timeout = setTimeout(later, wait - last);
-      } else {
-        timeout = null;
-        if (!immediate) {
-          result = func.apply(context, args);
-          if (!timeout) context = args = null;
-        }
-      }
-    };
-
-    return function () {
-      context = this;
-      args = arguments;
-      timestamp = _2.now();
-      var callNow = immediate && !timeout;
-      if (!timeout) timeout = setTimeout(later, wait);
-      if (callNow) {
-        result = func.apply(context, args);
-        context = args = null;
-      }
-
-      return result;
-    };
-  };
-
-  // Returns the first function passed as an argument to the second,
-  // allowing you to adjust arguments, run code before and after, and
-  // conditionally execute the original function.
-  _2.wrap = function (func, wrapper) {
-    return _2.partial(wrapper, func);
-  };
-
-  // Returns a negated version of the passed-in predicate.
-  _2.negate = function (predicate) {
-    return function () {
-      return !predicate.apply(this, arguments);
-    };
-  };
-
-  // Returns a function that is the composition of a list of functions, each
-  // consuming the return value of the function that follows.
-  _2.compose = function () {
-    var args = arguments;
-    var start = args.length - 1;
-    return function () {
-      var i = start;
-      var result = args[start].apply(this, arguments);
-      while (i--) {result = args[i].call(this, result);}
-      return result;
-    };
-  };
-
-  // Returns a function that will only be executed on and after the Nth call.
-  _2.after = function (times, func) {
-    return function () {
-      if (--times < 1) {
-        return func.apply(this, arguments);
-      }
-    };
-  };
-
-  // Returns a function that will only be executed up to (but not including) the Nth call.
-  _2.before = function (times, func) {
-    var memo;
-    return function () {
-      if (--times > 0) {
-        memo = func.apply(this, arguments);
-      }
-      if (times <= 1) func = null;
-      return memo;
-    };
-  };
-
-  // Returns a function that will be executed at most one time, no matter how
-  // often you call it. Useful for lazy initialization.
-  _2.once = _2.partial(_2.before, 2);
-
-  // Object Functions
-  // ----------------
-
-  // Keys in IE < 9 that won't be iterated by `for key in ...` and thus missed.
-  var hasEnumBug = !{
-    toString: null }.
-  propertyIsEnumerable('toString');
-  var nonEnumerableProps = ['valueOf', 'isPrototypeOf', 'toString',
-  'propertyIsEnumerable', 'hasOwnProperty', 'toLocaleString'];
-
-
-  function collectNonEnumProps(obj, keys) {
-    var nonEnumIdx = nonEnumerableProps.length;
-    var constructor = obj.constructor;
-    var proto = _2.isFunction(constructor) && constructor.prototype || ObjProto;
-
-    // Constructor is a special case.
-    var prop = 'constructor';
-    if (_2.has(obj, prop) && !_2.contains(keys, prop)) keys.push(prop);
-
-    while (nonEnumIdx--) {
-      prop = nonEnumerableProps[nonEnumIdx];
-      if (prop in obj && obj[prop] !== proto[prop] && !_2.contains(keys, prop)) {
-        keys.push(prop);
-      }
-    }
-  }
-
-  // Retrieve the names of an object's own properties.
-  // Delegates to **ECMAScript 5**'s native `Object.keys`
-  _2.keys = function (obj) {
-    if (!_2.isObject(obj)) return [];
-    if (nativeKeys) return nativeKeys(obj);
-    var keys = [];
-    for (var key in obj) {
-      if (_2.has(obj, key)) keys.push(key);}
-    // Ahem, IE < 9.
-    if (hasEnumBug) collectNonEnumProps(obj, keys);
-    return keys;
-  };
-
-  // Retrieve all the property names of an object.
-  _2.allKeys = function (obj) {
-    if (!_2.isObject(obj)) return [];
-    var keys = [];
-    for (var key in obj) {keys.push(key);}
-    // Ahem, IE < 9.
-    if (hasEnumBug) collectNonEnumProps(obj, keys);
-    return keys;
-  };
-
-  // Retrieve the values of an object's properties.
-  _2.values = function (obj) {
-    var keys = _2.keys(obj);
-    var length = keys.length;
-    var values = Array(length);
-    for (var i = 0; i < length; i++) {
-      values[i] = obj[keys[i]];
-    }
-    return values;
-  };
-
-  // Returns the results of applying the iteratee to each element of the object
-  // In contrast to _.map it returns an object
-  _2.mapObject = function (obj, iteratee, context) {
-    iteratee = cb(iteratee, context);
-    var keys = _2.keys(obj),
-    length = keys.length,
-    results = {},
-    currentKey;
-    for (var index = 0; index < length; index++) {
-      currentKey = keys[index];
-      results[currentKey] = iteratee(obj[currentKey], currentKey, obj);
-    }
-    return results;
-  };
-
-  // Convert an object into a list of `[key, value]` pairs.
-  _2.pairs = function (obj) {
-    var keys = _2.keys(obj);
-    var length = keys.length;
-    var pairs = Array(length);
-    for (var i = 0; i < length; i++) {
-      pairs[i] = [keys[i], obj[keys[i]]];
-    }
-    return pairs;
-  };
-
-  // Invert the keys and values of an object. The values must be serializable.
-  _2.invert = function (obj) {
-    var result = {};
-    var keys = _2.keys(obj);
-    for (var i = 0, length = keys.length; i < length; i++) {
-      result[obj[keys[i]]] = keys[i];
-    }
-    return result;
-  };
-
-  // Return a sorted list of the function names available on the object.
-  // Aliased as `methods`
-  _2.functions = _2.methods = function (obj) {
-    var names = [];
-    for (var key in obj) {
-      if (_2.isFunction(obj[key])) names.push(key);
-    }
-    return names.sort();
-  };
-
-  // Extend a given object with all the properties in passed-in object(s).
-  _2.extend = createAssigner(_2.allKeys);
-
-  // Assigns a given object with all the own properties in the passed-in object(s)
-  // (https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
-  _2.extendOwn = _2.assign = createAssigner(_2.keys);
-
-  // Returns the first key on an object that passes a predicate test
-  _2.findKey = function (obj, predicate, context) {
-    predicate = cb(predicate, context);
-    var keys = _2.keys(obj),
-    key;
-    for (var i = 0, length = keys.length; i < length; i++) {
-      key = keys[i];
-      if (predicate(obj[key], key, obj)) return key;
-    }
-  };
-
-  // Return a copy of the object only containing the whitelisted properties.
-  _2.pick = function (object, oiteratee, context) {
-    var result = {},
-    obj = object,
-    iteratee,keys;
-    if (obj == null) return result;
-    if (_2.isFunction(oiteratee)) {
-      keys = _2.allKeys(obj);
-      iteratee = optimizeCb(oiteratee, context);
-    } else {
-      keys = flatten(arguments, false, false, 1);
-      iteratee = function iteratee(value, key, obj) {
-        return key in obj;
-      };
-      obj = Object(obj);
-    }
-    for (var i = 0, length = keys.length; i < length; i++) {
-      var key = keys[i];
-      var value = obj[key];
-      if (iteratee(value, key, obj)) result[key] = value;
-    }
-    return result;
-  };
-
-  // Return a copy of the object without the blacklisted properties.
-  _2.omit = function (obj, iteratee, context) {
-    if (_2.isFunction(iteratee)) {
-      iteratee = _2.negate(iteratee);
-    } else {
-      var keys = _2.map(flatten(arguments, false, false, 1), String);
-      iteratee = function iteratee(value, key) {
-        return !_2.contains(keys, key);
-      };
-    }
-    return _2.pick(obj, iteratee, context);
-  };
-
-  // Fill in a given object with default properties.
-  _2.defaults = createAssigner(_2.allKeys, true);
-
-  // Creates an object that inherits from the given prototype object.
-  // If additional properties are provided then they will be added to the
-  // created object.
-  _2.create = function (prototype, props) {
-    var result = baseCreate(prototype);
-    if (props) _2.extendOwn(result, props);
-    return result;
-  };
-
-  // Create a (shallow-cloned) duplicate of an object.
-  _2.clone = function (obj) {
-    if (!_2.isObject(obj)) return obj;
-    return _2.isArray(obj) ? obj.slice() : _2.extend({}, obj);
-  };
-
-  // Invokes interceptor with the obj, and then returns obj.
-  // The primary purpose of this method is to "tap into" a method chain, in
-  // order to perform operations on intermediate results within the chain.
-  _2.tap = function (obj, interceptor) {
-    interceptor(obj);
-    return obj;
-  };
-
-  // Returns whether an object has a given set of `key:value` pairs.
-  _2.isMatch = function (object, attrs) {
-    var keys = _2.keys(attrs),
-    length = keys.length;
-    if (object == null) return !length;
-    var obj = Object(object);
-    for (var i = 0; i < length; i++) {
-      var key = keys[i];
-      if (attrs[key] !== obj[key] || !(key in obj)) return false;
-    }
-    return true;
-  };
-
-
-  // Internal recursive comparison function for `isEqual`.
-  var eq = function eq(a, b, aStack, bStack) {
-    // Identical objects are equal. `0 === -0`, but they aren't identical.
-    // See the [Harmony `egal` proposal](http://wiki.ecmascript.org/doku.php?id=harmony:egal).
-    if (a === b) return a !== 0 || 1 / a === 1 / b;
-    // A strict comparison is necessary because `null == undefined`.
-    if (a == null || b == null) return a === b;
-    // Unwrap any wrapped objects.
-    if (a instanceof _2) a = a._wrapped;
-    if (b instanceof _2) b = b._wrapped;
-    // Compare `[[Class]]` names.
-    var className = toString.call(a);
-    if (className !== toString.call(b)) return false;
-    switch (className) {
-      // Strings, numbers, regular expressions, dates, and booleans are compared by value.
-      case '[object RegExp]':
-      // RegExps are coerced to strings for comparison (Note: '' + /a/i === '/a/i')
-      case '[object String]':
-        // Primitives and their corresponding object wrappers are equivalent; thus, `"5"` is
-        // equivalent to `new String("5")`.
-        return '' + a === '' + b;
-      case '[object Number]':
-        // `NaN`s are equivalent, but non-reflexive.
-        // Object(NaN) is equivalent to NaN
-        if (+a !== +a) return +b !== +b;
-        // An `egal` comparison is performed for other numeric values.
-        return +a === 0 ? 1 / +a === 1 / b : +a === +b;
-      case '[object Date]':
-      case '[object Boolean]':
-        // Coerce dates and booleans to numeric primitive values. Dates are compared by their
-        // millisecond representations. Note that invalid dates with millisecond representations
-        // of `NaN` are not equivalent.
-        return +a === +b;}
-
-
-    var areArrays = className === '[object Array]';
-    if (!areArrays) {
-      if (typeof a != 'object' || typeof b != 'object') return false;
-
-      // Objects with different constructors are not equivalent, but `Object`s or `Array`s
-      // from different frames are.
-      var aCtor = a.constructor,
-      bCtor = b.constructor;
-      if (aCtor !== bCtor && !(_2.isFunction(aCtor) && aCtor instanceof aCtor &&
-      _2.isFunction(bCtor) && bCtor instanceof bCtor) &&
-      'constructor' in a && 'constructor' in b) {
-        return false;
-      }
-    }
-    // Assume equality for cyclic structures. The algorithm for detecting cyclic
-    // structures is adapted from ES 5.1 section 15.12.3, abstract operation `JO`.
-
-    // Initializing stack of traversed objects.
-    // It's done here since we only need them for objects and arrays comparison.
-    aStack = aStack || [];
-    bStack = bStack || [];
-    var length = aStack.length;
-    while (length--) {
-      // Linear search. Performance is inversely proportional to the number of
-      // unique nested structures.
-      if (aStack[length] === a) return bStack[length] === b;
-    }
-
-    // Add the first object to the stack of traversed objects.
-    aStack.push(a);
-    bStack.push(b);
-
-    // Recursively compare objects and arrays.
-    if (areArrays) {
-      // Compare array lengths to determine if a deep comparison is necessary.
-      length = a.length;
-      if (length !== b.length) return false;
-      // Deep compare the contents, ignoring non-numeric properties.
-      while (length--) {
-        if (!eq(a[length], b[length], aStack, bStack)) return false;
-      }
-    } else {
-      // Deep compare objects.
-      var keys = _2.keys(a),
-      key;
-      length = keys.length;
-      // Ensure that both objects contain the same number of properties before comparing deep equality.
-      if (_2.keys(b).length !== length) return false;
-      while (length--) {
-        // Deep compare each member
-        key = keys[length];
-        if (!(_2.has(b, key) && eq(a[key], b[key], aStack, bStack))) return false;
-      }
-    }
-    // Remove the first object from the stack of traversed objects.
-    aStack.pop();
-    bStack.pop();
-    return true;
-  };
-
-  // Perform a deep comparison to check if two objects are equal.
-  _2.isEqual = function (a, b) {
-    return eq(a, b);
-  };
-
-  // Is a given array, string, or object empty?
-  // An "empty" object has no enumerable own-properties.
-  _2.isEmpty = function (obj) {
-    if (obj == null) return true;
-    if (isArrayLike(obj) && (_2.isArray(obj) || _2.isString(obj) || _2.isArguments(obj))) return obj.length === 0;
-    return _2.keys(obj).length === 0;
-  };
-
-  // Is a given value a DOM element?
-  _2.isElement = function (obj) {
-    return !!(obj && obj.nodeType === 1);
-  };
-
-  // Is a given value an array?
-  // Delegates to ECMA5's native Array.isArray
-  _2.isArray = nativeIsArray || function (obj) {
-    return toString.call(obj) === '[object Array]';
-  };
-
-  // Is a given variable an object?
-  _2.isObject = function (obj) {
-    var type = typeof obj;
-    return type === 'function' || type === 'object' && !!obj;
-  };
-
-  // Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp, isError.
-  _2.each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp', 'Error'], function (name) {
-    _2['is' + name] = function (obj) {
-      return toString.call(obj) === '[object ' + name + ']';
-    };
-  });
-
-  // Define a fallback version of the method in browsers (ahem, IE < 9), where
-  // there isn't any inspectable "Arguments" type.
-  if (!_2.isArguments(arguments)) {
-    _2.isArguments = function (obj) {
-      return _2.has(obj, 'callee');
-    };
-  }
-
-  // Optimize `isFunction` if appropriate. Work around some typeof bugs in old v8,
-  // IE 11 (#1621), and in Safari 8 (#1929).
-  if ( true && typeof Int8Array != 'object') {
-    _2.isFunction = function (obj) {
-      return typeof obj == 'function' || false;
-    };
-  }
-
-  // Is a given object a finite number?
-  _2.isFinite = function (obj) {
-    return isFinite(obj) && !isNaN(parseFloat(obj));
-  };
-
-  // Is the given value `NaN`? (NaN is the only number which does not equal itself).
-  _2.isNaN = function (obj) {
-    return _2.isNumber(obj) && obj !== +obj;
-  };
-
-  // Is a given value a boolean?
-  _2.isBoolean = function (obj) {
-    return obj === true || obj === false || toString.call(obj) === '[object Boolean]';
-  };
-
-  // Is a given value equal to null?
-  _2.isNull = function (obj) {
-    return obj === null;
-  };
-
-  // Is a given variable undefined?
-  _2.isUndefined = function (obj) {
-    return obj === void 0;
-  };
-
-  // Shortcut function for checking if an object has a given property directly
-  // on itself (in other words, not on a prototype).
-  _2.has = function (obj, key) {
-    return obj != null && hasOwnProperty.call(obj, key);
-  };
-
-  // Utility Functions
-  // -----------------
-
-  // Run Underscore.js in *noConflict* mode, returning the `_` variable to its
-  // previous owner. Returns a reference to the Underscore object.
-  _2.noConflict = function () {
-    root._ = previousUnderscore;
-    return this;
-  };
-
-  // Keep the identity function around for default iteratees.
-  _2.identity = function (value) {
-    return value;
-  };
-
-  // Predicate-generating functions. Often useful outside of Underscore.
-  _2.constant = function (value) {
-    return function () {
-      return value;
-    };
-  };
-
-  _2.noop = function () {};
-
-  _2.property = function (key) {
-    return function (obj) {
-      return obj == null ? void 0 : obj[key];
-    };
-  };
-
-  // Generates a function for a given object that returns a given property.
-  _2.propertyOf = function (obj) {
-    return obj == null ? function () {} : function (key) {
-      return obj[key];
-    };
-  };
-
-  // Returns a predicate for checking whether an object has a given set of 
-  // `key:value` pairs.
-  _2.matcher = _2.matches = function (attrs) {
-    attrs = _2.extendOwn({}, attrs);
-    return function (obj) {
-      return _2.isMatch(obj, attrs);
-    };
-  };
-
-  // Run a function **n** times.
-  _2.times = function (n, iteratee, context) {
-    var accum = Array(Math.max(0, n));
-    iteratee = optimizeCb(iteratee, context, 1);
-    for (var i = 0; i < n; i++) {accum[i] = iteratee(i);}
-    return accum;
-  };
-
-  // Return a random integer between min and max (inclusive).
-  _2.random = function (min, max) {
-    if (max == null) {
-      max = min;
-      min = 0;
-    }
-    return min + Math.floor(Math.random() * (max - min + 1));
-  };
-
-  // A (possibly faster) way to get the current timestamp as an integer.
-  _2.now = Date.now || function () {
-    return new Date().getTime();
-  };
-
-  // List of HTML entities for escaping.
-  var escapeMap = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#x27;',
-    '`': '&#x60;' };
-
-  var unescapeMap = _2.invert(escapeMap);
-
-  // Functions for escaping and unescaping strings to/from HTML interpolation.
-  var createEscaper = function createEscaper(map) {
-    var escaper = function escaper(match) {
-      return map[match];
-    };
-    // Regexes for identifying a key that needs to be escaped
-    var source = '(?:' + _2.keys(map).join('|') + ')';
-    var testRegexp = RegExp(source);
-    var replaceRegexp = RegExp(source, 'g');
-    return function (string) {
-      string = string == null ? '' : '' + string;
-      return testRegexp.test(string) ? string.replace(replaceRegexp, escaper) : string;
-    };
-  };
-  _2.escape = createEscaper(escapeMap);
-  _2.unescape = createEscaper(unescapeMap);
-
-  // If the value of the named `property` is a function then invoke it with the
-  // `object` as context; otherwise, return it.
-  _2.result = function (object, property, fallback) {
-    var value = object == null ? void 0 : object[property];
-    if (value === void 0) {
-      value = fallback;
-    }
-    return _2.isFunction(value) ? value.call(object) : value;
-  };
-
-  // Generate a unique integer id (unique within the entire client session).
-  // Useful for temporary DOM ids.
-  var idCounter = 0;
-  _2.uniqueId = function (prefix) {
-    var id = ++idCounter + '';
-    return prefix ? prefix + id : id;
-  };
-
-  // By default, Underscore uses ERB-style template delimiters, change the
-  // following template settings to use alternative delimiters.
-  _2.templateSettings = {
-    evaluate: /<%([\s\S]+?)%>/g,
-    interpolate: /<%=([\s\S]+?)%>/g,
-    escape: /<%-([\s\S]+?)%>/g };
-
-
-  // When customizing `templateSettings`, if you don't want to define an
-  // interpolation, evaluation or escaping regex, we need one that is
-  // guaranteed not to match.
-  var noMatch = /(.)^/;
-
-  // Certain characters need to be escaped so that they can be put into a
-  // string literal.
-  var escapes = {
-    "'": "'",
-    '\\': '\\',
-    '\r': 'r',
-    '\n': 'n',
-    "\u2028": 'u2028',
-    "\u2029": 'u2029' };
-
-
-  var escaper = /\\|'|\r|\n|\u2028|\u2029/g;
-
-  var escapeChar = function escapeChar(match) {
-    return '\\' + escapes[match];
-  };
-
-  // JavaScript micro-templating, similar to John Resig's implementation.
-  // Underscore templating handles arbitrary delimiters, preserves whitespace,
-  // and correctly escapes quotes within interpolated code.
-  // NB: `oldSettings` only exists for backwards compatibility.
-  _2.template = function (text, settings, oldSettings) {
-    if (!settings && oldSettings) settings = oldSettings;
-    settings = _2.defaults({}, settings, _2.templateSettings);
-
-    // Combine delimiters into one regular expression via alternation.
-    var matcher = RegExp([
-    (settings.escape || noMatch).source,
-    (settings.interpolate || noMatch).source,
-    (settings.evaluate || noMatch).source].
-    join('|') + '|$', 'g');
-
-    // Compile the template source, escaping string literals appropriately.
-    var index = 0;
-    var source = "__p+='";
-    text.replace(matcher, function (match, escape, interpolate, evaluate, offset) {
-      source += text.slice(index, offset).replace(escaper, escapeChar);
-      index = offset + match.length;
-
-      if (escape) {
-        source += "'+\n((__t=(" + escape + "))==null?'':_.escape(__t))+\n'";
-      } else if (interpolate) {
-        source += "'+\n((__t=(" + interpolate + "))==null?'':__t)+\n'";
-      } else if (evaluate) {
-        source += "';\n" + evaluate + "\n__p+='";
-      }
-
-      // Adobe VMs need the match returned to produce the correct offest.
-      return match;
-    });
-    source += "';\n";
-
-    // If a variable is not specified, place data values in local scope.
-    if (!settings.variable) source = 'with(obj||{}){\n' + source + '}\n';
-
-    source = "var __t,__p='',__j=Array.prototype.join," +
-    "print=function(){__p+=__j.call(arguments,'');};\n" +
-    source + 'return __p;\n';
-
-    try {
-      var render = new Function(settings.variable || 'obj', '_', source);
-    } catch (e) {
-      e.source = source;
-      throw e;
-    }
-
-    var template = function template(data) {
-      return render.call(this, data, _2);
-    };
-
-    // Provide the compiled source as a convenience for precompilation.
-    var argument = settings.variable || 'obj';
-    template.source = 'function(' + argument + '){\n' + source + '}';
-
-    return template;
-  };
-
-  // Add a "chain" function. Start chaining a wrapped Underscore object.
-  _2.chain = function (obj) {
-    var instance = _2(obj);
-    instance._chain = true;
-    return instance;
-  };
-
-  // OOP
-  // ---------------
-  // If Underscore is called as a function, it returns a wrapped object that
-  // can be used OO-style. This wrapper holds altered versions of all the
-  // underscore functions. Wrapped objects may be chained.
-
-  // Helper function to continue chaining intermediate results.
-  var result = function result(instance, obj) {
-    return instance._chain ? _2(obj).chain() : obj;
-  };
-
-  // Add your own custom functions to the Underscore object.
-  _2.mixin = function (obj) {
-    _2.each(_2.functions(obj), function (name) {
-      var func = _2[name] = obj[name];
-      _2.prototype[name] = function () {
-        var args = [this._wrapped];
-        push.apply(args, arguments);
-        return result(this, func.apply(_2, args));
-      };
-    });
-  };
-
-  // Add all of the Underscore functions to the wrapper object.
-  _2.mixin(_2);
-
-  // Add all mutator Array functions to the wrapper.
-  _2.each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function (name) {
-    var method = ArrayProto[name];
-    _2.prototype[name] = function () {
-      var obj = this._wrapped;
-      method.apply(obj, arguments);
-      if ((name === 'shift' || name === 'splice') && obj.length === 0) delete obj[0];
-      return result(this, obj);
-    };
-  });
-
-  // Add all accessor Array functions to the wrapper.
-  _2.each(['concat', 'join', 'slice'], function (name) {
-    var method = ArrayProto[name];
-    _2.prototype[name] = function () {
-      return result(this, method.apply(this._wrapped, arguments));
-    };
-  });
-
-  // Extracts the result from a wrapped and chained object.
-  _2.prototype.value = function () {
-    return this._wrapped;
-  };
-
-  // Provide unwrapping proxy for some methods used in engine operations
-  // such as arithmetic and JSON stringification.
-  _2.prototype.valueOf = _2.prototype.toJSON = _2.prototype.value;
-
-  _2.prototype.toString = function () {
-    return '' + this._wrapped;
-  };
-
-
-  // AMD registration happens at the end for compatibility with AMD loaders
-  // that may not enforce next-turn semantics on modules. Even though general
-  // practice for AMD registration is to be anonymous, underscore registers
-  // as a named module because, like jQuery, it is a base library that is
-  // popular enough to be bundled in a third party lib, but not be part of
-  // an AMD load request. Those cases could generate an error when an
-  // anonymous define() is called outside of a loader request.
-  //   if (typeof define === 'function' && define.amd) {
-  //     define('underscore', [], function() {
-  //       return _;
-  //     });
-  //   }
-
-
-
-
-}).call(void 0);var _default =
-
-
-{
-  _: _2 };exports.default = _default;
-
-/***/ }),
-/* 20 */
+/***/ 20:
 /*!**************************************!*\
   !*** ./node_modules/md5.js/index.js ***!
   \**************************************/
@@ -9938,7 +10117,25 @@ module.exports = MD5
 
 
 /***/ }),
-/* 21 */
+
+/***/ 206:
+/*!****************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fdetalis%2Fdetails"} ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _details = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/details.vue */ 207));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_details.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 21:
 /*!***************************************************!*\
   !*** ./node_modules/inherits/inherits_browser.js ***!
   \***************************************************/
@@ -9971,7 +10168,8 @@ if (typeof Object.create === 'function') {
 
 
 /***/ }),
-/* 22 */
+
+/***/ 22:
 /*!*****************************************!*\
   !*** ./node_modules/hash-base/index.js ***!
   \*****************************************/
@@ -10077,7 +10275,25 @@ module.exports = HashBase
 
 
 /***/ }),
-/* 23 */
+
+/***/ 228:
+/*!*****************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fdetalis%2Fevaluate"} ***!
+  \*****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _evaluate = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/evaluate.vue */ 229));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_evaluate.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 23:
 /*!*******************************************!*\
   !*** ./node_modules/safe-buffer/index.js ***!
   \*******************************************/
@@ -10149,7 +10365,59 @@ SafeBuffer.allocUnsafeSlow = function (size) {
 
 
 /***/ }),
-/* 24 */
+
+/***/ 236:
+/*!**********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fdetalis%2Ffacility_list"} ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _facility_list = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/facility_list.vue */ 212));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_facility_list.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 237:
+/*!***************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fdetalis%2Fpolicy"} ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _policy = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/policy.vue */ 219));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_policy.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 238:
+/*!******************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Findex%2FsortAppoint"} ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _sortAppoint = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortAppoint.vue */ 239));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_sortAppoint.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 24:
 /*!**************************************!*\
   !*** ./node_modules/buffer/index.js ***!
   \**************************************/
@@ -11950,7 +12218,25 @@ function isnan (val) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 25 */
+
+/***/ 246:
+/*!****************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Findex%2FsortPrice"} ***!
+  \****************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _sortPrice = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortPrice.vue */ 247));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_sortPrice.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 25:
 /*!*****************************************!*\
   !*** ./node_modules/base64-js/index.js ***!
   \*****************************************/
@@ -12112,7 +12398,25 @@ function fromByteArray (uint8) {
 
 
 /***/ }),
-/* 26 */
+
+/***/ 254:
+/*!*********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Findex%2Fcourtyard_list"} ***!
+  \*********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _courtyard_list = _interopRequireDefault(__webpack_require__(/*! ./pages/index/courtyard_list.vue */ 255));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_courtyard_list.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 26:
 /*!***************************************!*\
   !*** ./node_modules/ieee754/index.js ***!
   \***************************************/
@@ -12206,7 +12510,25 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 27 */
+
+/***/ 262:
+/*!***************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Findex%2FsortSite"} ***!
+  \***************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _sortSite = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortSite.vue */ 263));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_sortSite.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 27:
 /*!***************************************!*\
   !*** ./node_modules/isarray/index.js ***!
   \***************************************/
@@ -12221,7 +12543,42 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 28 */
+
+/***/ 270:
+/*!*************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Findex%2FsortAi"} ***!
+  \*************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _sortAi = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortAi.vue */ 271));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_sortAi.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 278:
+/*!**************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
+  \**************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _search = _interopRequireDefault(__webpack_require__(/*! ./pages/search/search.vue */ 279));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_search.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 28:
 /*!*************************************************!*\
   !*** ./node_modules/stream-browserify/index.js ***!
   \*************************************************/
@@ -12358,7 +12715,25 @@ Stream.prototype.pipe = function(dest, options) {
 
 
 /***/ }),
-/* 29 */
+
+/***/ 286:
+/*!******************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fcalendar%2Fcalendar"} ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _calendar = _interopRequireDefault(__webpack_require__(/*! ./pages/calendar/calendar.vue */ 287));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_calendar.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 29:
 /*!***************************************!*\
   !*** ./node_modules/events/events.js ***!
   \***************************************/
@@ -12817,7 +13192,56 @@ function unwrapListeners(arr) {
 
 
 /***/ }),
-/* 30 */
+
+/***/ 294:
+/*!**********************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fcity%2Fcity"} ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
+var _city = _interopRequireDefault(__webpack_require__(/*! ./pages/city/city.vue */ 295));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+createPage(_city.default);
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
+
+/***/ }),
+
+/***/ 3:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 30:
 /*!**********************************************************!*\
   !*** ./node_modules/readable-stream/readable-browser.js ***!
   \**********************************************************/
@@ -12834,7 +13258,54 @@ exports.PassThrough = __webpack_require__(/*! ./lib/_stream_passthrough.js */ 46
 
 
 /***/ }),
-/* 31 */
+
+/***/ 300:
+/*!********************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/util/city.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+var cityObj = [{ "id": "35", "provincecode": "150000", "city": "\u963F\u62C9\u5584\u76DF", "code": "152900", "initial": "A" }, { "id": "38", "provincecode": "210000", "city": "\u978D\u5C71\u5E02", "code": "210300", "initial": "A" }, { "id": "105", "provincecode": "340000", "city": "\u5B89\u5E86\u5E02", "code": "340800", "initial": "A" }, { "id": "156", "provincecode": "410000", "city": "\u5B89\u9633\u5E02", "code": "410500", "initial": "A" }, { "id": "256", "provincecode": "510000", "city": "\u963F\u575D\u85CF\u65CF\u7F8C\u65CF\u81EA\u6CBB\u5DDE", "code": "513200", "initial": "A" }, { "id": "262", "provincecode": "520000", "city": "\u5B89\u987A\u5E02", "code": "520400", "initial": "A" }, { "id": "289", "provincecode": "540000", "city": "\u963F\u91CC\u5730\u533A", "code": "542500", "initial": "A" }, { "id": "299", "provincecode": "610000", "city": "\u5B89\u5EB7\u5E02", "code": "610900", "initial": "A" }, { "id": "335", "provincecode": "650000", "city": "\u963F\u514B\u82CF\u5730\u533A", "code": "652900", "initial": "A" }, { "id": "341", "provincecode": "650000", "city": "\u963F\u52D2\u6CF0\u5730\u533A", "code": "654300", "initial": "A" }, { "id": "1", "provincecode": "110000", "city": "\u5317\u4EAC\u5E02", "code": "110100", "initial": "B" }, { "id": "7", "provincecode": "130000", "city": "\u4FDD\u5B9A\u5E02", "code": "130600", "initial": "B" }, { "id": "25", "provincecode": "150000", "city": "\u5305\u5934\u5E02", "code": "150200", "initial": "B" }, { "id": "31", "provincecode": "150000", "city": "\u5DF4\u5F66\u6DD6\u5C14\u5E02", "code": "150800", "initial": "B" }, { "id": "40", "provincecode": "210000", "city": "\u672C\u6EAA\u5E02", "code": "210500", "initial": "B" }, { "id": "55", "provincecode": "220000", "city": "\u767D\u5C71\u5E02", "code": "220600", "initial": "B" }, { "id": "57", "provincecode": "220000", "city": "\u767D\u57CE\u5E02", "code": "220800", "initial": "B" }, { "id": "100", "provincecode": "340000", "city": "\u868C\u57E0\u5E02", "code": "340300", "initial": "B" }, { "id": "150", "provincecode": "370000", "city": "\u6EE8\u5DDE\u5E02", "code": "371600", "initial": "B" }, { "id": "222", "provincecode": "450000", "city": "\u5317\u6D77\u5E02", "code": "450500", "initial": "B" }, { "id": "227", "provincecode": "450000", "city": "\u767E\u8272\u5E02", "code": "451000", "initial": "B" }, { "id": "254", "provincecode": "510000", "city": "\u5DF4\u4E2D\u5E02", "code": "511900", "initial": "B" }, { "id": "265", "provincecode": "520000", "city": "\u6BD5\u8282\u5730\u533A", "code": "522400", "initial": "B" }, { "id": "271", "provincecode": "530000", "city": "\u4FDD\u5C71\u5E02", "code": "530500", "initial": "B" }, { "id": "293", "provincecode": "610000", "city": "\u5B9D\u9E21\u5E02", "code": "610300", "initial": "B" }, { "id": "304", "provincecode": "620000", "city": "\u767D\u94F6\u5E02", "code": "620400", "initial": "B" }, { "id": "333", "provincecode": "650000", "city": "\u535A\u5C14\u5854\u62C9\u8499\u53E4\u81EA\u6CBB\u5DDE", "code": "652700", "initial": "B" }, { "id": "334", "provincecode": "650000", "city": "\u5DF4\u97F3\u90ED\u695E\u8499\u53E4\u81EA\u6CBB\u5DDE", "code": "652800", "initial": "B" }, { "id": "", "provincecode": "500000", "city": "\u91CD\u5E86\u5E02", "code": "500000", "initial": "C" }, { "id": "9", "provincecode": "130000", "city": "\u627F\u5FB7\u5E02", "code": "130800", "initial": "C" }, { "id": "10", "provincecode": "130000", "city": "\u6CA7\u5DDE\u5E02", "code": "130900", "initial": "C" }, { "id": "16", "provincecode": "140000", "city": "\u957F\u6CBB\u5E02", "code": "140400", "initial": "C" }, { "id": "27", "provincecode": "150000", "city": "\u8D64\u5CF0\u5E02", "code": "150400", "initial": "C" }, { "id": "48", "provincecode": "210000", "city": "\u671D\u9633\u5E02", "code": "211300", "initial": "C" }, { "id": "50", "provincecode": "220000", "city": "\u957F\u6625\u5E02", "code": "220100", "initial": "C" }, { "id": "77", "provincecode": "320000", "city": "\u5E38\u5DDE\u5E02", "code": "320400", "initial": "C" }, { "id": "107", "provincecode": "340000", "city": "\u6EC1\u5DDE\u5E02", "code": "341100", "initial": "C" }, { "id": "110", "provincecode": "340000", "city": "\u5DE2\u6E56\u5E02", "code": "341400", "initial": "C" }, { "id": "113", "provincecode": "340000", "city": "\u6C60\u5DDE\u5E02", "code": "341700", "initial": "C" }, { "id": "183", "provincecode": "430000", "city": "\u957F\u6C99\u5E02", "code": "430100", "initial": "C" }, { "id": "189", "provincecode": "430000", "city": "\u5E38\u5FB7\u5E02", "code": "430700", "initial": "C" }, { "id": "192", "provincecode": "430000", "city": "\u90F4\u5DDE\u5E02", "code": "431000", "initial": "C" }, { "id": "215", "provincecode": "440000", "city": "\u6F6E\u5DDE\u5E02", "code": "445100", "initial": "C" }, { "id": "231", "provincecode": "450000", "city": "\u5D07\u5DE6\u5E02", "code": "451400", "initial": "C" }, { "id": "238", "provincecode": "510000", "city": "\u6210\u90FD\u5E02", "code": "510100", "initial": "C" }, { "id": "276", "provincecode": "530000", "city": "\u695A\u96C4\u5F5D\u65CF\u81EA\u6CBB\u5DDE", "code": "532300", "initial": "C" }, { "id": "285", "provincecode": "540000", "city": "\u660C\u90FD\u5730\u533A", "code": "542100", "initial": "C" }, { "id": "332", "provincecode": "650000", "city": "\u660C\u5409\u56DE\u65CF\u81EA\u6CBB\u5DDE", "code": "652300", "initial": "C" }, { "id": "14", "provincecode": "140000", "city": "\u5927\u540C\u5E02", "code": "140200", "initial": "D" }, { "id": "37", "provincecode": "210000", "city": "\u5927\u8FDE\u5E02", "code": "210200", "initial": "D" }, { "id": "41", "provincecode": "210000", "city": "\u4E39\u4E1C\u5E02", "code": "210600", "initial": "D" }, { "id": "64", "provincecode": "230000", "city": "\u5927\u5E86\u5E02", "code": "230600", "initial": "D" }, { "id": "71", "provincecode": "230000", "city": "\u5927\u5174\u5B89\u5CAD\u5730\u533A", "code": "232700", "initial": "D" }, { "id": "139", "provincecode": "370000", "city": "\u4E1C\u8425\u5E02", "code": "370500", "initial": "D" }, { "id": "148", "provincecode": "370000", "city": "\u5FB7\u5DDE\u5E02", "code": "371400", "initial": "D" }, { "id": "213", "provincecode": "440000", "city": "\u4E1C\u839E\u5E02", "code": "441900", "initial": "D" }, { "id": "242", "provincecode": "510000", "city": "\u5FB7\u9633\u5E02", "code": "510600", "initial": "D" }, { "id": "252", "provincecode": "510000", "city": "\u8FBE\u5DDE\u5E02", "code": "511700", "initial": "D" }, { "id": "280", "provincecode": "530000", "city": "\u5927\u7406\u767D\u65CF\u81EA\u6CBB\u5DDE", "code": "532900", "initial": "D" }, { "id": "281", "provincecode": "530000", "city": "\u5FB7\u5B8F\u50A3\u65CF\u666F\u9887\u65CF\u81EA\u6CBB\u5DDE", "code": "533100", "initial": "D" }, { "id": "283", "provincecode": "530000", "city": "\u8FEA\u5E86\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "533400", "initial": "D" }, { "id": "311", "provincecode": "620000", "city": "\u5B9A\u897F\u5E02", "code": "621100", "initial": "D" }, { "id": "29", "provincecode": "150000", "city": "\u9102\u5C14\u591A\u65AF\u5E02", "code": "150600", "initial": "E" }, { "id": "174", "provincecode": "420000", "city": "\u9102\u5DDE\u5E02", "code": "420700", "initial": "E" }, { "id": "181", "provincecode": "420000", "city": "\u6069\u65BD\u571F\u5BB6\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "422800", "initial": "E" }, { "id": "39", "provincecode": "210000", "city": "\u629A\u987A\u5E02", "code": "210400", "initial": "F" }, { "id": "44", "provincecode": "210000", "city": "\u961C\u65B0\u5E02", "code": "210900", "initial": "F" }, { "id": "108", "provincecode": "340000", "city": "\u961C\u9633\u5E02", "code": "341200", "initial": "F" }, { "id": "115", "provincecode": "350000", "city": "\u798F\u5DDE\u5E02", "code": "350100", "initial": "F" }, { "id": "133", "provincecode": "360000", "city": "\u629A\u5DDE\u5E02", "code": "361000", "initial": "F" }, { "id": "202", "provincecode": "440000", "city": "\u4F5B\u5C71\u5E02", "code": "440600", "initial": "F" }, { "id": "223", "provincecode": "450000", "city": "\u9632\u57CE\u6E2F\u5E02", "code": "450600", "initial": "F" }, { "id": "130", "provincecode": "360000", "city": "\u8D63\u5DDE\u5E02", "code": "360700", "initial": "G" }, { "id": "197", "provincecode": "440000", "city": "\u5E7F\u5DDE\u5E02", "code": "440100", "initial": "G" }, { "id": "220", "provincecode": "450000", "city": "\u6842\u6797\u5E02", "code": "450300", "initial": "G" }, { "id": "225", "provincecode": "450000", "city": "\u8D35\u6E2F\u5E02", "code": "450800", "initial": "G" }, { "id": "244", "provincecode": "510000", "city": "\u5E7F\u5143\u5E02", "code": "510800", "initial": "G" }, { "id": "251", "provincecode": "510000", "city": "\u5E7F\u5B89\u5E02", "code": "511600", "initial": "G" }, { "id": "257", "provincecode": "510000", "city": "\u7518\u5B5C\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "513300", "initial": "G" }, { "id": "259", "provincecode": "520000", "city": "\u8D35\u9633\u5E02", "code": "520100", "initial": "G" }, { "id": "314", "provincecode": "620000", "city": "\u7518\u5357\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "623000", "initial": "G" }, { "id": "320", "provincecode": "630000", "city": "\u679C\u6D1B\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632600", "initial": "G" }, { "id": "326", "provincecode": "640000", "city": "\u56FA\u539F\u5E02", "code": "640400", "initial": "G" }, { "id": "5", "provincecode": "130000", "city": "\u90AF\u90F8\u5E02", "code": "130400", "initial": "H" }, { "id": "12", "provincecode": "130000", "city": "\u8861\u6C34\u5E02", "code": "131100", "initial": "H" }, { "id": "24", "provincecode": "150000", "city": "\u547C\u548C\u6D69\u7279\u5E02", "code": "150100", "initial": "H" }, { "id": "30", "provincecode": "150000", "city": "\u547C\u4F26\u8D1D\u5C14\u5E02", "code": "150700", "initial": "H" }, { "id": "49", "provincecode": "210000", "city": "\u846B\u82A6\u5C9B\u5E02", "code": "211400", "initial": "H" }, { "id": "59", "provincecode": "230000", "city": "\u54C8\u5C14\u6EE8\u5E02", "code": "230100", "initial": "H" }, { "id": "62", "provincecode": "230000", "city": "\u9E64\u5C97\u5E02", "code": "230400", "initial": "H" }, { "id": "69", "provincecode": "230000", "city": "\u9ED1\u6CB3\u5E02", "code": "231100", "initial": "H" }, { "id": "81", "provincecode": "320000", "city": "\u6DEE\u5B89\u5E02", "code": "320800", "initial": "H" }, { "id": "87", "provincecode": "330000", "city": "\u676D\u5DDE\u5E02", "code": "330100", "initial": "H" }, { "id": "91", "provincecode": "330000", "city": "\u6E56\u5DDE\u5E02", "code": "330500", "initial": "H" }, { "id": "98", "provincecode": "340000", "city": "\u5408\u80A5\u5E02", "code": "340100", "initial": "H" }, { "id": "101", "provincecode": "340000", "city": "\u6DEE\u5357\u5E02", "code": "340400", "initial": "H" }, { "id": "103", "provincecode": "340000", "city": "\u6DEE\u5317\u5E02", "code": "340600", "initial": "H" }, { "id": "106", "provincecode": "340000", "city": "\u9EC4\u5C71\u5E02", "code": "341000", "initial": "H" }, { "id": "112", "provincecode": "340000", "city": "\u4EB3\u5DDE\u5E02", "code": "341600", "initial": "H" }, { "id": "151", "provincecode": "370000", "city": "\u8377\u6CFD\u5E02", "code": "371700", "initial": "H" }, { "id": "157", "provincecode": "410000", "city": "\u9E64\u58C1\u5E02", "code": "410600", "initial": "H" }, { "id": "170", "provincecode": "420000", "city": "\u9EC4\u77F3\u5E02", "code": "420200", "initial": "H" }, { "id": "178", "provincecode": "420000", "city": "\u9EC4\u5188\u5E02", "code": "421100", "initial": "H" }, { "id": "186", "provincecode": "430000", "city": "\u8861\u9633\u5E02", "code": "430400", "initial": "H" }, { "id": "194", "provincecode": "430000", "city": "\u6000\u5316\u5E02", "code": "431200", "initial": "H" }, { "id": "207", "provincecode": "440000", "city": "\u60E0\u5DDE\u5E02", "code": "441300", "initial": "H" }, { "id": "210", "provincecode": "440000", "city": "\u6CB3\u6E90\u5E02", "code": "441600", "initial": "H" }, { "id": "228", "provincecode": "450000", "city": "\u8D3A\u5DDE\u5E02", "code": "451100", "initial": "H" }, { "id": "229", "provincecode": "450000", "city": "\u6CB3\u6C60\u5E02", "code": "451200", "initial": "H" }, { "id": "232", "provincecode": "460000", "city": "\u6D77\u53E3\u5E02", "code": "460100", "initial": "H" }, { "id": "277", "provincecode": "530000", "city": "\u7EA2\u6CB3\u54C8\u5C3C\u65CF\u5F5D\u65CF\u81EA\u6CBB\u5DDE", "code": "532500", "initial": "H" }, { "id": "297", "provincecode": "610000", "city": "\u6C49\u4E2D\u5E02", "code": "610700", "initial": "H" }, { "id": "316", "provincecode": "630000", "city": "\u6D77\u4E1C\u5730\u533A", "code": "632100", "initial": "H" }, { "id": "317", "provincecode": "630000", "city": "\u6D77\u5317\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632200", "initial": "H" }, { "id": "318", "provincecode": "630000", "city": "\u9EC4\u5357\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632300", "initial": "H" }, { "id": "319", "provincecode": "630000", "city": "\u6D77\u5357\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632500", "initial": "H" }, { "id": "322", "provincecode": "630000", "city": "\u6D77\u897F\u8499\u53E4\u65CF\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632800", "initial": "H" }, { "id": "331", "provincecode": "650000", "city": "\u54C8\u5BC6\u5730\u533A", "code": "652200", "initial": "H" }, { "id": "338", "provincecode": "650000", "city": "\u548C\u7530\u5730\u533A", "code": "653200", "initial": "H" }, { "id": "17", "provincecode": "140000", "city": "\u664B\u57CE\u5E02", "code": "140500", "initial": "J" }, { "id": "19", "provincecode": "140000", "city": "\u664B\u4E2D\u5E02", "code": "140700", "initial": "J" }, { "id": "42", "provincecode": "210000", "city": "\u9526\u5DDE\u5E02", "code": "210700", "initial": "J" }, { "id": "51", "provincecode": "220000", "city": "\u5409\u6797\u5E02", "code": "220200", "initial": "J" }, { "id": "61", "provincecode": "230000", "city": "\u9E21\u897F\u5E02", "code": "230300", "initial": "J" }, { "id": "66", "provincecode": "230000", "city": "\u4F73\u6728\u65AF\u5E02", "code": "230800", "initial": "J" }, { "id": "90", "provincecode": "330000", "city": "\u5609\u5174\u5E02", "code": "330400", "initial": "J" }, { "id": "93", "provincecode": "330000", "city": "\u91D1\u534E\u5E02", "code": "330700", "initial": "J" }, { "id": "125", "provincecode": "360000", "city": "\u666F\u5FB7\u9547\u5E02", "code": "360200", "initial": "J" }, { "id": "127", "provincecode": "360000", "city": "\u4E5D\u6C5F\u5E02", "code": "360400", "initial": "J" }, { "id": "131", "provincecode": "360000", "city": "\u5409\u5B89\u5E02", "code": "360800", "initial": "J" }, { "id": "135", "provincecode": "370000", "city": "\u6D4E\u5357\u5E02", "code": "370100", "initial": "J" }, { "id": "142", "provincecode": "370000", "city": "\u6D4E\u5B81\u5E02", "code": "370800", "initial": "J" }, { "id": "159", "provincecode": "410000", "city": "\u7126\u4F5C\u5E02", "code": "410800", "initial": "J" }, { "id": "175", "provincecode": "420000", "city": "\u8346\u95E8\u5E02", "code": "420800", "initial": "J" }, { "id": "177", "provincecode": "420000", "city": "\u8346\u5DDE\u5E02", "code": "421000", "initial": "J" }, { "id": "203", "provincecode": "440000", "city": "\u6C5F\u95E8\u5E02", "code": "440700", "initial": "J" }, { "id": "216", "provincecode": "440000", "city": "\u63ED\u9633\u5E02", "code": "445200", "initial": "J" }, { "id": "302", "provincecode": "620000", "city": "\u5609\u5CEA\u5173\u5E02", "code": "620200", "initial": "J" }, { "id": "303", "provincecode": "620000", "city": "\u91D1\u660C\u5E02", "code": "620300", "initial": "J" }, { "id": "309", "provincecode": "620000", "city": "\u9152\u6CC9\u5E02", "code": "620900", "initial": "J" }, { "id": "153", "provincecode": "410000", "city": "\u5F00\u5C01\u5E02", "code": "410200", "initial": "K" }, { "id": "268", "provincecode": "530000", "city": "\u6606\u660E\u5E02", "code": "530100", "initial": "K" }, { "id": "329", "provincecode": "650000", "city": "\u514B\u62C9\u739B\u4F9D\u5E02", "code": "650200", "initial": "K" }, { "id": "336", "provincecode": "650000", "city": "\u514B\u5B5C\u52D2\u82CF\u67EF\u5C14\u514B\u5B5C\u81EA\u6CBB\u5DDE", "code": "653000", "initial": "K" }, { "id": "337", "provincecode": "650000", "city": "\u5580\u4EC0\u5730\u533A", "code": "653100", "initial": "K" }, { "id": "11", "provincecode": "130000", "city": "\u5ECA\u574A\u5E02", "code": "131000", "initial": "L" }, { "id": "22", "provincecode": "140000", "city": "\u4E34\u6C7E\u5E02", "code": "141000", "initial": "L" }, { "id": "23", "provincecode": "140000", "city": "\u5415\u6881\u5E02", "code": "141100", "initial": "L" }, { "id": "45", "provincecode": "210000", "city": "\u8FBD\u9633\u5E02", "code": "211000", "initial": "L" }, { "id": "53", "provincecode": "220000", "city": "\u8FBD\u6E90\u5E02", "code": "220400", "initial": "L" }, { "id": "80", "provincecode": "320000", "city": "\u8FDE\u4E91\u6E2F\u5E02", "code": "320700", "initial": "L" }, { "id": "97", "provincecode": "330000", "city": "\u4E3D\u6C34\u5E02", "code": "331100", "initial": "L" }, { "id": "111", "provincecode": "340000", "city": "\u516D\u5B89\u5E02", "code": "341500", "initial": "L" }, { "id": "122", "provincecode": "350000", "city": "\u9F99\u5CA9\u5E02", "code": "350800", "initial": "L" }, { "id": "146", "provincecode": "370000", "city": "\u83B1\u829C\u5E02", "code": "371200", "initial": "L" }, { "id": "147", "provincecode": "370000", "city": "\u4E34\u6C82\u5E02", "code": "371300", "initial": "L" }, { "id": "149", "provincecode": "370000", "city": "\u804A\u57CE\u5E02", "code": "371500", "initial": "L" }, { "id": "154", "provincecode": "410000", "city": "\u6D1B\u9633\u5E02", "code": "410300", "initial": "L" }, { "id": "162", "provincecode": "410000", "city": "\u6F2F\u6CB3\u5E02", "code": "411100", "initial": "L" }, { "id": "195", "provincecode": "430000", "city": "\u5A04\u5E95\u5E02", "code": "431300", "initial": "L" }, { "id": "219", "provincecode": "450000", "city": "\u67F3\u5DDE\u5E02", "code": "450200", "initial": "L" }, { "id": "230", "provincecode": "450000", "city": "\u6765\u5BBE\u5E02", "code": "451300", "initial": "L" }, { "id": "241", "provincecode": "510000", "city": "\u6CF8\u5DDE\u5E02", "code": "510500", "initial": "L" }, { "id": "247", "provincecode": "510000", "city": "\u4E50\u5C71\u5E02", "code": "511100", "initial": "L" }, { "id": "258", "provincecode": "510000", "city": "\u51C9\u5C71\u5F5D\u65CF\u81EA\u6CBB\u5DDE", "code": "513400", "initial": "L" }, { "id": "260", "provincecode": "520000", "city": "\u516D\u76D8\u6C34\u5E02", "code": "520200", "initial": "L" }, { "id": "273", "provincecode": "530000", "city": "\u4E3D\u6C5F\u5E02", "code": "530700", "initial": "L" }, { "id": "275", "provincecode": "530000", "city": "\u4E34\u6CA7\u5E02", "code": "530900", "initial": "L" }, { "id": "284", "provincecode": "540000", "city": "\u62C9\u8428\u5E02", "code": "540100", "initial": "L" }, { "id": "290", "provincecode": "540000", "city": "\u6797\u829D\u5730\u533A", "code": "542600", "initial": "L" }, { "id": "301", "provincecode": "620000", "city": "\u5170\u5DDE\u5E02", "code": "620100", "initial": "L" }, { "id": "312", "provincecode": "620000", "city": "\u9647\u5357\u5E02", "code": "621200", "initial": "L" }, { "id": "313", "provincecode": "620000", "city": "\u4E34\u590F\u56DE\u65CF\u81EA\u6CBB\u5DDE", "code": "622900", "initial": "L" }, { "id": "68", "provincecode": "230000", "city": "\u7261\u4E39\u6C5F\u5E02", "code": "231000", "initial": "M" }, { "id": "102", "provincecode": "340000", "city": "\u9A6C\u978D\u5C71\u5E02", "code": "340500", "initial": "M" }, { "id": "205", "provincecode": "440000", "city": "\u8302\u540D\u5E02", "code": "440900", "initial": "M" }, { "id": "208", "provincecode": "440000", "city": "\u6885\u5DDE\u5E02", "code": "441400", "initial": "M" }, { "id": "243", "provincecode": "510000", "city": "\u7EF5\u9633\u5E02", "code": "510700", "initial": "M" }, { "id": "249", "provincecode": "510000", "city": "\u7709\u5C71\u5E02", "code": "511400", "initial": "M" }, { "id": "74", "provincecode": "320000", "city": "\u5357\u4EAC\u5E02", "code": "320100", "initial": "N" }, { "id": "79", "provincecode": "320000", "city": "\u5357\u901A\u5E02", "code": "320600", "initial": "N" }, { "id": "88", "provincecode": "330000", "city": "\u5B81\u6CE2\u5E02", "code": "330200", "initial": "N" }, { "id": "121", "provincecode": "350000", "city": "\u5357\u5E73\u5E02", "code": "350700", "initial": "N" }, { "id": "123", "provincecode": "350000", "city": "\u5B81\u5FB7\u5E02", "code": "350900", "initial": "N" }, { "id": "124", "provincecode": "360000", "city": "\u5357\u660C\u5E02", "code": "360100", "initial": "N" }, { "id": "164", "provincecode": "410000", "city": "\u5357\u9633\u5E02", "code": "411300", "initial": "N" }, { "id": "218", "provincecode": "450000", "city": "\u5357\u5B81\u5E02", "code": "450100", "initial": "N" }, { "id": "246", "provincecode": "510000", "city": "\u5185\u6C5F\u5E02", "code": "511000", "initial": "N" }, { "id": "248", "provincecode": "510000", "city": "\u5357\u5145\u5E02", "code": "511300", "initial": "N" }, { "id": "282", "provincecode": "530000", "city": "\u6012\u6C5F\u5088\u50F3\u65CF\u81EA\u6CBB\u5DDE", "code": "533300", "initial": "N" }, { "id": "288", "provincecode": "540000", "city": "\u90A3\u66F2\u5730\u533A", "code": "542400", "initial": "N" }, { "id": "46", "provincecode": "210000", "city": "\u76D8\u9526\u5E02", "code": "211100", "initial": "P" }, { "id": "117", "provincecode": "350000", "city": "\u8386\u7530\u5E02", "code": "350300", "initial": "P" }, { "id": "126", "provincecode": "360000", "city": "\u840D\u4E61\u5E02", "code": "360300", "initial": "P" }, { "id": "155", "provincecode": "410000", "city": "\u5E73\u9876\u5C71\u5E02", "code": "410400", "initial": "P" }, { "id": "160", "provincecode": "410000", "city": "\u6FEE\u9633\u5E02", "code": "410900", "initial": "P" }, { "id": "240", "provincecode": "510000", "city": "\u6500\u679D\u82B1\u5E02", "code": "510400", "initial": "P" }, { "id": "308", "provincecode": "620000", "city": "\u5E73\u51C9\u5E02", "code": "620800", "initial": "P" }, { "id": "4", "provincecode": "130000", "city": "\u79E6\u7687\u5C9B\u5E02", "code": "130300", "initial": "Q" }, { "id": "60", "provincecode": "230000", "city": "\u9F50\u9F50\u54C8\u5C14\u5E02", "code": "230200", "initial": "Q" }, { "id": "67", "provincecode": "230000", "city": "\u4E03\u53F0\u6CB3\u5E02", "code": "230900", "initial": "Q" }, { "id": "94", "provincecode": "330000", "city": "\u8862\u5DDE\u5E02", "code": "330800", "initial": "Q" }, { "id": "119", "provincecode": "350000", "city": "\u6CC9\u5DDE\u5E02", "code": "350500", "initial": "Q" }, { "id": "136", "provincecode": "370000", "city": "\u9752\u5C9B\u5E02", "code": "370200", "initial": "Q" }, { "id": "212", "provincecode": "440000", "city": "\u6E05\u8FDC\u5E02", "code": "441800", "initial": "Q" }, { "id": "224", "provincecode": "450000", "city": "\u94A6\u5DDE\u5E02", "code": "450700", "initial": "Q" }, { "id": "264", "provincecode": "520000", "city": "\u9ED4\u897F\u5357\u5E03\u4F9D\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "522300", "initial": "Q" }, { "id": "266", "provincecode": "520000", "city": "\u9ED4\u4E1C\u5357\u82D7\u65CF\u4F97\u65CF\u81EA\u6CBB\u5DDE", "code": "522600", "initial": "Q" }, { "id": "267", "provincecode": "520000", "city": "\u9ED4\u5357\u5E03\u4F9D\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "522700", "initial": "Q" }, { "id": "269", "provincecode": "530000", "city": "\u66F2\u9756\u5E02", "code": "530300", "initial": "Q" }, { "id": "310", "provincecode": "620000", "city": "\u5E86\u9633\u5E02", "code": "621000", "initial": "Q" }, { "id": "145", "provincecode": "370000", "city": "\u65E5\u7167\u5E02", "code": "371100", "initial": "R" }, { "id": "287", "provincecode": "540000", "city": "\u65E5\u5580\u5219\u5730\u533A", "code": "542300", "initial": "R" }, { "id": "2", "provincecode": "130000", "city": "\u77F3\u5BB6\u5E84\u5E02", "code": "130100", "initial": "S" }, { "id": "", "provincecode": "310000", "city": "\u4E0A\u6D77\u5E02", "code": "310100", "initial": "S" }, { "id": "18", "provincecode": "140000", "city": "\u6714\u5DDE\u5E02", "code": "140600", "initial": "S" }, { "id": "36", "provincecode": "210000", "city": "\u6C88\u9633\u5E02", "code": "210100", "initial": "S" }, { "id": "52", "provincecode": "220000", "city": "\u56DB\u5E73\u5E02", "code": "220300", "initial": "S" }, { "id": "56", "provincecode": "220000", "city": "\u677E\u539F\u5E02", "code": "220700", "initial": "S" }, { "id": "63", "provincecode": "230000", "city": "\u53CC\u9E2D\u5C71\u5E02", "code": "230500", "initial": "S" }, { "id": "70", "provincecode": "230000", "city": "\u7EE5\u5316\u5E02", "code": "231200", "initial": "S" }, { "id": "78", "provincecode": "320000", "city": "\u82CF\u5DDE\u5E02", "code": "320500", "initial": "S" }, { "id": "86", "provincecode": "320000", "city": "\u5BBF\u8FC1\u5E02", "code": "321300", "initial": "S" }, { "id": "92", "provincecode": "330000", "city": "\u7ECD\u5174\u5E02", "code": "330600", "initial": "S" }, { "id": "109", "provincecode": "340000", "city": "\u5BBF\u5DDE\u5E02", "code": "341300", "initial": "S" }, { "id": "118", "provincecode": "350000", "city": "\u4E09\u660E\u5E02", "code": "350400", "initial": "S" }, { "id": "134", "provincecode": "360000", "city": "\u4E0A\u9976\u5E02", "code": "361100", "initial": "S" }, { "id": "163", "provincecode": "410000", "city": "\u4E09\u95E8\u5CE1\u5E02", "code": "411200", "initial": "S" }, { "id": "165", "provincecode": "410000", "city": "\u5546\u4E18\u5E02", "code": "411400", "initial": "S" }, { "id": "171", "provincecode": "420000", "city": "\u5341\u5830\u5E02", "code": "420300", "initial": "S" }, { "id": "180", "provincecode": "420000", "city": "\u968F\u5DDE\u5E02", "code": "421300", "initial": "S" }, { "id": "187", "provincecode": "430000", "city": "\u90B5\u9633\u5E02", "code": "430500", "initial": "S" }, { "id": "198", "provincecode": "440000", "city": "\u97F6\u5173\u5E02", "code": "440200", "initial": "S" }, { "id": "199", "provincecode": "440000", "city": "\u6DF1\u5733\u5E02", "code": "440300", "initial": "S" }, { "id": "201", "provincecode": "440000", "city": "\u6C55\u5934\u5E02", "code": "440500", "initial": "S" }, { "id": "209", "provincecode": "440000", "city": "\u6C55\u5C3E\u5E02", "code": "441500", "initial": "S" }, { "id": "233", "provincecode": "460000", "city": "\u4E09\u4E9A\u5E02", "code": "460200", "initial": "S" }, { "id": "245", "provincecode": "510000", "city": "\u9042\u5B81\u5E02", "code": "510900", "initial": "S" }, { "id": "274", "provincecode": "530000", "city": "\u601D\u8305\u5E02", "code": "530800", "initial": "S" }, { "id": "286", "provincecode": "540000", "city": "\u5C71\u5357\u5730\u533A", "code": "542200", "initial": "S" }, { "id": "300", "provincecode": "610000", "city": "\u5546\u6D1B\u5E02", "code": "611000", "initial": "S" }, { "id": "324", "provincecode": "640000", "city": "\u77F3\u5634\u5C71\u5E02", "code": "640200", "initial": "S" }, { "id": "3", "provincecode": "130000", "city": "\u5510\u5C71\u5E02", "code": "130200", "initial": "T" }, { "id": "13", "provincecode": "140000", "city": "\u592A\u539F\u5E02", "code": "140100", "initial": "T" }, { "id": "28", "provincecode": "150000", "city": "\u901A\u8FBD\u5E02", "code": "150500", "initial": "T" }, { "id": "47", "provincecode": "210000", "city": "\u94C1\u5CAD\u5E02", "code": "211200", "initial": "T" }, { "id": "54", "provincecode": "220000", "city": "\u901A\u5316\u5E02", "code": "220500", "initial": "T" }, { "id": "85", "provincecode": "320000", "city": "\u6CF0\u5DDE\u5E02", "code": "321200", "initial": "T" }, { "id": "96", "provincecode": "330000", "city": "\u53F0\u5DDE\u5E02", "code": "331000", "initial": "T" }, { "id": "104", "provincecode": "340000", "city": "\u94DC\u9675\u5E02", "code": "340700", "initial": "T" }, { "id": "143", "provincecode": "370000", "city": "\u6CF0\u5B89\u5E02", "code": "370900", "initial": "T" }, { "id": "263", "provincecode": "520000", "city": "\u94DC\u4EC1\u5730\u533A", "code": "522200", "initial": "T" }, { "id": "292", "provincecode": "610000", "city": "\u94DC\u5DDD\u5E02", "code": "610200", "initial": "T" }, { "id": "305", "provincecode": "620000", "city": "\u5929\u6C34\u5E02", "code": "620500", "initial": "T" }, { "id": "330", "provincecode": "650000", "city": "\u5410\u9C81\u756A\u5730\u533A", "code": "652100", "initial": "T" }, { "id": "340", "provincecode": "650000", "city": "\u5854\u57CE\u5730\u533A", "code": "654200", "initial": "T" }, { "id": "343", "provincecode": "120000", "city": "\u5929\u6D25\u5E02", "code": "120100", "initial": "T" }, { "id": "26", "provincecode": "150000", "city": "\u4E4C\u6D77\u5E02", "code": "150300", "initial": "W" }, { "id": "32", "provincecode": "150000", "city": "\u4E4C\u5170\u5BDF\u5E03\u5E02", "code": "150900", "initial": "W" }, { "id": "75", "provincecode": "320000", "city": "\u65E0\u9521\u5E02", "code": "320200", "initial": "W" }, { "id": "89", "provincecode": "330000", "city": "\u6E29\u5DDE\u5E02", "code": "330300", "initial": "W" }, { "id": "99", "provincecode": "340000", "city": "\u829C\u6E56\u5E02", "code": "340200", "initial": "W" }, { "id": "141", "provincecode": "370000", "city": "\u6F4D\u574A\u5E02", "code": "370700", "initial": "W" }, { "id": "144", "provincecode": "370000", "city": "\u5A01\u6D77\u5E02", "code": "371000", "initial": "W" }, { "id": "169", "provincecode": "420000", "city": "\u6B66\u6C49\u5E02", "code": "420100", "initial": "W" }, { "id": "221", "provincecode": "450000", "city": "\u68A7\u5DDE\u5E02", "code": "450400", "initial": "W" }, { "id": "278", "provincecode": "530000", "city": "\u6587\u5C71\u58EE\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "532600", "initial": "W" }, { "id": "295", "provincecode": "610000", "city": "\u6E2D\u5357\u5E02", "code": "610500", "initial": "W" }, { "id": "306", "provincecode": "620000", "city": "\u6B66\u5A01\u5E02", "code": "620600", "initial": "W" }, { "id": "325", "provincecode": "640000", "city": "\u5434\u5FE0\u5E02", "code": "640300", "initial": "W" }, { "id": "328", "provincecode": "650000", "city": "\u4E4C\u9C81\u6728\u9F50\u5E02", "code": "650100", "initial": "W" }, { "id": "6", "provincecode": "130000", "city": "\u90A2\u53F0\u5E02", "code": "130500", "initial": "X" }, { "id": "21", "provincecode": "140000", "city": "\u5FFB\u5DDE\u5E02", "code": "140900", "initial": "X" }, { "id": "33", "provincecode": "150000", "city": "\u5174\u5B89\u76DF", "code": "152200", "initial": "X" }, { "id": "34", "provincecode": "150000", "city": "\u9521\u6797\u90ED\u52D2\u76DF", "code": "152500", "initial": "X" }, { "id": "76", "provincecode": "320000", "city": "\u5F90\u5DDE\u5E02", "code": "320300", "initial": "X" }, { "id": "114", "provincecode": "340000", "city": "\u5BA3\u57CE\u5E02", "code": "341800", "initial": "X" }, { "id": "116", "provincecode": "350000", "city": "\u53A6\u95E8\u5E02", "code": "350200", "initial": "X" }, { "id": "128", "provincecode": "360000", "city": "\u65B0\u4F59\u5E02", "code": "360500", "initial": "X" }, { "id": "158", "provincecode": "410000", "city": "\u65B0\u4E61\u5E02", "code": "410700", "initial": "X" }, { "id": "161", "provincecode": "410000", "city": "\u8BB8\u660C\u5E02", "code": "411000", "initial": "X" }, { "id": "166", "provincecode": "410000", "city": "\u4FE1\u9633\u5E02", "code": "411500", "initial": "X" }, { "id": "173", "provincecode": "420000", "city": "\u8944\u6A0A\u5E02", "code": "420600", "initial": "X" }, { "id": "176", "provincecode": "420000", "city": "\u5B5D\u611F\u5E02", "code": "420900", "initial": "X" }, { "id": "179", "provincecode": "420000", "city": "\u54B8\u5B81\u5E02", "code": "421200", "initial": "X" }, { "id": "185", "provincecode": "430000", "city": "\u6E58\u6F6D\u5E02", "code": "430300", "initial": "X" }, { "id": "196", "provincecode": "430000", "city": "\u6E58\u897F\u571F\u5BB6\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "433100", "initial": "X" }, { "id": "279", "provincecode": "530000", "city": "\u897F\u53CC\u7248\u7EB3\u50A3\u65CF\u81EA\u6CBB\u5DDE", "code": "532800", "initial": "X" }, { "id": "291", "provincecode": "610000", "city": "\u897F\u5B89\u5E02", "code": "610100", "initial": "X" }, { "id": "294", "provincecode": "610000", "city": "\u54B8\u9633\u5E02", "code": "610400", "initial": "X" }, { "id": "315", "provincecode": "630000", "city": "\u897F\u5B81\u5E02", "code": "630100", "initial": "X" }, { "id": "15", "provincecode": "140000", "city": "\u9633\u6CC9\u5E02", "code": "140300", "initial": "Y" }, { "id": "20", "provincecode": "140000", "city": "\u8FD0\u57CE\u5E02", "code": "140800", "initial": "Y" }, { "id": "43", "provincecode": "210000", "city": "\u8425\u53E3\u5E02", "code": "210800", "initial": "Y" }, { "id": "58", "provincecode": "220000", "city": "\u5EF6\u8FB9\u671D\u9C9C\u65CF\u81EA\u6CBB\u5DDE", "code": "222400", "initial": "Y" }, { "id": "65", "provincecode": "230000", "city": "\u4F0A\u6625\u5E02", "code": "230700", "initial": "Y" }, { "id": "82", "provincecode": "320000", "city": "\u76D0\u57CE\u5E02", "code": "320900", "initial": "Y" }, { "id": "83", "provincecode": "320000", "city": "\u626C\u5DDE\u5E02", "code": "321000", "initial": "Y" }, { "id": "129", "provincecode": "360000", "city": "\u9E70\u6F6D\u5E02", "code": "360600", "initial": "Y" }, { "id": "132", "provincecode": "360000", "city": "\u5B9C\u6625\u5E02", "code": "360900", "initial": "Y" }, { "id": "140", "provincecode": "370000", "city": "\u70DF\u53F0\u5E02", "code": "370600", "initial": "Y" }, { "id": "172", "provincecode": "420000", "city": "\u5B9C\u660C\u5E02", "code": "420500", "initial": "Y" }, { "id": "188", "provincecode": "430000", "city": "\u5CB3\u9633\u5E02", "code": "430600", "initial": "Y" }, { "id": "191", "provincecode": "430000", "city": "\u76CA\u9633\u5E02", "code": "430900", "initial": "Y" }, { "id": "193", "provincecode": "430000", "city": "\u6C38\u5DDE\u5E02", "code": "431100", "initial": "Y" }, { "id": "211", "provincecode": "440000", "city": "\u9633\u6C5F\u5E02", "code": "441700", "initial": "Y" }, { "id": "217", "provincecode": "440000", "city": "\u4E91\u6D6E\u5E02", "code": "445300", "initial": "Y" }, { "id": "226", "provincecode": "450000", "city": "\u7389\u6797\u5E02", "code": "450900", "initial": "Y" }, { "id": "250", "provincecode": "510000", "city": "\u5B9C\u5BBE\u5E02", "code": "511500", "initial": "Y" }, { "id": "253", "provincecode": "510000", "city": "\u96C5\u5B89\u5E02", "code": "511800", "initial": "Y" }, { "id": "270", "provincecode": "530000", "city": "\u7389\u6EAA\u5E02", "code": "530400", "initial": "Y" }, { "id": "296", "provincecode": "610000", "city": "\u5EF6\u5B89\u5E02", "code": "610600", "initial": "Y" }, { "id": "298", "provincecode": "610000", "city": "\u6986\u6797\u5E02", "code": "610800", "initial": "Y" }, { "id": "321", "provincecode": "630000", "city": "\u7389\u6811\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632700", "initial": "Y" }, { "id": "323", "provincecode": "640000", "city": "\u94F6\u5DDD\u5E02", "code": "640100", "initial": "Y" }, { "id": "339", "provincecode": "650000", "city": "\u4F0A\u7281\u54C8\u8428\u514B\u81EA\u6CBB\u5DDE", "code": "654000", "initial": "Y" }, { "id": "8", "provincecode": "130000", "city": "\u5F20\u5BB6\u53E3\u5E02", "code": "130700", "initial": "Z" }, { "id": "84", "provincecode": "320000", "city": "\u9547\u6C5F\u5E02", "code": "321100", "initial": "Z" }, { "id": "95", "provincecode": "330000", "city": "\u821F\u5C71\u5E02", "code": "330900", "initial": "Z" }, { "id": "120", "provincecode": "350000", "city": "\u6F33\u5DDE\u5E02", "code": "350600", "initial": "Z" }, { "id": "137", "provincecode": "370000", "city": "\u6DC4\u535A\u5E02", "code": "370300", "initial": "Z" }, { "id": "138", "provincecode": "370000", "city": "\u67A3\u5E84\u5E02", "code": "370400", "initial": "Z" }, { "id": "152", "provincecode": "410000", "city": "\u90D1\u5DDE\u5E02", "code": "410100", "initial": "Z" }, { "id": "167", "provincecode": "410000", "city": "\u5468\u53E3\u5E02", "code": "411600", "initial": "Z" }, { "id": "168", "provincecode": "410000", "city": "\u9A7B\u9A6C\u5E97\u5E02", "code": "411700", "initial": "Z" }, { "id": "184", "provincecode": "430000", "city": "\u682A\u6D32\u5E02", "code": "430200", "initial": "Z" }, { "id": "190", "provincecode": "430000", "city": "\u5F20\u5BB6\u754C\u5E02", "code": "430800", "initial": "Z" }, { "id": "200", "provincecode": "440000", "city": "\u73E0\u6D77\u5E02", "code": "440400", "initial": "Z" }, { "id": "204", "provincecode": "440000", "city": "\u6E5B\u6C5F\u5E02", "code": "440800", "initial": "Z" }, { "id": "206", "provincecode": "440000", "city": "\u8087\u5E86\u5E02", "code": "441200", "initial": "Z" }, { "id": "214", "provincecode": "440000", "city": "\u4E2D\u5C71\u5E02", "code": "442000", "initial": "Z" }, { "id": "239", "provincecode": "510000", "city": "\u81EA\u8D21\u5E02", "code": "510300", "initial": "Z" }, { "id": "255", "provincecode": "510000", "city": "\u8D44\u9633\u5E02", "code": "512000", "initial": "Z" }, { "id": "261", "provincecode": "520000", "city": "\u9075\u4E49\u5E02", "code": "520300", "initial": "Z" }, { "id": "272", "provincecode": "530000", "city": "\u662D\u901A\u5E02", "code": "530600", "initial": "Z" }, { "id": "307", "provincecode": "620000", "city": "\u5F20\u6396\u5E02", "code": "620700", "initial": "Z" }, { "id": "327", "provincecode": "640000", "city": "\u4E2D\u536B\u5E02", "code": "640500", "initial": "Z" }];
+
+//城市检索的首字母
+var searchLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z"];
+
+function searchLetter() {
+  return searchLetter;
+}
+
+//对城市信息进行分组
+function cityList() {
+  var tempObj = [];
+  for (var i = 0; i < searchLetter.length; i++) {
+    var initial = searchLetter[i];
+    var cityInfo = [];
+    var tempArr = {};
+    tempArr.initial = initial;
+    for (var j = 0; j < cityObj.length; j++) {
+      if (initial == cityObj[j].initial) {
+        cityInfo.push(cityObj[j]);
+      }
+    }
+    tempArr.cityInfo = cityInfo;
+    tempObj.push(tempArr);
+  }
+  return tempObj;
+}
+
+function pushCity() {
+
+}
+
+module.exports = {
+  searchLetter: searchLetter,
+  cityList: cityList };
+
+/***/ }),
+
+/***/ 31:
 /*!**************************************************************!*\
   !*** ./node_modules/readable-stream/lib/_stream_readable.js ***!
   \**************************************************************/
@@ -13864,7 +14335,8 @@ function indexOf(xs, x) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ 3), __webpack_require__(/*! ./../../node-libs-browser/mock/process.js */ 32)))
 
 /***/ }),
-/* 32 */
+
+/***/ 32:
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -13904,7 +14376,8 @@ exports.features = {};
 
 
 /***/ }),
-/* 33 */
+
+/***/ 33:
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -14139,7 +14612,20 @@ var substr = 'ab'.substr(-1) === 'b'
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 32)))
 
 /***/ }),
-/* 34 */
+
+/***/ 339:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 340);
+
+
+/***/ }),
+
+/***/ 34:
 /*!****************************************************!*\
   !*** ./node_modules/process-nextick-args/index.js ***!
   \****************************************************/
@@ -14195,7 +14681,788 @@ function nextTick(fn, arg1, arg2, arg3) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 32)))
 
 /***/ }),
-/* 35 */
+
+/***/ 340:
+/*!************************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+// This method of obtaining a reference to the global object needs to be
+// kept identical to the way it is obtained in runtime.js
+var g = (function() {
+  return this || (typeof self === "object" && self);
+})() || Function("return this")();
+
+// Use `getOwnPropertyNames` because not all browsers support calling
+// `hasOwnProperty` on the global `self` object in a worker. See #183.
+var hadRuntime = g.regeneratorRuntime &&
+  Object.getOwnPropertyNames(g).indexOf("regeneratorRuntime") >= 0;
+
+// Save the old regeneratorRuntime in case it needs to be restored later.
+var oldRuntime = hadRuntime && g.regeneratorRuntime;
+
+// Force reevalutation of runtime.js.
+g.regeneratorRuntime = undefined;
+
+module.exports = __webpack_require__(/*! ./runtime */ 341);
+
+if (hadRuntime) {
+  // Restore the original runtime.
+  g.regeneratorRuntime = oldRuntime;
+} else {
+  // Remove the global property added by runtime.js.
+  try {
+    delete g.regeneratorRuntime;
+  } catch(e) {
+    g.regeneratorRuntime = undefined;
+  }
+}
+
+
+/***/ }),
+
+/***/ 341:
+/*!*****************************************************!*\
+  !*** ./node_modules/regenerator-runtime/runtime.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/**
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+!(function(global) {
+  "use strict";
+
+  var Op = Object.prototype;
+  var hasOwn = Op.hasOwnProperty;
+  var undefined; // More compressible than void 0.
+  var $Symbol = typeof Symbol === "function" ? Symbol : {};
+  var iteratorSymbol = $Symbol.iterator || "@@iterator";
+  var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+  var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+
+  var inModule = typeof module === "object";
+  var runtime = global.regeneratorRuntime;
+  if (runtime) {
+    if (inModule) {
+      // If regeneratorRuntime is defined globally and we're in a module,
+      // make the exports object identical to regeneratorRuntime.
+      module.exports = runtime;
+    }
+    // Don't bother evaluating the rest of this file if the runtime was
+    // already defined globally.
+    return;
+  }
+
+  // Define the runtime globally (as expected by generated code) as either
+  // module.exports (if we're in a module) or a new, empty object.
+  runtime = global.regeneratorRuntime = inModule ? module.exports : {};
+
+  function wrap(innerFn, outerFn, self, tryLocsList) {
+    // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+    var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+    var generator = Object.create(protoGenerator.prototype);
+    var context = new Context(tryLocsList || []);
+
+    // The ._invoke method unifies the implementations of the .next,
+    // .throw, and .return methods.
+    generator._invoke = makeInvokeMethod(innerFn, self, context);
+
+    return generator;
+  }
+  runtime.wrap = wrap;
+
+  // Try/catch helper to minimize deoptimizations. Returns a completion
+  // record like context.tryEntries[i].completion. This interface could
+  // have been (and was previously) designed to take a closure to be
+  // invoked without arguments, but in all the cases we care about we
+  // already have an existing method we want to call, so there's no need
+  // to create a new function object. We can even get away with assuming
+  // the method takes exactly one argument, since that happens to be true
+  // in every case, so we don't have to touch the arguments object. The
+  // only additional allocation required is the completion record, which
+  // has a stable shape and so hopefully should be cheap to allocate.
+  function tryCatch(fn, obj, arg) {
+    try {
+      return { type: "normal", arg: fn.call(obj, arg) };
+    } catch (err) {
+      return { type: "throw", arg: err };
+    }
+  }
+
+  var GenStateSuspendedStart = "suspendedStart";
+  var GenStateSuspendedYield = "suspendedYield";
+  var GenStateExecuting = "executing";
+  var GenStateCompleted = "completed";
+
+  // Returning this object from the innerFn has the same effect as
+  // breaking out of the dispatch switch statement.
+  var ContinueSentinel = {};
+
+  // Dummy constructor functions that we use as the .constructor and
+  // .constructor.prototype properties for functions that return Generator
+  // objects. For full spec compliance, you may wish to configure your
+  // minifier not to mangle the names of these two functions.
+  function Generator() {}
+  function GeneratorFunction() {}
+  function GeneratorFunctionPrototype() {}
+
+  // This is a polyfill for %IteratorPrototype% for environments that
+  // don't natively support it.
+  var IteratorPrototype = {};
+  IteratorPrototype[iteratorSymbol] = function () {
+    return this;
+  };
+
+  var getProto = Object.getPrototypeOf;
+  var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+  if (NativeIteratorPrototype &&
+      NativeIteratorPrototype !== Op &&
+      hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+    // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+  }
+
+  var Gp = GeneratorFunctionPrototype.prototype =
+    Generator.prototype = Object.create(IteratorPrototype);
+  GeneratorFunction.prototype = Gp.constructor = GeneratorFunctionPrototype;
+  GeneratorFunctionPrototype.constructor = GeneratorFunction;
+  GeneratorFunctionPrototype[toStringTagSymbol] =
+    GeneratorFunction.displayName = "GeneratorFunction";
+
+  // Helper for defining the .next, .throw, and .return methods of the
+  // Iterator interface in terms of a single ._invoke method.
+  function defineIteratorMethods(prototype) {
+    ["next", "throw", "return"].forEach(function(method) {
+      prototype[method] = function(arg) {
+        return this._invoke(method, arg);
+      };
+    });
+  }
+
+  runtime.isGeneratorFunction = function(genFun) {
+    var ctor = typeof genFun === "function" && genFun.constructor;
+    return ctor
+      ? ctor === GeneratorFunction ||
+        // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction"
+      : false;
+  };
+
+  runtime.mark = function(genFun) {
+    if (Object.setPrototypeOf) {
+      Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+    } else {
+      genFun.__proto__ = GeneratorFunctionPrototype;
+      if (!(toStringTagSymbol in genFun)) {
+        genFun[toStringTagSymbol] = "GeneratorFunction";
+      }
+    }
+    genFun.prototype = Object.create(Gp);
+    return genFun;
+  };
+
+  // Within the body of any async function, `await x` is transformed to
+  // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+  // `hasOwn.call(value, "__await")` to determine if the yielded value is
+  // meant to be awaited.
+  runtime.awrap = function(arg) {
+    return { __await: arg };
+  };
+
+  function AsyncIterator(generator) {
+    function invoke(method, arg, resolve, reject) {
+      var record = tryCatch(generator[method], generator, arg);
+      if (record.type === "throw") {
+        reject(record.arg);
+      } else {
+        var result = record.arg;
+        var value = result.value;
+        if (value &&
+            typeof value === "object" &&
+            hasOwn.call(value, "__await")) {
+          return Promise.resolve(value.__await).then(function(value) {
+            invoke("next", value, resolve, reject);
+          }, function(err) {
+            invoke("throw", err, resolve, reject);
+          });
+        }
+
+        return Promise.resolve(value).then(function(unwrapped) {
+          // When a yielded Promise is resolved, its final value becomes
+          // the .value of the Promise<{value,done}> result for the
+          // current iteration.
+          result.value = unwrapped;
+          resolve(result);
+        }, function(error) {
+          // If a rejected Promise was yielded, throw the rejection back
+          // into the async generator function so it can be handled there.
+          return invoke("throw", error, resolve, reject);
+        });
+      }
+    }
+
+    var previousPromise;
+
+    function enqueue(method, arg) {
+      function callInvokeWithMethodAndArg() {
+        return new Promise(function(resolve, reject) {
+          invoke(method, arg, resolve, reject);
+        });
+      }
+
+      return previousPromise =
+        // If enqueue has been called before, then we want to wait until
+        // all previous Promises have been resolved before calling invoke,
+        // so that results are always delivered in the correct order. If
+        // enqueue has not been called before, then it is important to
+        // call invoke immediately, without waiting on a callback to fire,
+        // so that the async generator function has the opportunity to do
+        // any necessary setup in a predictable way. This predictability
+        // is why the Promise constructor synchronously invokes its
+        // executor callback, and why async functions synchronously
+        // execute code before the first await. Since we implement simple
+        // async functions in terms of async generators, it is especially
+        // important to get this right, even though it requires care.
+        previousPromise ? previousPromise.then(
+          callInvokeWithMethodAndArg,
+          // Avoid propagating failures to Promises returned by later
+          // invocations of the iterator.
+          callInvokeWithMethodAndArg
+        ) : callInvokeWithMethodAndArg();
+    }
+
+    // Define the unified helper method that is used to implement .next,
+    // .throw, and .return (see defineIteratorMethods).
+    this._invoke = enqueue;
+  }
+
+  defineIteratorMethods(AsyncIterator.prototype);
+  AsyncIterator.prototype[asyncIteratorSymbol] = function () {
+    return this;
+  };
+  runtime.AsyncIterator = AsyncIterator;
+
+  // Note that simple async functions are implemented on top of
+  // AsyncIterator objects; they just return a Promise for the value of
+  // the final result produced by the iterator.
+  runtime.async = function(innerFn, outerFn, self, tryLocsList) {
+    var iter = new AsyncIterator(
+      wrap(innerFn, outerFn, self, tryLocsList)
+    );
+
+    return runtime.isGeneratorFunction(outerFn)
+      ? iter // If outerFn is a generator, return the full iterator.
+      : iter.next().then(function(result) {
+          return result.done ? result.value : iter.next();
+        });
+  };
+
+  function makeInvokeMethod(innerFn, self, context) {
+    var state = GenStateSuspendedStart;
+
+    return function invoke(method, arg) {
+      if (state === GenStateExecuting) {
+        throw new Error("Generator is already running");
+      }
+
+      if (state === GenStateCompleted) {
+        if (method === "throw") {
+          throw arg;
+        }
+
+        // Be forgiving, per 25.3.3.3.3 of the spec:
+        // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+        return doneResult();
+      }
+
+      context.method = method;
+      context.arg = arg;
+
+      while (true) {
+        var delegate = context.delegate;
+        if (delegate) {
+          var delegateResult = maybeInvokeDelegate(delegate, context);
+          if (delegateResult) {
+            if (delegateResult === ContinueSentinel) continue;
+            return delegateResult;
+          }
+        }
+
+        if (context.method === "next") {
+          // Setting context._sent for legacy support of Babel's
+          // function.sent implementation.
+          context.sent = context._sent = context.arg;
+
+        } else if (context.method === "throw") {
+          if (state === GenStateSuspendedStart) {
+            state = GenStateCompleted;
+            throw context.arg;
+          }
+
+          context.dispatchException(context.arg);
+
+        } else if (context.method === "return") {
+          context.abrupt("return", context.arg);
+        }
+
+        state = GenStateExecuting;
+
+        var record = tryCatch(innerFn, self, context);
+        if (record.type === "normal") {
+          // If an exception is thrown from innerFn, we leave state ===
+          // GenStateExecuting and loop back for another invocation.
+          state = context.done
+            ? GenStateCompleted
+            : GenStateSuspendedYield;
+
+          if (record.arg === ContinueSentinel) {
+            continue;
+          }
+
+          return {
+            value: record.arg,
+            done: context.done
+          };
+
+        } else if (record.type === "throw") {
+          state = GenStateCompleted;
+          // Dispatch the exception by looping back around to the
+          // context.dispatchException(context.arg) call above.
+          context.method = "throw";
+          context.arg = record.arg;
+        }
+      }
+    };
+  }
+
+  // Call delegate.iterator[context.method](context.arg) and handle the
+  // result, either by returning a { value, done } result from the
+  // delegate iterator, or by modifying context.method and context.arg,
+  // setting context.delegate to null, and returning the ContinueSentinel.
+  function maybeInvokeDelegate(delegate, context) {
+    var method = delegate.iterator[context.method];
+    if (method === undefined) {
+      // A .throw or .return when the delegate iterator has no .throw
+      // method always terminates the yield* loop.
+      context.delegate = null;
+
+      if (context.method === "throw") {
+        if (delegate.iterator.return) {
+          // If the delegate iterator has a return method, give it a
+          // chance to clean up.
+          context.method = "return";
+          context.arg = undefined;
+          maybeInvokeDelegate(delegate, context);
+
+          if (context.method === "throw") {
+            // If maybeInvokeDelegate(context) changed context.method from
+            // "return" to "throw", let that override the TypeError below.
+            return ContinueSentinel;
+          }
+        }
+
+        context.method = "throw";
+        context.arg = new TypeError(
+          "The iterator does not provide a 'throw' method");
+      }
+
+      return ContinueSentinel;
+    }
+
+    var record = tryCatch(method, delegate.iterator, context.arg);
+
+    if (record.type === "throw") {
+      context.method = "throw";
+      context.arg = record.arg;
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    var info = record.arg;
+
+    if (! info) {
+      context.method = "throw";
+      context.arg = new TypeError("iterator result is not an object");
+      context.delegate = null;
+      return ContinueSentinel;
+    }
+
+    if (info.done) {
+      // Assign the result of the finished delegate to the temporary
+      // variable specified by delegate.resultName (see delegateYield).
+      context[delegate.resultName] = info.value;
+
+      // Resume execution at the desired location (see delegateYield).
+      context.next = delegate.nextLoc;
+
+      // If context.method was "throw" but the delegate handled the
+      // exception, let the outer generator proceed normally. If
+      // context.method was "next", forget context.arg since it has been
+      // "consumed" by the delegate iterator. If context.method was
+      // "return", allow the original .return call to continue in the
+      // outer generator.
+      if (context.method !== "return") {
+        context.method = "next";
+        context.arg = undefined;
+      }
+
+    } else {
+      // Re-yield the result returned by the delegate method.
+      return info;
+    }
+
+    // The delegate iterator is finished, so forget it and continue with
+    // the outer generator.
+    context.delegate = null;
+    return ContinueSentinel;
+  }
+
+  // Define Generator.prototype.{next,throw,return} in terms of the
+  // unified ._invoke helper method.
+  defineIteratorMethods(Gp);
+
+  Gp[toStringTagSymbol] = "Generator";
+
+  // A Generator should always return itself as the iterator object when the
+  // @@iterator function is called on it. Some browsers' implementations of the
+  // iterator prototype chain incorrectly implement this, causing the Generator
+  // object to not be returned from this call. This ensures that doesn't happen.
+  // See https://github.com/facebook/regenerator/issues/274 for more details.
+  Gp[iteratorSymbol] = function() {
+    return this;
+  };
+
+  Gp.toString = function() {
+    return "[object Generator]";
+  };
+
+  function pushTryEntry(locs) {
+    var entry = { tryLoc: locs[0] };
+
+    if (1 in locs) {
+      entry.catchLoc = locs[1];
+    }
+
+    if (2 in locs) {
+      entry.finallyLoc = locs[2];
+      entry.afterLoc = locs[3];
+    }
+
+    this.tryEntries.push(entry);
+  }
+
+  function resetTryEntry(entry) {
+    var record = entry.completion || {};
+    record.type = "normal";
+    delete record.arg;
+    entry.completion = record;
+  }
+
+  function Context(tryLocsList) {
+    // The root entry object (effectively a try statement without a catch
+    // or a finally block) gives us a place to store values thrown from
+    // locations where there is no enclosing try statement.
+    this.tryEntries = [{ tryLoc: "root" }];
+    tryLocsList.forEach(pushTryEntry, this);
+    this.reset(true);
+  }
+
+  runtime.keys = function(object) {
+    var keys = [];
+    for (var key in object) {
+      keys.push(key);
+    }
+    keys.reverse();
+
+    // Rather than returning an object with a next method, we keep
+    // things simple and return the next function itself.
+    return function next() {
+      while (keys.length) {
+        var key = keys.pop();
+        if (key in object) {
+          next.value = key;
+          next.done = false;
+          return next;
+        }
+      }
+
+      // To avoid creating an additional object, we just hang the .value
+      // and .done properties off the next function object itself. This
+      // also ensures that the minifier will not anonymize the function.
+      next.done = true;
+      return next;
+    };
+  };
+
+  function values(iterable) {
+    if (iterable) {
+      var iteratorMethod = iterable[iteratorSymbol];
+      if (iteratorMethod) {
+        return iteratorMethod.call(iterable);
+      }
+
+      if (typeof iterable.next === "function") {
+        return iterable;
+      }
+
+      if (!isNaN(iterable.length)) {
+        var i = -1, next = function next() {
+          while (++i < iterable.length) {
+            if (hasOwn.call(iterable, i)) {
+              next.value = iterable[i];
+              next.done = false;
+              return next;
+            }
+          }
+
+          next.value = undefined;
+          next.done = true;
+
+          return next;
+        };
+
+        return next.next = next;
+      }
+    }
+
+    // Return an iterator with no values.
+    return { next: doneResult };
+  }
+  runtime.values = values;
+
+  function doneResult() {
+    return { value: undefined, done: true };
+  }
+
+  Context.prototype = {
+    constructor: Context,
+
+    reset: function(skipTempReset) {
+      this.prev = 0;
+      this.next = 0;
+      // Resetting context._sent for legacy support of Babel's
+      // function.sent implementation.
+      this.sent = this._sent = undefined;
+      this.done = false;
+      this.delegate = null;
+
+      this.method = "next";
+      this.arg = undefined;
+
+      this.tryEntries.forEach(resetTryEntry);
+
+      if (!skipTempReset) {
+        for (var name in this) {
+          // Not sure about the optimal order of these conditions:
+          if (name.charAt(0) === "t" &&
+              hasOwn.call(this, name) &&
+              !isNaN(+name.slice(1))) {
+            this[name] = undefined;
+          }
+        }
+      }
+    },
+
+    stop: function() {
+      this.done = true;
+
+      var rootEntry = this.tryEntries[0];
+      var rootRecord = rootEntry.completion;
+      if (rootRecord.type === "throw") {
+        throw rootRecord.arg;
+      }
+
+      return this.rval;
+    },
+
+    dispatchException: function(exception) {
+      if (this.done) {
+        throw exception;
+      }
+
+      var context = this;
+      function handle(loc, caught) {
+        record.type = "throw";
+        record.arg = exception;
+        context.next = loc;
+
+        if (caught) {
+          // If the dispatched exception was caught by a catch block,
+          // then let that catch block handle the exception normally.
+          context.method = "next";
+          context.arg = undefined;
+        }
+
+        return !! caught;
+      }
+
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        var record = entry.completion;
+
+        if (entry.tryLoc === "root") {
+          // Exception thrown outside of any try block that could handle
+          // it, so set the completion value of the entire function to
+          // throw the exception.
+          return handle("end");
+        }
+
+        if (entry.tryLoc <= this.prev) {
+          var hasCatch = hasOwn.call(entry, "catchLoc");
+          var hasFinally = hasOwn.call(entry, "finallyLoc");
+
+          if (hasCatch && hasFinally) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            } else if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else if (hasCatch) {
+            if (this.prev < entry.catchLoc) {
+              return handle(entry.catchLoc, true);
+            }
+
+          } else if (hasFinally) {
+            if (this.prev < entry.finallyLoc) {
+              return handle(entry.finallyLoc);
+            }
+
+          } else {
+            throw new Error("try statement without catch or finally");
+          }
+        }
+      }
+    },
+
+    abrupt: function(type, arg) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc <= this.prev &&
+            hasOwn.call(entry, "finallyLoc") &&
+            this.prev < entry.finallyLoc) {
+          var finallyEntry = entry;
+          break;
+        }
+      }
+
+      if (finallyEntry &&
+          (type === "break" ||
+           type === "continue") &&
+          finallyEntry.tryLoc <= arg &&
+          arg <= finallyEntry.finallyLoc) {
+        // Ignore the finally entry if control is not jumping to a
+        // location outside the try/catch block.
+        finallyEntry = null;
+      }
+
+      var record = finallyEntry ? finallyEntry.completion : {};
+      record.type = type;
+      record.arg = arg;
+
+      if (finallyEntry) {
+        this.method = "next";
+        this.next = finallyEntry.finallyLoc;
+        return ContinueSentinel;
+      }
+
+      return this.complete(record);
+    },
+
+    complete: function(record, afterLoc) {
+      if (record.type === "throw") {
+        throw record.arg;
+      }
+
+      if (record.type === "break" ||
+          record.type === "continue") {
+        this.next = record.arg;
+      } else if (record.type === "return") {
+        this.rval = this.arg = record.arg;
+        this.method = "return";
+        this.next = "end";
+      } else if (record.type === "normal" && afterLoc) {
+        this.next = afterLoc;
+      }
+
+      return ContinueSentinel;
+    },
+
+    finish: function(finallyLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.finallyLoc === finallyLoc) {
+          this.complete(entry.completion, entry.afterLoc);
+          resetTryEntry(entry);
+          return ContinueSentinel;
+        }
+      }
+    },
+
+    "catch": function(tryLoc) {
+      for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+        var entry = this.tryEntries[i];
+        if (entry.tryLoc === tryLoc) {
+          var record = entry.completion;
+          if (record.type === "throw") {
+            var thrown = record.arg;
+            resetTryEntry(entry);
+          }
+          return thrown;
+        }
+      }
+
+      // The context.catch method must only be called with a location
+      // argument that corresponds to a known catch block.
+      throw new Error("illegal catch attempt");
+    },
+
+    delegateYield: function(iterable, resultName, nextLoc) {
+      this.delegate = {
+        iterator: values(iterable),
+        resultName: resultName,
+        nextLoc: nextLoc
+      };
+
+      if (this.method === "next") {
+        // Deliberately forget the last sent value so that we don't
+        // accidentally pass it on to the delegate.
+        this.arg = undefined;
+      }
+
+      return ContinueSentinel;
+    }
+  };
+})(
+  // In sloppy mode, unbound `this` refers to the global object, fallback to
+  // Function constructor if we're in global strict mode. That is sadly a form
+  // of indirect eval which violates Content Security Policy.
+  (function() {
+    return this || (typeof self === "object" && self);
+  })() || Function("return this")()
+);
+
+
+/***/ }),
+
+/***/ 35:
 /*!*****************************************************************************!*\
   !*** ./node_modules/readable-stream/lib/internal/streams/stream-browser.js ***!
   \*****************************************************************************/
@@ -14206,7 +15473,8 @@ module.exports = __webpack_require__(/*! events */ 29).EventEmitter;
 
 
 /***/ }),
-/* 36 */
+
+/***/ 36:
 /*!***********************************************!*\
   !*** ./node_modules/core-util-is/lib/util.js ***!
   \***********************************************/
@@ -14324,7 +15592,8 @@ function objectToString(o) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../buffer/index.js */ 24).Buffer))
 
 /***/ }),
-/* 37 */
+
+/***/ 37:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
@@ -14334,7 +15603,8 @@ function objectToString(o) {
 /* (ignored) */
 
 /***/ }),
-/* 38 */
+
+/***/ 38:
 /*!*************************************************************************!*\
   !*** ./node_modules/readable-stream/lib/internal/streams/BufferList.js ***!
   \*************************************************************************/
@@ -14423,7 +15693,8 @@ if (util && util.inspect && util.inspect.custom) {
 }
 
 /***/ }),
-/* 39 */
+
+/***/ 39:
 /*!**********************!*\
   !*** util (ignored) ***!
   \**********************/
@@ -14433,7 +15704,20 @@ if (util && util.inspect && util.inspect.custom) {
 /* (ignored) */
 
 /***/ }),
-/* 40 */
+
+/***/ 4:
+/*!******************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/pages.json ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/***/ }),
+
+/***/ 40:
 /*!**********************************************************************!*\
   !*** ./node_modules/readable-stream/lib/internal/streams/destroy.js ***!
   \**********************************************************************/
@@ -14517,7 +15801,8 @@ module.exports = {
 };
 
 /***/ }),
-/* 41 */
+
+/***/ 41:
 /*!************************************************************!*\
   !*** ./node_modules/readable-stream/lib/_stream_duplex.js ***!
   \************************************************************/
@@ -14658,7 +15943,8 @@ Duplex.prototype._destroy = function (err, cb) {
 };
 
 /***/ }),
-/* 42 */
+
+/***/ 42:
 /*!**************************************************************!*\
   !*** ./node_modules/readable-stream/lib/_stream_writable.js ***!
   \**************************************************************/
@@ -15356,7 +16642,8 @@ Writable.prototype._destroy = function (err, cb) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node-libs-browser/mock/process.js */ 32), __webpack_require__(/*! ./../../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 43 */
+
+/***/ 43:
 /*!************************************************!*\
   !*** ./node_modules/util-deprecate/browser.js ***!
   \************************************************/
@@ -15434,7 +16721,8 @@ function config (name) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ 3)))
 
 /***/ }),
-/* 44 */
+
+/***/ 44:
 /*!***********************************************************!*\
   !*** ./node_modules/string_decoder/lib/string_decoder.js ***!
   \***********************************************************/
@@ -15740,7 +17028,8 @@ function simpleEnd(buf) {
 }
 
 /***/ }),
-/* 45 */
+
+/***/ 45:
 /*!***************************************************************!*\
   !*** ./node_modules/readable-stream/lib/_stream_transform.js ***!
   \***************************************************************/
@@ -15964,7 +17253,8 @@ function done(stream, er, data) {
 }
 
 /***/ }),
-/* 46 */
+
+/***/ 46:
 /*!*****************************************************************!*\
   !*** ./node_modules/readable-stream/lib/_stream_passthrough.js ***!
   \*****************************************************************/
@@ -16021,7 +17311,8 @@ PassThrough.prototype._transform = function (chunk, encoding, cb) {
 };
 
 /***/ }),
-/* 47 */
+
+/***/ 47:
 /*!**********************************************************!*\
   !*** ./node_modules/readable-stream/writable-browser.js ***!
   \**********************************************************/
@@ -16032,7 +17323,8 @@ module.exports = __webpack_require__(/*! ./lib/_stream_writable.js */ 42);
 
 
 /***/ }),
-/* 48 */
+
+/***/ 48:
 /*!********************************************************!*\
   !*** ./node_modules/readable-stream/duplex-browser.js ***!
   \********************************************************/
@@ -16043,7 +17335,8 @@ module.exports = __webpack_require__(/*! ./lib/_stream_duplex.js */ 41);
 
 
 /***/ }),
-/* 49 */
+
+/***/ 49:
 /*!***************************************************!*\
   !*** ./node_modules/readable-stream/transform.js ***!
   \***************************************************/
@@ -16054,7 +17347,8 @@ module.exports = __webpack_require__(/*! ./readable */ 30).Transform
 
 
 /***/ }),
-/* 50 */
+
+/***/ 50:
 /*!*****************************************************!*\
   !*** ./node_modules/readable-stream/passthrough.js ***!
   \*****************************************************/
@@ -16065,10 +17359,11 @@ module.exports = __webpack_require__(/*! ./readable */ 30).PassThrough
 
 
 /***/ }),
-/* 51 */
-/*!******************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/util/data.js ***!
-  \******************************************************************/
+
+/***/ 51:
+/*!********************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/util/data.js ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16360,12 +17655,11 @@ function month(month) {
 }
 
 /***/ }),
-/* 52 */,
-/* 53 */,
-/* 54 */
-/*!****************************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Freservation%2Freservation_index"} ***!
-  \****************************************************************************************************************/
+
+/***/ 54:
+/*!******************************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Freservation%2Freservation_index"} ***!
+  \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16378,17 +17672,11 @@ createPage(_reservation_index.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 55 */,
-/* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */
-/*!******************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fhome"} ***!
-  \******************************************************************************************/
+
+/***/ 62:
+/*!********************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fhome"} ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16401,17 +17689,11 @@ createPage(_home.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */
-/*!***********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fmy_centre"} ***!
-  \***********************************************************************************************/
+
+/***/ 70:
+/*!*************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fmy_centre"} ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16424,17 +17706,11 @@ createPage(_my_centre.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 71 */,
-/* 72 */,
-/* 73 */,
-/* 74 */,
-/* 75 */,
-/* 76 */,
-/* 77 */,
-/* 78 */
-/*!********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fcoupon"} ***!
-  \********************************************************************************************/
+
+/***/ 78:
+/*!**********************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fmy%2Fcoupon"} ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16447,17 +17723,11 @@ createPage(_coupon.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 79 */,
-/* 80 */,
-/* 81 */,
-/* 82 */,
-/* 83 */,
-/* 84 */,
-/* 85 */,
-/* 86 */
-/*!********************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fsell_order%2Fsell_order"} ***!
-  \********************************************************************************************************/
+
+/***/ 86:
+/*!**********************************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fsell_order%2Fsell_order"} ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16470,17 +17740,11 @@ createPage(_sell_order.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
-/* 87 */,
-/* 88 */,
-/* 89 */,
-/* 90 */,
-/* 91 */,
-/* 92 */,
-/* 93 */,
-/* 94 */
-/*!*********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fvip%2Fup_vip"} ***!
-  \*********************************************************************************************/
+
+/***/ 94:
+/*!***********************************************************************************!*\
+  !*** C:/Users/30422/Desktop/uni-app-tian/main.js?{"page":"pages%2Fvip%2Fup_vip"} ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16492,631 +17756,7 @@ var _up_vip = _interopRequireDefault(__webpack_require__(/*! ./pages/vip/up_vip.
 createPage(_up_vip.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
-/***/ }),
-/* 95 */,
-/* 96 */,
-/* 97 */,
-/* 98 */,
-/* 99 */,
-/* 100 */,
-/* 101 */,
-/* 102 */
-/*!*************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fvip%2Fpolicy_vip"} ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _policy_vip = _interopRequireDefault(__webpack_require__(/*! ./pages/vip/policy_vip.vue */ 103));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_policy_vip.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 103 */,
-/* 104 */,
-/* 105 */,
-/* 106 */,
-/* 107 */,
-/* 108 */,
-/* 109 */,
-/* 110 */
-/*!*********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fmy_team"} ***!
-  \*********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _my_team = _interopRequireDefault(__webpack_require__(/*! ./pages/my/my_team.vue */ 111));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_my_team.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 111 */,
-/* 112 */,
-/* 113 */,
-/* 114 */,
-/* 115 */,
-/* 116 */,
-/* 117 */,
-/* 118 */
-/*!******************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fwithdraw_success"} ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _withdraw_success = _interopRequireDefault(__webpack_require__(/*! ./pages/my/withdraw_success.vue */ 119));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_withdraw_success.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 119 */,
-/* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */,
-/* 125 */,
-/* 126 */
-/*!**********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fwithdraw"} ***!
-  \**********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _withdraw = _interopRequireDefault(__webpack_require__(/*! ./pages/my/withdraw.vue */ 127));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_withdraw.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 127 */,
-/* 128 */,
-/* 129 */,
-/* 130 */,
-/* 131 */,
-/* 132 */,
-/* 133 */,
-/* 134 */
-/*!****************************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fprice_detailed%2Fprice_detailed"} ***!
-  \****************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _price_detailed = _interopRequireDefault(__webpack_require__(/*! ./pages/price_detailed/price_detailed.vue */ 135));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_price_detailed.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */
-/*!********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fmy%2Fwallet"} ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _wallet = _interopRequireDefault(__webpack_require__(/*! ./pages/my/wallet.vue */ 143));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_wallet.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */
-/*!**************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Forder_list%2Flist"} ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _list = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/list.vue */ 151));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_list.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 151 */,
-/* 152 */,
-/* 153 */,
-/* 154 */,
-/* 155 */,
-/* 156 */,
-/* 157 */,
-/* 158 */,
-/* 159 */,
-/* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */
-/*!*******************************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Forder_list%2Forder_comment_success"} ***!
-  \*******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _order_comment_success = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/order_comment_success.vue */ 166));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_order_comment_success.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 166 */,
-/* 167 */,
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
-/* 172 */,
-/* 173 */
-/*!***********************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Forder_list%2Forder_comment"} ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _order_comment = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/order_comment.vue */ 174));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_order_comment.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 174 */,
-/* 175 */,
-/* 176 */,
-/* 177 */,
-/* 178 */,
-/* 179 */,
-/* 180 */,
-/* 181 */
-/*!*******************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Forder_list%2Flist_item"} ***!
-  \*******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _list_item = _interopRequireDefault(__webpack_require__(/*! ./pages/order_list/list_item.vue */ 156));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_list_item.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 182 */
-/*!***********************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Forder_details%2Forder_quit"} ***!
-  \***********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _order_quit = _interopRequireDefault(__webpack_require__(/*! ./pages/order_details/order_quit.vue */ 183));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_order_quit.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 183 */,
-/* 184 */,
-/* 185 */,
-/* 186 */,
-/* 187 */,
-/* 188 */,
-/* 189 */,
-/* 190 */
-/*!********************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Forder_details%2Fdetails"} ***!
-  \********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _details = _interopRequireDefault(__webpack_require__(/*! ./pages/order_details/details.vue */ 191));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_details.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 191 */,
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */
-/*!******************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fagreement%2Fagreement"} ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _agreement = _interopRequireDefault(__webpack_require__(/*! ./pages/agreement/agreement.vue */ 199));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_agreement.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 199 */,
-/* 200 */,
-/* 201 */,
-/* 202 */,
-/* 203 */,
-/* 204 */,
-/* 205 */,
-/* 206 */
-/*!**************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fdetalis%2Fdetails"} ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _details = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/details.vue */ 207));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_details.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 207 */,
-/* 208 */,
-/* 209 */,
-/* 210 */,
-/* 211 */,
-/* 212 */,
-/* 213 */,
-/* 214 */,
-/* 215 */,
-/* 216 */,
-/* 217 */,
-/* 218 */,
-/* 219 */,
-/* 220 */,
-/* 221 */,
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */,
-/* 226 */,
-/* 227 */,
-/* 228 */
-/*!***************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fdetalis%2Fevaluate"} ***!
-  \***************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _evaluate = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/evaluate.vue */ 229));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_evaluate.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 229 */,
-/* 230 */,
-/* 231 */,
-/* 232 */,
-/* 233 */,
-/* 234 */,
-/* 235 */,
-/* 236 */
-/*!********************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fdetalis%2Ffacility_list"} ***!
-  \********************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _facility_list = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/facility_list.vue */ 212));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_facility_list.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 237 */
-/*!*************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fdetalis%2Fpolicy"} ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _policy = _interopRequireDefault(__webpack_require__(/*! ./pages/detalis/policy.vue */ 219));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_policy.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 238 */
-/*!****************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Findex%2FsortAppoint"} ***!
-  \****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _sortAppoint = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortAppoint.vue */ 239));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_sortAppoint.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 239 */,
-/* 240 */,
-/* 241 */,
-/* 242 */,
-/* 243 */,
-/* 244 */,
-/* 245 */,
-/* 246 */
-/*!**************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Findex%2FsortPrice"} ***!
-  \**************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _sortPrice = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortPrice.vue */ 247));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_sortPrice.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 247 */,
-/* 248 */,
-/* 249 */,
-/* 250 */,
-/* 251 */,
-/* 252 */,
-/* 253 */,
-/* 254 */
-/*!*******************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Findex%2Fcourtyard_list"} ***!
-  \*******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _courtyard_list = _interopRequireDefault(__webpack_require__(/*! ./pages/index/courtyard_list.vue */ 255));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_courtyard_list.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 255 */,
-/* 256 */,
-/* 257 */,
-/* 258 */,
-/* 259 */,
-/* 260 */,
-/* 261 */,
-/* 262 */
-/*!*************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Findex%2FsortSite"} ***!
-  \*************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _sortSite = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortSite.vue */ 263));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_sortSite.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 263 */,
-/* 264 */,
-/* 265 */,
-/* 266 */,
-/* 267 */,
-/* 268 */,
-/* 269 */,
-/* 270 */
-/*!***********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Findex%2FsortAi"} ***!
-  \***********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _sortAi = _interopRequireDefault(__webpack_require__(/*! ./pages/index/sortAi.vue */ 271));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_sortAi.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 271 */,
-/* 272 */,
-/* 273 */,
-/* 274 */,
-/* 275 */,
-/* 276 */,
-/* 277 */,
-/* 278 */
-/*!************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fsearch%2Fsearch"} ***!
-  \************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _search = _interopRequireDefault(__webpack_require__(/*! ./pages/search/search.vue */ 279));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_search.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 279 */,
-/* 280 */,
-/* 281 */,
-/* 282 */,
-/* 283 */,
-/* 284 */,
-/* 285 */,
-/* 286 */
-/*!****************************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fcalendar%2Fcalendar"} ***!
-  \****************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _calendar = _interopRequireDefault(__webpack_require__(/*! ./pages/calendar/calendar.vue */ 287));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_calendar.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 287 */,
-/* 288 */,
-/* 289 */,
-/* 290 */,
-/* 291 */,
-/* 292 */,
-/* 293 */,
-/* 294 */
-/*!********************************************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/main.js?{"page":"pages%2Fcity%2Fcity"} ***!
-  \********************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 4);
-
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
-var _city = _interopRequireDefault(__webpack_require__(/*! ./pages/city/city.vue */ 295));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-createPage(_city.default);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
-
-/***/ }),
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
-/* 299 */,
-/* 300 */
-/*!******************************************************************!*\
-  !*** D:/Documents/HBuilderProjects/tiantian_wx_two/util/city.js ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-var cityObj = [{ "id": "35", "provincecode": "150000", "city": "\u963F\u62C9\u5584\u76DF", "code": "152900", "initial": "A" }, { "id": "38", "provincecode": "210000", "city": "\u978D\u5C71\u5E02", "code": "210300", "initial": "A" }, { "id": "105", "provincecode": "340000", "city": "\u5B89\u5E86\u5E02", "code": "340800", "initial": "A" }, { "id": "156", "provincecode": "410000", "city": "\u5B89\u9633\u5E02", "code": "410500", "initial": "A" }, { "id": "256", "provincecode": "510000", "city": "\u963F\u575D\u85CF\u65CF\u7F8C\u65CF\u81EA\u6CBB\u5DDE", "code": "513200", "initial": "A" }, { "id": "262", "provincecode": "520000", "city": "\u5B89\u987A\u5E02", "code": "520400", "initial": "A" }, { "id": "289", "provincecode": "540000", "city": "\u963F\u91CC\u5730\u533A", "code": "542500", "initial": "A" }, { "id": "299", "provincecode": "610000", "city": "\u5B89\u5EB7\u5E02", "code": "610900", "initial": "A" }, { "id": "335", "provincecode": "650000", "city": "\u963F\u514B\u82CF\u5730\u533A", "code": "652900", "initial": "A" }, { "id": "341", "provincecode": "650000", "city": "\u963F\u52D2\u6CF0\u5730\u533A", "code": "654300", "initial": "A" }, { "id": "1", "provincecode": "110000", "city": "\u5317\u4EAC\u5E02", "code": "110100", "initial": "B" }, { "id": "7", "provincecode": "130000", "city": "\u4FDD\u5B9A\u5E02", "code": "130600", "initial": "B" }, { "id": "25", "provincecode": "150000", "city": "\u5305\u5934\u5E02", "code": "150200", "initial": "B" }, { "id": "31", "provincecode": "150000", "city": "\u5DF4\u5F66\u6DD6\u5C14\u5E02", "code": "150800", "initial": "B" }, { "id": "40", "provincecode": "210000", "city": "\u672C\u6EAA\u5E02", "code": "210500", "initial": "B" }, { "id": "55", "provincecode": "220000", "city": "\u767D\u5C71\u5E02", "code": "220600", "initial": "B" }, { "id": "57", "provincecode": "220000", "city": "\u767D\u57CE\u5E02", "code": "220800", "initial": "B" }, { "id": "100", "provincecode": "340000", "city": "\u868C\u57E0\u5E02", "code": "340300", "initial": "B" }, { "id": "150", "provincecode": "370000", "city": "\u6EE8\u5DDE\u5E02", "code": "371600", "initial": "B" }, { "id": "222", "provincecode": "450000", "city": "\u5317\u6D77\u5E02", "code": "450500", "initial": "B" }, { "id": "227", "provincecode": "450000", "city": "\u767E\u8272\u5E02", "code": "451000", "initial": "B" }, { "id": "254", "provincecode": "510000", "city": "\u5DF4\u4E2D\u5E02", "code": "511900", "initial": "B" }, { "id": "265", "provincecode": "520000", "city": "\u6BD5\u8282\u5730\u533A", "code": "522400", "initial": "B" }, { "id": "271", "provincecode": "530000", "city": "\u4FDD\u5C71\u5E02", "code": "530500", "initial": "B" }, { "id": "293", "provincecode": "610000", "city": "\u5B9D\u9E21\u5E02", "code": "610300", "initial": "B" }, { "id": "304", "provincecode": "620000", "city": "\u767D\u94F6\u5E02", "code": "620400", "initial": "B" }, { "id": "333", "provincecode": "650000", "city": "\u535A\u5C14\u5854\u62C9\u8499\u53E4\u81EA\u6CBB\u5DDE", "code": "652700", "initial": "B" }, { "id": "334", "provincecode": "650000", "city": "\u5DF4\u97F3\u90ED\u695E\u8499\u53E4\u81EA\u6CBB\u5DDE", "code": "652800", "initial": "B" }, { "id": "", "provincecode": "500000", "city": "\u91CD\u5E86\u5E02", "code": "500000", "initial": "C" }, { "id": "9", "provincecode": "130000", "city": "\u627F\u5FB7\u5E02", "code": "130800", "initial": "C" }, { "id": "10", "provincecode": "130000", "city": "\u6CA7\u5DDE\u5E02", "code": "130900", "initial": "C" }, { "id": "16", "provincecode": "140000", "city": "\u957F\u6CBB\u5E02", "code": "140400", "initial": "C" }, { "id": "27", "provincecode": "150000", "city": "\u8D64\u5CF0\u5E02", "code": "150400", "initial": "C" }, { "id": "48", "provincecode": "210000", "city": "\u671D\u9633\u5E02", "code": "211300", "initial": "C" }, { "id": "50", "provincecode": "220000", "city": "\u957F\u6625\u5E02", "code": "220100", "initial": "C" }, { "id": "77", "provincecode": "320000", "city": "\u5E38\u5DDE\u5E02", "code": "320400", "initial": "C" }, { "id": "107", "provincecode": "340000", "city": "\u6EC1\u5DDE\u5E02", "code": "341100", "initial": "C" }, { "id": "110", "provincecode": "340000", "city": "\u5DE2\u6E56\u5E02", "code": "341400", "initial": "C" }, { "id": "113", "provincecode": "340000", "city": "\u6C60\u5DDE\u5E02", "code": "341700", "initial": "C" }, { "id": "183", "provincecode": "430000", "city": "\u957F\u6C99\u5E02", "code": "430100", "initial": "C" }, { "id": "189", "provincecode": "430000", "city": "\u5E38\u5FB7\u5E02", "code": "430700", "initial": "C" }, { "id": "192", "provincecode": "430000", "city": "\u90F4\u5DDE\u5E02", "code": "431000", "initial": "C" }, { "id": "215", "provincecode": "440000", "city": "\u6F6E\u5DDE\u5E02", "code": "445100", "initial": "C" }, { "id": "231", "provincecode": "450000", "city": "\u5D07\u5DE6\u5E02", "code": "451400", "initial": "C" }, { "id": "238", "provincecode": "510000", "city": "\u6210\u90FD\u5E02", "code": "510100", "initial": "C" }, { "id": "276", "provincecode": "530000", "city": "\u695A\u96C4\u5F5D\u65CF\u81EA\u6CBB\u5DDE", "code": "532300", "initial": "C" }, { "id": "285", "provincecode": "540000", "city": "\u660C\u90FD\u5730\u533A", "code": "542100", "initial": "C" }, { "id": "332", "provincecode": "650000", "city": "\u660C\u5409\u56DE\u65CF\u81EA\u6CBB\u5DDE", "code": "652300", "initial": "C" }, { "id": "14", "provincecode": "140000", "city": "\u5927\u540C\u5E02", "code": "140200", "initial": "D" }, { "id": "37", "provincecode": "210000", "city": "\u5927\u8FDE\u5E02", "code": "210200", "initial": "D" }, { "id": "41", "provincecode": "210000", "city": "\u4E39\u4E1C\u5E02", "code": "210600", "initial": "D" }, { "id": "64", "provincecode": "230000", "city": "\u5927\u5E86\u5E02", "code": "230600", "initial": "D" }, { "id": "71", "provincecode": "230000", "city": "\u5927\u5174\u5B89\u5CAD\u5730\u533A", "code": "232700", "initial": "D" }, { "id": "139", "provincecode": "370000", "city": "\u4E1C\u8425\u5E02", "code": "370500", "initial": "D" }, { "id": "148", "provincecode": "370000", "city": "\u5FB7\u5DDE\u5E02", "code": "371400", "initial": "D" }, { "id": "213", "provincecode": "440000", "city": "\u4E1C\u839E\u5E02", "code": "441900", "initial": "D" }, { "id": "242", "provincecode": "510000", "city": "\u5FB7\u9633\u5E02", "code": "510600", "initial": "D" }, { "id": "252", "provincecode": "510000", "city": "\u8FBE\u5DDE\u5E02", "code": "511700", "initial": "D" }, { "id": "280", "provincecode": "530000", "city": "\u5927\u7406\u767D\u65CF\u81EA\u6CBB\u5DDE", "code": "532900", "initial": "D" }, { "id": "281", "provincecode": "530000", "city": "\u5FB7\u5B8F\u50A3\u65CF\u666F\u9887\u65CF\u81EA\u6CBB\u5DDE", "code": "533100", "initial": "D" }, { "id": "283", "provincecode": "530000", "city": "\u8FEA\u5E86\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "533400", "initial": "D" }, { "id": "311", "provincecode": "620000", "city": "\u5B9A\u897F\u5E02", "code": "621100", "initial": "D" }, { "id": "29", "provincecode": "150000", "city": "\u9102\u5C14\u591A\u65AF\u5E02", "code": "150600", "initial": "E" }, { "id": "174", "provincecode": "420000", "city": "\u9102\u5DDE\u5E02", "code": "420700", "initial": "E" }, { "id": "181", "provincecode": "420000", "city": "\u6069\u65BD\u571F\u5BB6\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "422800", "initial": "E" }, { "id": "39", "provincecode": "210000", "city": "\u629A\u987A\u5E02", "code": "210400", "initial": "F" }, { "id": "44", "provincecode": "210000", "city": "\u961C\u65B0\u5E02", "code": "210900", "initial": "F" }, { "id": "108", "provincecode": "340000", "city": "\u961C\u9633\u5E02", "code": "341200", "initial": "F" }, { "id": "115", "provincecode": "350000", "city": "\u798F\u5DDE\u5E02", "code": "350100", "initial": "F" }, { "id": "133", "provincecode": "360000", "city": "\u629A\u5DDE\u5E02", "code": "361000", "initial": "F" }, { "id": "202", "provincecode": "440000", "city": "\u4F5B\u5C71\u5E02", "code": "440600", "initial": "F" }, { "id": "223", "provincecode": "450000", "city": "\u9632\u57CE\u6E2F\u5E02", "code": "450600", "initial": "F" }, { "id": "130", "provincecode": "360000", "city": "\u8D63\u5DDE\u5E02", "code": "360700", "initial": "G" }, { "id": "197", "provincecode": "440000", "city": "\u5E7F\u5DDE\u5E02", "code": "440100", "initial": "G" }, { "id": "220", "provincecode": "450000", "city": "\u6842\u6797\u5E02", "code": "450300", "initial": "G" }, { "id": "225", "provincecode": "450000", "city": "\u8D35\u6E2F\u5E02", "code": "450800", "initial": "G" }, { "id": "244", "provincecode": "510000", "city": "\u5E7F\u5143\u5E02", "code": "510800", "initial": "G" }, { "id": "251", "provincecode": "510000", "city": "\u5E7F\u5B89\u5E02", "code": "511600", "initial": "G" }, { "id": "257", "provincecode": "510000", "city": "\u7518\u5B5C\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "513300", "initial": "G" }, { "id": "259", "provincecode": "520000", "city": "\u8D35\u9633\u5E02", "code": "520100", "initial": "G" }, { "id": "314", "provincecode": "620000", "city": "\u7518\u5357\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "623000", "initial": "G" }, { "id": "320", "provincecode": "630000", "city": "\u679C\u6D1B\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632600", "initial": "G" }, { "id": "326", "provincecode": "640000", "city": "\u56FA\u539F\u5E02", "code": "640400", "initial": "G" }, { "id": "5", "provincecode": "130000", "city": "\u90AF\u90F8\u5E02", "code": "130400", "initial": "H" }, { "id": "12", "provincecode": "130000", "city": "\u8861\u6C34\u5E02", "code": "131100", "initial": "H" }, { "id": "24", "provincecode": "150000", "city": "\u547C\u548C\u6D69\u7279\u5E02", "code": "150100", "initial": "H" }, { "id": "30", "provincecode": "150000", "city": "\u547C\u4F26\u8D1D\u5C14\u5E02", "code": "150700", "initial": "H" }, { "id": "49", "provincecode": "210000", "city": "\u846B\u82A6\u5C9B\u5E02", "code": "211400", "initial": "H" }, { "id": "59", "provincecode": "230000", "city": "\u54C8\u5C14\u6EE8\u5E02", "code": "230100", "initial": "H" }, { "id": "62", "provincecode": "230000", "city": "\u9E64\u5C97\u5E02", "code": "230400", "initial": "H" }, { "id": "69", "provincecode": "230000", "city": "\u9ED1\u6CB3\u5E02", "code": "231100", "initial": "H" }, { "id": "81", "provincecode": "320000", "city": "\u6DEE\u5B89\u5E02", "code": "320800", "initial": "H" }, { "id": "87", "provincecode": "330000", "city": "\u676D\u5DDE\u5E02", "code": "330100", "initial": "H" }, { "id": "91", "provincecode": "330000", "city": "\u6E56\u5DDE\u5E02", "code": "330500", "initial": "H" }, { "id": "98", "provincecode": "340000", "city": "\u5408\u80A5\u5E02", "code": "340100", "initial": "H" }, { "id": "101", "provincecode": "340000", "city": "\u6DEE\u5357\u5E02", "code": "340400", "initial": "H" }, { "id": "103", "provincecode": "340000", "city": "\u6DEE\u5317\u5E02", "code": "340600", "initial": "H" }, { "id": "106", "provincecode": "340000", "city": "\u9EC4\u5C71\u5E02", "code": "341000", "initial": "H" }, { "id": "112", "provincecode": "340000", "city": "\u4EB3\u5DDE\u5E02", "code": "341600", "initial": "H" }, { "id": "151", "provincecode": "370000", "city": "\u8377\u6CFD\u5E02", "code": "371700", "initial": "H" }, { "id": "157", "provincecode": "410000", "city": "\u9E64\u58C1\u5E02", "code": "410600", "initial": "H" }, { "id": "170", "provincecode": "420000", "city": "\u9EC4\u77F3\u5E02", "code": "420200", "initial": "H" }, { "id": "178", "provincecode": "420000", "city": "\u9EC4\u5188\u5E02", "code": "421100", "initial": "H" }, { "id": "186", "provincecode": "430000", "city": "\u8861\u9633\u5E02", "code": "430400", "initial": "H" }, { "id": "194", "provincecode": "430000", "city": "\u6000\u5316\u5E02", "code": "431200", "initial": "H" }, { "id": "207", "provincecode": "440000", "city": "\u60E0\u5DDE\u5E02", "code": "441300", "initial": "H" }, { "id": "210", "provincecode": "440000", "city": "\u6CB3\u6E90\u5E02", "code": "441600", "initial": "H" }, { "id": "228", "provincecode": "450000", "city": "\u8D3A\u5DDE\u5E02", "code": "451100", "initial": "H" }, { "id": "229", "provincecode": "450000", "city": "\u6CB3\u6C60\u5E02", "code": "451200", "initial": "H" }, { "id": "232", "provincecode": "460000", "city": "\u6D77\u53E3\u5E02", "code": "460100", "initial": "H" }, { "id": "277", "provincecode": "530000", "city": "\u7EA2\u6CB3\u54C8\u5C3C\u65CF\u5F5D\u65CF\u81EA\u6CBB\u5DDE", "code": "532500", "initial": "H" }, { "id": "297", "provincecode": "610000", "city": "\u6C49\u4E2D\u5E02", "code": "610700", "initial": "H" }, { "id": "316", "provincecode": "630000", "city": "\u6D77\u4E1C\u5730\u533A", "code": "632100", "initial": "H" }, { "id": "317", "provincecode": "630000", "city": "\u6D77\u5317\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632200", "initial": "H" }, { "id": "318", "provincecode": "630000", "city": "\u9EC4\u5357\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632300", "initial": "H" }, { "id": "319", "provincecode": "630000", "city": "\u6D77\u5357\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632500", "initial": "H" }, { "id": "322", "provincecode": "630000", "city": "\u6D77\u897F\u8499\u53E4\u65CF\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632800", "initial": "H" }, { "id": "331", "provincecode": "650000", "city": "\u54C8\u5BC6\u5730\u533A", "code": "652200", "initial": "H" }, { "id": "338", "provincecode": "650000", "city": "\u548C\u7530\u5730\u533A", "code": "653200", "initial": "H" }, { "id": "17", "provincecode": "140000", "city": "\u664B\u57CE\u5E02", "code": "140500", "initial": "J" }, { "id": "19", "provincecode": "140000", "city": "\u664B\u4E2D\u5E02", "code": "140700", "initial": "J" }, { "id": "42", "provincecode": "210000", "city": "\u9526\u5DDE\u5E02", "code": "210700", "initial": "J" }, { "id": "51", "provincecode": "220000", "city": "\u5409\u6797\u5E02", "code": "220200", "initial": "J" }, { "id": "61", "provincecode": "230000", "city": "\u9E21\u897F\u5E02", "code": "230300", "initial": "J" }, { "id": "66", "provincecode": "230000", "city": "\u4F73\u6728\u65AF\u5E02", "code": "230800", "initial": "J" }, { "id": "90", "provincecode": "330000", "city": "\u5609\u5174\u5E02", "code": "330400", "initial": "J" }, { "id": "93", "provincecode": "330000", "city": "\u91D1\u534E\u5E02", "code": "330700", "initial": "J" }, { "id": "125", "provincecode": "360000", "city": "\u666F\u5FB7\u9547\u5E02", "code": "360200", "initial": "J" }, { "id": "127", "provincecode": "360000", "city": "\u4E5D\u6C5F\u5E02", "code": "360400", "initial": "J" }, { "id": "131", "provincecode": "360000", "city": "\u5409\u5B89\u5E02", "code": "360800", "initial": "J" }, { "id": "135", "provincecode": "370000", "city": "\u6D4E\u5357\u5E02", "code": "370100", "initial": "J" }, { "id": "142", "provincecode": "370000", "city": "\u6D4E\u5B81\u5E02", "code": "370800", "initial": "J" }, { "id": "159", "provincecode": "410000", "city": "\u7126\u4F5C\u5E02", "code": "410800", "initial": "J" }, { "id": "175", "provincecode": "420000", "city": "\u8346\u95E8\u5E02", "code": "420800", "initial": "J" }, { "id": "177", "provincecode": "420000", "city": "\u8346\u5DDE\u5E02", "code": "421000", "initial": "J" }, { "id": "203", "provincecode": "440000", "city": "\u6C5F\u95E8\u5E02", "code": "440700", "initial": "J" }, { "id": "216", "provincecode": "440000", "city": "\u63ED\u9633\u5E02", "code": "445200", "initial": "J" }, { "id": "302", "provincecode": "620000", "city": "\u5609\u5CEA\u5173\u5E02", "code": "620200", "initial": "J" }, { "id": "303", "provincecode": "620000", "city": "\u91D1\u660C\u5E02", "code": "620300", "initial": "J" }, { "id": "309", "provincecode": "620000", "city": "\u9152\u6CC9\u5E02", "code": "620900", "initial": "J" }, { "id": "153", "provincecode": "410000", "city": "\u5F00\u5C01\u5E02", "code": "410200", "initial": "K" }, { "id": "268", "provincecode": "530000", "city": "\u6606\u660E\u5E02", "code": "530100", "initial": "K" }, { "id": "329", "provincecode": "650000", "city": "\u514B\u62C9\u739B\u4F9D\u5E02", "code": "650200", "initial": "K" }, { "id": "336", "provincecode": "650000", "city": "\u514B\u5B5C\u52D2\u82CF\u67EF\u5C14\u514B\u5B5C\u81EA\u6CBB\u5DDE", "code": "653000", "initial": "K" }, { "id": "337", "provincecode": "650000", "city": "\u5580\u4EC0\u5730\u533A", "code": "653100", "initial": "K" }, { "id": "11", "provincecode": "130000", "city": "\u5ECA\u574A\u5E02", "code": "131000", "initial": "L" }, { "id": "22", "provincecode": "140000", "city": "\u4E34\u6C7E\u5E02", "code": "141000", "initial": "L" }, { "id": "23", "provincecode": "140000", "city": "\u5415\u6881\u5E02", "code": "141100", "initial": "L" }, { "id": "45", "provincecode": "210000", "city": "\u8FBD\u9633\u5E02", "code": "211000", "initial": "L" }, { "id": "53", "provincecode": "220000", "city": "\u8FBD\u6E90\u5E02", "code": "220400", "initial": "L" }, { "id": "80", "provincecode": "320000", "city": "\u8FDE\u4E91\u6E2F\u5E02", "code": "320700", "initial": "L" }, { "id": "97", "provincecode": "330000", "city": "\u4E3D\u6C34\u5E02", "code": "331100", "initial": "L" }, { "id": "111", "provincecode": "340000", "city": "\u516D\u5B89\u5E02", "code": "341500", "initial": "L" }, { "id": "122", "provincecode": "350000", "city": "\u9F99\u5CA9\u5E02", "code": "350800", "initial": "L" }, { "id": "146", "provincecode": "370000", "city": "\u83B1\u829C\u5E02", "code": "371200", "initial": "L" }, { "id": "147", "provincecode": "370000", "city": "\u4E34\u6C82\u5E02", "code": "371300", "initial": "L" }, { "id": "149", "provincecode": "370000", "city": "\u804A\u57CE\u5E02", "code": "371500", "initial": "L" }, { "id": "154", "provincecode": "410000", "city": "\u6D1B\u9633\u5E02", "code": "410300", "initial": "L" }, { "id": "162", "provincecode": "410000", "city": "\u6F2F\u6CB3\u5E02", "code": "411100", "initial": "L" }, { "id": "195", "provincecode": "430000", "city": "\u5A04\u5E95\u5E02", "code": "431300", "initial": "L" }, { "id": "219", "provincecode": "450000", "city": "\u67F3\u5DDE\u5E02", "code": "450200", "initial": "L" }, { "id": "230", "provincecode": "450000", "city": "\u6765\u5BBE\u5E02", "code": "451300", "initial": "L" }, { "id": "241", "provincecode": "510000", "city": "\u6CF8\u5DDE\u5E02", "code": "510500", "initial": "L" }, { "id": "247", "provincecode": "510000", "city": "\u4E50\u5C71\u5E02", "code": "511100", "initial": "L" }, { "id": "258", "provincecode": "510000", "city": "\u51C9\u5C71\u5F5D\u65CF\u81EA\u6CBB\u5DDE", "code": "513400", "initial": "L" }, { "id": "260", "provincecode": "520000", "city": "\u516D\u76D8\u6C34\u5E02", "code": "520200", "initial": "L" }, { "id": "273", "provincecode": "530000", "city": "\u4E3D\u6C5F\u5E02", "code": "530700", "initial": "L" }, { "id": "275", "provincecode": "530000", "city": "\u4E34\u6CA7\u5E02", "code": "530900", "initial": "L" }, { "id": "284", "provincecode": "540000", "city": "\u62C9\u8428\u5E02", "code": "540100", "initial": "L" }, { "id": "290", "provincecode": "540000", "city": "\u6797\u829D\u5730\u533A", "code": "542600", "initial": "L" }, { "id": "301", "provincecode": "620000", "city": "\u5170\u5DDE\u5E02", "code": "620100", "initial": "L" }, { "id": "312", "provincecode": "620000", "city": "\u9647\u5357\u5E02", "code": "621200", "initial": "L" }, { "id": "313", "provincecode": "620000", "city": "\u4E34\u590F\u56DE\u65CF\u81EA\u6CBB\u5DDE", "code": "622900", "initial": "L" }, { "id": "68", "provincecode": "230000", "city": "\u7261\u4E39\u6C5F\u5E02", "code": "231000", "initial": "M" }, { "id": "102", "provincecode": "340000", "city": "\u9A6C\u978D\u5C71\u5E02", "code": "340500", "initial": "M" }, { "id": "205", "provincecode": "440000", "city": "\u8302\u540D\u5E02", "code": "440900", "initial": "M" }, { "id": "208", "provincecode": "440000", "city": "\u6885\u5DDE\u5E02", "code": "441400", "initial": "M" }, { "id": "243", "provincecode": "510000", "city": "\u7EF5\u9633\u5E02", "code": "510700", "initial": "M" }, { "id": "249", "provincecode": "510000", "city": "\u7709\u5C71\u5E02", "code": "511400", "initial": "M" }, { "id": "74", "provincecode": "320000", "city": "\u5357\u4EAC\u5E02", "code": "320100", "initial": "N" }, { "id": "79", "provincecode": "320000", "city": "\u5357\u901A\u5E02", "code": "320600", "initial": "N" }, { "id": "88", "provincecode": "330000", "city": "\u5B81\u6CE2\u5E02", "code": "330200", "initial": "N" }, { "id": "121", "provincecode": "350000", "city": "\u5357\u5E73\u5E02", "code": "350700", "initial": "N" }, { "id": "123", "provincecode": "350000", "city": "\u5B81\u5FB7\u5E02", "code": "350900", "initial": "N" }, { "id": "124", "provincecode": "360000", "city": "\u5357\u660C\u5E02", "code": "360100", "initial": "N" }, { "id": "164", "provincecode": "410000", "city": "\u5357\u9633\u5E02", "code": "411300", "initial": "N" }, { "id": "218", "provincecode": "450000", "city": "\u5357\u5B81\u5E02", "code": "450100", "initial": "N" }, { "id": "246", "provincecode": "510000", "city": "\u5185\u6C5F\u5E02", "code": "511000", "initial": "N" }, { "id": "248", "provincecode": "510000", "city": "\u5357\u5145\u5E02", "code": "511300", "initial": "N" }, { "id": "282", "provincecode": "530000", "city": "\u6012\u6C5F\u5088\u50F3\u65CF\u81EA\u6CBB\u5DDE", "code": "533300", "initial": "N" }, { "id": "288", "provincecode": "540000", "city": "\u90A3\u66F2\u5730\u533A", "code": "542400", "initial": "N" }, { "id": "46", "provincecode": "210000", "city": "\u76D8\u9526\u5E02", "code": "211100", "initial": "P" }, { "id": "117", "provincecode": "350000", "city": "\u8386\u7530\u5E02", "code": "350300", "initial": "P" }, { "id": "126", "provincecode": "360000", "city": "\u840D\u4E61\u5E02", "code": "360300", "initial": "P" }, { "id": "155", "provincecode": "410000", "city": "\u5E73\u9876\u5C71\u5E02", "code": "410400", "initial": "P" }, { "id": "160", "provincecode": "410000", "city": "\u6FEE\u9633\u5E02", "code": "410900", "initial": "P" }, { "id": "240", "provincecode": "510000", "city": "\u6500\u679D\u82B1\u5E02", "code": "510400", "initial": "P" }, { "id": "308", "provincecode": "620000", "city": "\u5E73\u51C9\u5E02", "code": "620800", "initial": "P" }, { "id": "4", "provincecode": "130000", "city": "\u79E6\u7687\u5C9B\u5E02", "code": "130300", "initial": "Q" }, { "id": "60", "provincecode": "230000", "city": "\u9F50\u9F50\u54C8\u5C14\u5E02", "code": "230200", "initial": "Q" }, { "id": "67", "provincecode": "230000", "city": "\u4E03\u53F0\u6CB3\u5E02", "code": "230900", "initial": "Q" }, { "id": "94", "provincecode": "330000", "city": "\u8862\u5DDE\u5E02", "code": "330800", "initial": "Q" }, { "id": "119", "provincecode": "350000", "city": "\u6CC9\u5DDE\u5E02", "code": "350500", "initial": "Q" }, { "id": "136", "provincecode": "370000", "city": "\u9752\u5C9B\u5E02", "code": "370200", "initial": "Q" }, { "id": "212", "provincecode": "440000", "city": "\u6E05\u8FDC\u5E02", "code": "441800", "initial": "Q" }, { "id": "224", "provincecode": "450000", "city": "\u94A6\u5DDE\u5E02", "code": "450700", "initial": "Q" }, { "id": "264", "provincecode": "520000", "city": "\u9ED4\u897F\u5357\u5E03\u4F9D\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "522300", "initial": "Q" }, { "id": "266", "provincecode": "520000", "city": "\u9ED4\u4E1C\u5357\u82D7\u65CF\u4F97\u65CF\u81EA\u6CBB\u5DDE", "code": "522600", "initial": "Q" }, { "id": "267", "provincecode": "520000", "city": "\u9ED4\u5357\u5E03\u4F9D\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "522700", "initial": "Q" }, { "id": "269", "provincecode": "530000", "city": "\u66F2\u9756\u5E02", "code": "530300", "initial": "Q" }, { "id": "310", "provincecode": "620000", "city": "\u5E86\u9633\u5E02", "code": "621000", "initial": "Q" }, { "id": "145", "provincecode": "370000", "city": "\u65E5\u7167\u5E02", "code": "371100", "initial": "R" }, { "id": "287", "provincecode": "540000", "city": "\u65E5\u5580\u5219\u5730\u533A", "code": "542300", "initial": "R" }, { "id": "2", "provincecode": "130000", "city": "\u77F3\u5BB6\u5E84\u5E02", "code": "130100", "initial": "S" }, { "id": "", "provincecode": "310000", "city": "\u4E0A\u6D77\u5E02", "code": "310100", "initial": "S" }, { "id": "18", "provincecode": "140000", "city": "\u6714\u5DDE\u5E02", "code": "140600", "initial": "S" }, { "id": "36", "provincecode": "210000", "city": "\u6C88\u9633\u5E02", "code": "210100", "initial": "S" }, { "id": "52", "provincecode": "220000", "city": "\u56DB\u5E73\u5E02", "code": "220300", "initial": "S" }, { "id": "56", "provincecode": "220000", "city": "\u677E\u539F\u5E02", "code": "220700", "initial": "S" }, { "id": "63", "provincecode": "230000", "city": "\u53CC\u9E2D\u5C71\u5E02", "code": "230500", "initial": "S" }, { "id": "70", "provincecode": "230000", "city": "\u7EE5\u5316\u5E02", "code": "231200", "initial": "S" }, { "id": "78", "provincecode": "320000", "city": "\u82CF\u5DDE\u5E02", "code": "320500", "initial": "S" }, { "id": "86", "provincecode": "320000", "city": "\u5BBF\u8FC1\u5E02", "code": "321300", "initial": "S" }, { "id": "92", "provincecode": "330000", "city": "\u7ECD\u5174\u5E02", "code": "330600", "initial": "S" }, { "id": "109", "provincecode": "340000", "city": "\u5BBF\u5DDE\u5E02", "code": "341300", "initial": "S" }, { "id": "118", "provincecode": "350000", "city": "\u4E09\u660E\u5E02", "code": "350400", "initial": "S" }, { "id": "134", "provincecode": "360000", "city": "\u4E0A\u9976\u5E02", "code": "361100", "initial": "S" }, { "id": "163", "provincecode": "410000", "city": "\u4E09\u95E8\u5CE1\u5E02", "code": "411200", "initial": "S" }, { "id": "165", "provincecode": "410000", "city": "\u5546\u4E18\u5E02", "code": "411400", "initial": "S" }, { "id": "171", "provincecode": "420000", "city": "\u5341\u5830\u5E02", "code": "420300", "initial": "S" }, { "id": "180", "provincecode": "420000", "city": "\u968F\u5DDE\u5E02", "code": "421300", "initial": "S" }, { "id": "187", "provincecode": "430000", "city": "\u90B5\u9633\u5E02", "code": "430500", "initial": "S" }, { "id": "198", "provincecode": "440000", "city": "\u97F6\u5173\u5E02", "code": "440200", "initial": "S" }, { "id": "199", "provincecode": "440000", "city": "\u6DF1\u5733\u5E02", "code": "440300", "initial": "S" }, { "id": "201", "provincecode": "440000", "city": "\u6C55\u5934\u5E02", "code": "440500", "initial": "S" }, { "id": "209", "provincecode": "440000", "city": "\u6C55\u5C3E\u5E02", "code": "441500", "initial": "S" }, { "id": "233", "provincecode": "460000", "city": "\u4E09\u4E9A\u5E02", "code": "460200", "initial": "S" }, { "id": "245", "provincecode": "510000", "city": "\u9042\u5B81\u5E02", "code": "510900", "initial": "S" }, { "id": "274", "provincecode": "530000", "city": "\u601D\u8305\u5E02", "code": "530800", "initial": "S" }, { "id": "286", "provincecode": "540000", "city": "\u5C71\u5357\u5730\u533A", "code": "542200", "initial": "S" }, { "id": "300", "provincecode": "610000", "city": "\u5546\u6D1B\u5E02", "code": "611000", "initial": "S" }, { "id": "324", "provincecode": "640000", "city": "\u77F3\u5634\u5C71\u5E02", "code": "640200", "initial": "S" }, { "id": "3", "provincecode": "130000", "city": "\u5510\u5C71\u5E02", "code": "130200", "initial": "T" }, { "id": "13", "provincecode": "140000", "city": "\u592A\u539F\u5E02", "code": "140100", "initial": "T" }, { "id": "28", "provincecode": "150000", "city": "\u901A\u8FBD\u5E02", "code": "150500", "initial": "T" }, { "id": "47", "provincecode": "210000", "city": "\u94C1\u5CAD\u5E02", "code": "211200", "initial": "T" }, { "id": "54", "provincecode": "220000", "city": "\u901A\u5316\u5E02", "code": "220500", "initial": "T" }, { "id": "85", "provincecode": "320000", "city": "\u6CF0\u5DDE\u5E02", "code": "321200", "initial": "T" }, { "id": "96", "provincecode": "330000", "city": "\u53F0\u5DDE\u5E02", "code": "331000", "initial": "T" }, { "id": "104", "provincecode": "340000", "city": "\u94DC\u9675\u5E02", "code": "340700", "initial": "T" }, { "id": "143", "provincecode": "370000", "city": "\u6CF0\u5B89\u5E02", "code": "370900", "initial": "T" }, { "id": "263", "provincecode": "520000", "city": "\u94DC\u4EC1\u5730\u533A", "code": "522200", "initial": "T" }, { "id": "292", "provincecode": "610000", "city": "\u94DC\u5DDD\u5E02", "code": "610200", "initial": "T" }, { "id": "305", "provincecode": "620000", "city": "\u5929\u6C34\u5E02", "code": "620500", "initial": "T" }, { "id": "330", "provincecode": "650000", "city": "\u5410\u9C81\u756A\u5730\u533A", "code": "652100", "initial": "T" }, { "id": "340", "provincecode": "650000", "city": "\u5854\u57CE\u5730\u533A", "code": "654200", "initial": "T" }, { "id": "343", "provincecode": "120000", "city": "\u5929\u6D25\u5E02", "code": "120100", "initial": "T" }, { "id": "26", "provincecode": "150000", "city": "\u4E4C\u6D77\u5E02", "code": "150300", "initial": "W" }, { "id": "32", "provincecode": "150000", "city": "\u4E4C\u5170\u5BDF\u5E03\u5E02", "code": "150900", "initial": "W" }, { "id": "75", "provincecode": "320000", "city": "\u65E0\u9521\u5E02", "code": "320200", "initial": "W" }, { "id": "89", "provincecode": "330000", "city": "\u6E29\u5DDE\u5E02", "code": "330300", "initial": "W" }, { "id": "99", "provincecode": "340000", "city": "\u829C\u6E56\u5E02", "code": "340200", "initial": "W" }, { "id": "141", "provincecode": "370000", "city": "\u6F4D\u574A\u5E02", "code": "370700", "initial": "W" }, { "id": "144", "provincecode": "370000", "city": "\u5A01\u6D77\u5E02", "code": "371000", "initial": "W" }, { "id": "169", "provincecode": "420000", "city": "\u6B66\u6C49\u5E02", "code": "420100", "initial": "W" }, { "id": "221", "provincecode": "450000", "city": "\u68A7\u5DDE\u5E02", "code": "450400", "initial": "W" }, { "id": "278", "provincecode": "530000", "city": "\u6587\u5C71\u58EE\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "532600", "initial": "W" }, { "id": "295", "provincecode": "610000", "city": "\u6E2D\u5357\u5E02", "code": "610500", "initial": "W" }, { "id": "306", "provincecode": "620000", "city": "\u6B66\u5A01\u5E02", "code": "620600", "initial": "W" }, { "id": "325", "provincecode": "640000", "city": "\u5434\u5FE0\u5E02", "code": "640300", "initial": "W" }, { "id": "328", "provincecode": "650000", "city": "\u4E4C\u9C81\u6728\u9F50\u5E02", "code": "650100", "initial": "W" }, { "id": "6", "provincecode": "130000", "city": "\u90A2\u53F0\u5E02", "code": "130500", "initial": "X" }, { "id": "21", "provincecode": "140000", "city": "\u5FFB\u5DDE\u5E02", "code": "140900", "initial": "X" }, { "id": "33", "provincecode": "150000", "city": "\u5174\u5B89\u76DF", "code": "152200", "initial": "X" }, { "id": "34", "provincecode": "150000", "city": "\u9521\u6797\u90ED\u52D2\u76DF", "code": "152500", "initial": "X" }, { "id": "76", "provincecode": "320000", "city": "\u5F90\u5DDE\u5E02", "code": "320300", "initial": "X" }, { "id": "114", "provincecode": "340000", "city": "\u5BA3\u57CE\u5E02", "code": "341800", "initial": "X" }, { "id": "116", "provincecode": "350000", "city": "\u53A6\u95E8\u5E02", "code": "350200", "initial": "X" }, { "id": "128", "provincecode": "360000", "city": "\u65B0\u4F59\u5E02", "code": "360500", "initial": "X" }, { "id": "158", "provincecode": "410000", "city": "\u65B0\u4E61\u5E02", "code": "410700", "initial": "X" }, { "id": "161", "provincecode": "410000", "city": "\u8BB8\u660C\u5E02", "code": "411000", "initial": "X" }, { "id": "166", "provincecode": "410000", "city": "\u4FE1\u9633\u5E02", "code": "411500", "initial": "X" }, { "id": "173", "provincecode": "420000", "city": "\u8944\u6A0A\u5E02", "code": "420600", "initial": "X" }, { "id": "176", "provincecode": "420000", "city": "\u5B5D\u611F\u5E02", "code": "420900", "initial": "X" }, { "id": "179", "provincecode": "420000", "city": "\u54B8\u5B81\u5E02", "code": "421200", "initial": "X" }, { "id": "185", "provincecode": "430000", "city": "\u6E58\u6F6D\u5E02", "code": "430300", "initial": "X" }, { "id": "196", "provincecode": "430000", "city": "\u6E58\u897F\u571F\u5BB6\u65CF\u82D7\u65CF\u81EA\u6CBB\u5DDE", "code": "433100", "initial": "X" }, { "id": "279", "provincecode": "530000", "city": "\u897F\u53CC\u7248\u7EB3\u50A3\u65CF\u81EA\u6CBB\u5DDE", "code": "532800", "initial": "X" }, { "id": "291", "provincecode": "610000", "city": "\u897F\u5B89\u5E02", "code": "610100", "initial": "X" }, { "id": "294", "provincecode": "610000", "city": "\u54B8\u9633\u5E02", "code": "610400", "initial": "X" }, { "id": "315", "provincecode": "630000", "city": "\u897F\u5B81\u5E02", "code": "630100", "initial": "X" }, { "id": "15", "provincecode": "140000", "city": "\u9633\u6CC9\u5E02", "code": "140300", "initial": "Y" }, { "id": "20", "provincecode": "140000", "city": "\u8FD0\u57CE\u5E02", "code": "140800", "initial": "Y" }, { "id": "43", "provincecode": "210000", "city": "\u8425\u53E3\u5E02", "code": "210800", "initial": "Y" }, { "id": "58", "provincecode": "220000", "city": "\u5EF6\u8FB9\u671D\u9C9C\u65CF\u81EA\u6CBB\u5DDE", "code": "222400", "initial": "Y" }, { "id": "65", "provincecode": "230000", "city": "\u4F0A\u6625\u5E02", "code": "230700", "initial": "Y" }, { "id": "82", "provincecode": "320000", "city": "\u76D0\u57CE\u5E02", "code": "320900", "initial": "Y" }, { "id": "83", "provincecode": "320000", "city": "\u626C\u5DDE\u5E02", "code": "321000", "initial": "Y" }, { "id": "129", "provincecode": "360000", "city": "\u9E70\u6F6D\u5E02", "code": "360600", "initial": "Y" }, { "id": "132", "provincecode": "360000", "city": "\u5B9C\u6625\u5E02", "code": "360900", "initial": "Y" }, { "id": "140", "provincecode": "370000", "city": "\u70DF\u53F0\u5E02", "code": "370600", "initial": "Y" }, { "id": "172", "provincecode": "420000", "city": "\u5B9C\u660C\u5E02", "code": "420500", "initial": "Y" }, { "id": "188", "provincecode": "430000", "city": "\u5CB3\u9633\u5E02", "code": "430600", "initial": "Y" }, { "id": "191", "provincecode": "430000", "city": "\u76CA\u9633\u5E02", "code": "430900", "initial": "Y" }, { "id": "193", "provincecode": "430000", "city": "\u6C38\u5DDE\u5E02", "code": "431100", "initial": "Y" }, { "id": "211", "provincecode": "440000", "city": "\u9633\u6C5F\u5E02", "code": "441700", "initial": "Y" }, { "id": "217", "provincecode": "440000", "city": "\u4E91\u6D6E\u5E02", "code": "445300", "initial": "Y" }, { "id": "226", "provincecode": "450000", "city": "\u7389\u6797\u5E02", "code": "450900", "initial": "Y" }, { "id": "250", "provincecode": "510000", "city": "\u5B9C\u5BBE\u5E02", "code": "511500", "initial": "Y" }, { "id": "253", "provincecode": "510000", "city": "\u96C5\u5B89\u5E02", "code": "511800", "initial": "Y" }, { "id": "270", "provincecode": "530000", "city": "\u7389\u6EAA\u5E02", "code": "530400", "initial": "Y" }, { "id": "296", "provincecode": "610000", "city": "\u5EF6\u5B89\u5E02", "code": "610600", "initial": "Y" }, { "id": "298", "provincecode": "610000", "city": "\u6986\u6797\u5E02", "code": "610800", "initial": "Y" }, { "id": "321", "provincecode": "630000", "city": "\u7389\u6811\u85CF\u65CF\u81EA\u6CBB\u5DDE", "code": "632700", "initial": "Y" }, { "id": "323", "provincecode": "640000", "city": "\u94F6\u5DDD\u5E02", "code": "640100", "initial": "Y" }, { "id": "339", "provincecode": "650000", "city": "\u4F0A\u7281\u54C8\u8428\u514B\u81EA\u6CBB\u5DDE", "code": "654000", "initial": "Y" }, { "id": "8", "provincecode": "130000", "city": "\u5F20\u5BB6\u53E3\u5E02", "code": "130700", "initial": "Z" }, { "id": "84", "provincecode": "320000", "city": "\u9547\u6C5F\u5E02", "code": "321100", "initial": "Z" }, { "id": "95", "provincecode": "330000", "city": "\u821F\u5C71\u5E02", "code": "330900", "initial": "Z" }, { "id": "120", "provincecode": "350000", "city": "\u6F33\u5DDE\u5E02", "code": "350600", "initial": "Z" }, { "id": "137", "provincecode": "370000", "city": "\u6DC4\u535A\u5E02", "code": "370300", "initial": "Z" }, { "id": "138", "provincecode": "370000", "city": "\u67A3\u5E84\u5E02", "code": "370400", "initial": "Z" }, { "id": "152", "provincecode": "410000", "city": "\u90D1\u5DDE\u5E02", "code": "410100", "initial": "Z" }, { "id": "167", "provincecode": "410000", "city": "\u5468\u53E3\u5E02", "code": "411600", "initial": "Z" }, { "id": "168", "provincecode": "410000", "city": "\u9A7B\u9A6C\u5E97\u5E02", "code": "411700", "initial": "Z" }, { "id": "184", "provincecode": "430000", "city": "\u682A\u6D32\u5E02", "code": "430200", "initial": "Z" }, { "id": "190", "provincecode": "430000", "city": "\u5F20\u5BB6\u754C\u5E02", "code": "430800", "initial": "Z" }, { "id": "200", "provincecode": "440000", "city": "\u73E0\u6D77\u5E02", "code": "440400", "initial": "Z" }, { "id": "204", "provincecode": "440000", "city": "\u6E5B\u6C5F\u5E02", "code": "440800", "initial": "Z" }, { "id": "206", "provincecode": "440000", "city": "\u8087\u5E86\u5E02", "code": "441200", "initial": "Z" }, { "id": "214", "provincecode": "440000", "city": "\u4E2D\u5C71\u5E02", "code": "442000", "initial": "Z" }, { "id": "239", "provincecode": "510000", "city": "\u81EA\u8D21\u5E02", "code": "510300", "initial": "Z" }, { "id": "255", "provincecode": "510000", "city": "\u8D44\u9633\u5E02", "code": "512000", "initial": "Z" }, { "id": "261", "provincecode": "520000", "city": "\u9075\u4E49\u5E02", "code": "520300", "initial": "Z" }, { "id": "272", "provincecode": "530000", "city": "\u662D\u901A\u5E02", "code": "530600", "initial": "Z" }, { "id": "307", "provincecode": "620000", "city": "\u5F20\u6396\u5E02", "code": "620700", "initial": "Z" }, { "id": "327", "provincecode": "640000", "city": "\u4E2D\u536B\u5E02", "code": "640500", "initial": "Z" }];
-
-//城市检索的首字母
-var searchLetter = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "W", "X", "Y", "Z"];
-
-function searchLetter() {
-  return searchLetter;
-}
-
-//对城市信息进行分组
-function cityList() {
-  var tempObj = [];
-  for (var i = 0; i < searchLetter.length; i++) {
-    var initial = searchLetter[i];
-    var cityInfo = [];
-    var tempArr = {};
-    tempArr.initial = initial;
-    for (var j = 0; j < cityObj.length; j++) {
-      if (initial == cityObj[j].initial) {
-        cityInfo.push(cityObj[j]);
-      }
-    }
-    tempArr.cityInfo = cityInfo;
-    tempObj.push(tempArr);
-  }
-  return tempObj;
-}
-
-function pushCity() {
-
-}
-
-module.exports = {
-  searchLetter: searchLetter,
-  cityList: cityList };
-
 /***/ })
-]]);
+
+}]);
 //# sourceMappingURL=../../.sourcemap/mp-weixin/common/vendor.js.map

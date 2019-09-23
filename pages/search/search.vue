@@ -7,7 +7,7 @@
 		<view class="cu-bar search bg-white">
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
-				<input type="text" placeholder="搜索城市"></input>
+				<input type="text" confirm-type="search" placeholder="搜索城市"></input>
 			</view>
 		</view>
 		<!-- 搜索模块 -->
@@ -45,7 +45,12 @@
 			}
 		},
 		onReady: function(e) {
-
+		},
+		onNavigationBarSearchInputChanged(e){
+			console.log(JSON.stringify(e))
+		},
+		onNavigationBarSearchInputConfirmed(e){
+			console.log(JSON.stringify(e))
 		},
 		methods: {
 

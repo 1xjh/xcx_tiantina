@@ -70,7 +70,7 @@
     "autoclose": false
   },
   "appname": "tiantian_wx_two",
-  "compilerVersion": "2.2.0",
+  "compilerVersion": "2.2.2",
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom"
   }

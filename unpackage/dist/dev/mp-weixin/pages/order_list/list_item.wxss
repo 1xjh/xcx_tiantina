@@ -24,17 +24,17 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.list_item_box {
+.list_item_box.data-v-4b23c2f6 {
   background: white;
   border-radius: 20rpx;
   padding: 37rpx 24rpx 32rpx 32rpx;
   font-family: Source Han Sans CN;
   margin-top: 30rpx;
 }
-.list_item_box .left_title {
+.list_item_box .left_title.data-v-4b23c2f6 {
     width: 150rpx;
 }
-.room_order_number {
+.room_order_number.data-v-4b23c2f6 {
   font-size: 28rpx;
   font-weight: 400;
   color: #555555;
@@ -44,7 +44,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
-.room_order_number .order_status {
+.room_order_number .order_status.data-v-4b23c2f6 {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
         -ms-flex: 1;
@@ -52,10 +52,10 @@
     font-weight: bold;
     text-align: right;
 }
-.room_order_number .order_number {
+.room_order_number .order_number.data-v-4b23c2f6 {
     white-space: nowrap;
 }
-.room_order_number .order_today {
+.room_order_number .order_today.data-v-4b23c2f6 {
     height: 40rpx;
     line-height: 40rpx;
     background: white;
@@ -68,17 +68,17 @@
     padding: 0rpx 16rpx;
     margin-left: 45rpx;
 }
-.room_order_number .order_today text {
+.room_order_number .order_today text.data-v-4b23c2f6 {
       color: #267656;
 }
-.room_order_bottom {
+.room_order_bottom.data-v-4b23c2f6 {
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-top: 50rpx;
 }
-.room_order_bottom .button {
+.room_order_bottom .button.data-v-4b23c2f6 {
     height: 54rpx;
     line-height: 54rpx;
     border: 1px solid #555555;
@@ -86,11 +86,11 @@
     margin-left: 30rpx;
     padding: 0rpx 20rpx;
 }
-.room_order_bottom .action {
+.room_order_bottom .action.data-v-4b23c2f6 {
     color: #267656;
     border: 2rpx solid #267656;
 }
-.room_order_title {
+.room_order_title.data-v-4b23c2f6 {
   font-size: 28rpx;
   font-weight: bold;
   color: #555555;

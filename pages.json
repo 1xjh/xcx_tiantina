@@ -49,7 +49,12 @@
 		},
 
 		{
-			"path": "pages/order_list/order_comment"
+			"path": "pages/order_list/order_comment",
+			"style": {
+				"app-plus":{
+					"titleNView":false
+				}
+			}
 		},
 		{
 			"path": "pages/order_list/list_item"

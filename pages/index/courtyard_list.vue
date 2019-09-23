@@ -7,7 +7,7 @@
 		<view class="cu-bar search bg-white" @click="jumpSearch">
 			<view class="search-form round">
 				<text class="cuIcon-search"></text>
-				<input @input="onKeyInput" type="text" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
+				<input disabled="true" placeholder="搜索图片、文章、视频" confirm-type="search"></input>
 			</view>
 		</view>
 		<view class="condition_list flex">
@@ -123,9 +123,6 @@
 
 		},
 		methods: {
-			onKeyInput(e) {
-				this.inputValue = e.target.value
-			},
 			jumpSearch(e) {
 				uni.navigateTo({
 					url: '../city/city'

@@ -1,0 +1,1 @@
+<view class="order_no_login"><view class="img"><image src="../static/img/OrderNoLogin.png" mode="aspectFill" lazy-load></image></view><view class="title">{{notitle}}</view><view hidden="{{!(show)}}" class="button">登录</view></view>
