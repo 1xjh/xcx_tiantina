@@ -66,7 +66,7 @@
 		data() {
 			return {
 				textareaAInput: '',
-				imageList: [],
+				imageList: [],	
 			}
 		},
 		methods: {
